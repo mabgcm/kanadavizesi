@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "oxlint",
-    "format": "oxfmt"
+    "format": "oxfmt",
+    "test:assessment": "node --experimental-strip-types --test tests/assessment.test.mjs"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",
@@ -25,6 +26,7 @@
     "input-otp": "1.4.2",
     "lucide-react": "1.31.0",
     "next": "16.3.5",
+    "nodemailer": "^10.0.9",
     "react": "19.2.6",
     "react-day-picker": "9.8.1",
     "react-dom": "19.2.6",
@@ -37,6 +39,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "4.2.1",
     "@types/node": "22.19.19",
+    "@types/nodemailer": "^8.0.1",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "oxfmt": "0.61.0",

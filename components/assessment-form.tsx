@@ -1,33 +1,190 @@
 'use client';
 
-import { type FormEvent, useState } from 'react';
+import { type SubmitEvent, useRef, useState } from 'react';
 import Link from 'next/link';
+import { questions } from '@/lib/assessment';
 
-type Result={title:string;description:string;href:string;link:string};
-
-export function AssessmentForm(){
-  const [result,setResult]=useState<Result|null>(null);
-  function submit(event:FormEvent<HTMLFormElement>){
+export function AssessmentForm() {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
+  const [error, setError] = useState('');
+  const busy = useRef(false);
+  async function submit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data=new FormData(event.currentTarget);
-    const goal=String(data.get('goal'));
-    const readiness=['age','language','education','experience','funds'].reduce((total,key)=>total+Number(data.get(key)),0);
-    const paths:Record<string,Result>={
-      visit:{title:'Ziyaretçi vizesi başlangıç yolu',description:'Kısa süreli ziyaret hedefiniz için seyahat amacı, mali durum ve Türkiye’ye bağlar temel hazırlık alanlarıdır.',href:'/kanada-vizesi/kanada-ziyaretci-vizesi',link:'Ziyaretçi vizesi rehberini aç'},
-      study:{title:'Eğitim yolu',description:'Program ve okul seçimi, eğitim bütçesi ve mezuniyet sonrası planınız birlikte değerlendirilmelidir.',href:'/kanadada-egitim/kanadada-egitim-rehberi',link:'Eğitim rehberini aç'},
-      work:{title:'Çalışma yolu',description:'Mesleğiniz, deneyiminiz, dil seviyeniz ve geçerli bir iş teklifi olasılığı çalışma planınızın temelini oluşturur.',href:'/kanadada-calisma/turkiyeden-kanadada-is-bulmak',link:'Çalışma rehberini aç'},
-      permanent:{title:'Kalıcı oturum yolu',description:readiness>=10?'Yanıtlarınız ekonomik göçmenlik seçeneklerini ayrıntılı karşılaştırmaya hazır bir profile işaret ediyor.':'Kalıcı oturum hedefiniz için dil, eğitim denklik işlemleri, deneyim veya mali hazırlık alanlarından bazılarını güçlendirmeniz gerekebilir.',href:'/kanada-gocmenlik/kalici-oturum-ve-express-entry',link:'Kalıcı oturum rehberini aç'},
-      unsure:{title:'Seçenek karşılaştırmasıyla başlayın',description:'Hedefiniz henüz net değilse ziyaret, eğitim, çalışma ve kalıcı oturum yollarını koşullarınıza göre yan yana inceleyin.',href:'/rehberler/turkiyeden-kanadaya-nasil-gidilir',link:'Başlangıç rehberini aç'},
-    };
-    setResult(paths[goal]??paths.unsure);
+    if (busy.current) return;
+    const form = event.currentTarget;
+    const values = Object.fromEntries(new FormData(form));
+    busy.current = true;
+    setStatus('sending');
+    setError('');
+    try {
+      const response = await fetch('/api/on-degerlendirme', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...values, consent: values.consent === 'on' }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.ok)
+        throw new Error(
+          result.error || 'Gönderim tamamlanamadı. Lütfen tekrar deneyin.',
+        );
+      setStatus('sent');
+      form.reset();
+    } catch (cause) {
+      setError(
+        cause instanceof Error
+          ? cause.message
+          : 'Bağlantı kurulamadı. Lütfen tekrar deneyin.',
+      );
+      setStatus('idle');
+    } finally {
+      busy.current = false;
+    }
   }
-  return <div className="assessment-layout"><form className="assessment-form" onSubmit={submit}>
-    <label>Kanada’daki temel hedefiniz<select name="goal" required defaultValue=""><option value="" disabled>Seçin</option><option value="visit">Ziyaret</option><option value="study">Eğitim</option><option value="work">Çalışma</option><option value="permanent">Kalıcı oturum</option><option value="unsure">Henüz emin değilim</option></select></label>
-    <label>Yaş aralığınız<select name="age" required defaultValue=""><option value="" disabled>Seçin</option><option value="4">18–29</option><option value="3">30–39</option><option value="2">40–49</option><option value="1">50 ve üzeri</option></select></label>
-    <label>Tamamladığınız eğitim<select name="education" required defaultValue=""><option value="" disabled>Seçin</option><option value="1">Lise</option><option value="2">Ön lisans</option><option value="3">Lisans</option><option value="4">Yüksek lisans veya doktora</option></select></label>
-    <label>İngilizce veya Fransızca seviyeniz<select name="language" required defaultValue=""><option value="" disabled>Seçin</option><option value="1">Başlangıç</option><option value="2">Orta</option><option value="3">İyi</option><option value="4">İleri / sınav sonucum var</option></select></label>
-    <label>Nitelikli iş deneyiminiz<select name="experience" required defaultValue=""><option value="" disabled>Seçin</option><option value="1">Henüz yok</option><option value="2">1–2 yıl</option><option value="3">3–5 yıl</option><option value="4">6 yıl veya üzeri</option></select></label>
-    <label>Planınız için mali hazırlığınız<select name="funds" required defaultValue=""><option value="" disabled>Seçin</option><option value="1">Henüz bütçe oluşturmadım</option><option value="2">Kısmen hazır</option><option value="3">Temel giderler için hazır</option><option value="4">Eğitim/yerleşim bütçem hazır</option></select></label>
-    <button type="submit">Konumumu belirle</button><p className="form-note">Yanıtlar yalnızca tarayıcınızda değerlendirilir; kaydedilmez veya gönderilmez.</p>
-  </form>{result?<aside className="assessment-result" aria-live="polite"><small>Başlangıç sonucunuz</small><h2>{result.title}</h2><p>{result.description}</p><Link href={result.href}>{result.link}</Link><span>Bu sonuç resmi uygunluk kararı veya kişisel hukuk tavsiyesi değildir.</span></aside>:<aside className="assessment-help"><h2>Sonuçta ne göreceksiniz?</h2><p>Yanıtlarınıza göre ilk araştırmanız gereken yolu ve hazırlık alanlarını göstereceğiz.</p><ul><li>Önerilen başlangıç yolu</li><li>Öncelikli hazırlık konusu</li><li>İlgili ayrıntılı rehber</li></ul></aside>}</div>;
+  return (
+    <div className="assessment-layout">
+      <div aria-live="polite">
+        {status === 'sent' ? (
+          <section className="assessment-result">
+            <h2>Talebiniz gönderildi</h2>
+            <p>
+              Ön değerlendirme bilgileriniz ekibimize e-posta ile iletildi.
+              Talebiniz hakkında belirttiğiniz iletişim bilgileri üzerinden size
+              ulaşabiliriz.
+            </p>
+            <p>
+              Bu gönderim bir vize başvurusu değildir ve uygunluk kararı
+              içermez.
+            </p>
+            <Link href="/rehberler">Kanada rehberlerini inceleyin</Link>
+          </section>
+        ) : (
+          <form
+            className="assessment-form"
+            onSubmit={submit}
+            aria-busy={status === 'sending'}
+          >
+            <label>
+              Ad soyad
+              <input
+                name="name"
+                autoComplete="name"
+                required
+                minLength={2}
+                maxLength={100}
+              />
+            </label>
+            <label>
+              E-posta adresiniz
+              <input
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+                maxLength={254}
+              />
+            </label>
+            <label className="form-wide">
+              Telefon (isteğe bağlı)
+              <input
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                maxLength={30}
+                pattern={String.raw`[+0-9\s\(\).\-]{7,30}`}
+                placeholder="+90 5xx xxx xx xx"
+              />
+            </label>
+            {Object.entries(questions).map(([key, question]) => (
+              <label key={key}>
+                {question.label}
+                <select name={key} required defaultValue="">
+                  <option value="" disabled>
+                    Seçin
+                  </option>
+                  {Object.entries(question.options).map(([value, label]) => (
+                    <option key={value} value={value}>
+                      {label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            ))}
+            <label className="form-wide">
+              Eklemek istedikleriniz (isteğe bağlı)
+              <textarea
+                name="message"
+                rows={4}
+                maxLength={2000}
+                placeholder="Planınızı veya sorunuzu kısaca paylaşın."
+              />
+            </label>
+            <p className="form-note">
+              Bu form 18 yaş ve üzeri kullanıcılar içindir. Pasaport, kimlik
+              numarası, banka bilgisi veya sağlık bilgisi paylaşmayın.
+            </p>
+            <div className="form-trap" aria-hidden="true">
+              <label>
+                Web sitesi
+                <input name="website" tabIndex={-1} autoComplete="off" />
+              </label>
+            </div>
+            <label className="form-consent">
+              <input type="checkbox" name="consent" required />
+              <span>
+                <Link
+                  href="/gizlilik"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Gizlilik Politikası
+                </Link>
+                ’nı okudum,{' '}
+                <Link
+                  href="/kullanim-kosullari"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Kullanım Koşulları
+                </Link>
+                ’nı kabul ediyorum. Bilgilerimin ön değerlendirme talebim için
+                Gmail üzerinden ekibe iletilmesine ve bu talep hakkında benimle
+                iletişim kurulmasına onay veriyorum.
+              </span>
+            </label>
+            {error ? (
+              <p className="form-error" role="alert">
+                {error}
+              </p>
+            ) : null}
+            <button type="submit" disabled={status === 'sending'}>
+              {status === 'sending'
+                ? 'Gönderiliyor…'
+                : 'Ön değerlendirme talebini gönder'}
+            </button>
+            <p className="form-note">
+              Bilgileriniz yalnızca talebinizi değerlendirmek ve yanıtlamak için
+              gönderilir. Pazarlama aboneliği oluşturulmaz.
+            </p>
+          </form>
+        )}
+      </div>
+      <aside className="assessment-help">
+        <h2>Nasıl ilerliyor?</h2>
+        <p>
+          Kanada planınızı ve iletişim bilgilerinizi paylaşın. Yanıtlarınız ön
+          değerlendirme için ekibimize iletilsin.
+        </p>
+        <ul>
+          <li>Hedefinizi ve hazırlık durumunuzu belirtin.</li>
+          <li>Ekibimiz talebinizi inceleyebilsin.</li>
+          <li>İletişim bilgileriniz üzerinden geri dönüş alabilin.</li>
+        </ul>
+        <p>
+          Form, resmi uygunluk puanı hesaplamaz. Vize veya kabul garantisi
+          vermez.
+        </p>
+        <Link href="/rehberler">Bu sırada rehberleri inceleyin</Link>
+      </aside>
+    </div>
+  );
 }
