@@ -17,6 +17,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: { url: '/favicon.jpeg', type: 'image/jpeg' },
+    shortcut: '/favicon.jpeg',
+    apple: '/favicon.jpeg',
+  },
   metadataBase: new URL('https://kanadavizesi.ca'),
   title: 'KanadaVizesi.ca | Kanada’ya Gel, Kanada’da Hayat Kur',
   description: 'Kanada vizesi ve göçmenlik seçenekleri için Türkçe danışmanlık; başvurudan yerleşim ve kariyer desteğine uzanan yol haritası.',
