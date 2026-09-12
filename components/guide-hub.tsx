@@ -5,8 +5,8 @@ import { Search } from 'lucide-react';
 import type { Article } from '@/lib/content';
 
 type Cluster={category:string;pillar:string;articles:Article[]};
-export function GuideHub({clusters}:{clusters:Cluster[]}){
-  const [query,setQuery]=useState(''); const [category,setCategory]=useState('Tümü');
+export function GuideHub({clusters,initialQuery=''}:{clusters:Cluster[];initialQuery?:string}){
+  const [query,setQuery]=useState(initialQuery); const [category,setCategory]=useState('Tümü');
   const results=useMemo(()=>clusters.flatMap(c=>c.articles).filter(a=>(category==='Tümü'||a.category===category)&&`${a.title} ${a.description}`.toLocaleLowerCase('tr-TR').includes(query.toLocaleLowerCase('tr-TR'))),[clusters,query,category]);
   return <>
     <div className="guide-controls"><label><Search/><span className="sr-only">Rehberlerde ara</span><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Rehberlerde ara"/></label><div className="category-filters"><button className={category==='Tümü'?'active':''} onClick={()=>setCategory('Tümü')}>Tümü</button>{clusters.map(c=><button className={category===c.category?'active':''} key={c.category} onClick={()=>setCategory(c.category)}>{c.category} <span>{c.articles.length}</span></button>)}</div></div>
