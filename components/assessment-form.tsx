@@ -3,6 +3,7 @@
 import { type SubmitEvent, useRef, useState } from 'react';
 import Link from 'next/link';
 import { questions } from '@/lib/assessment';
+import styles from './assessment-form.module.css';
 
 export function AssessmentForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
@@ -41,10 +42,10 @@ export function AssessmentForm() {
     }
   }
   return (
-    <div className="assessment-layout">
+    <div className={styles.layout}>
       <div aria-live="polite">
         {status === 'sent' ? (
-          <section className="assessment-result">
+          <section className={styles.result}>
             <h2>Talebiniz gönderildi</h2>
             <p>
               Ön değerlendirme bilgileriniz ekibimize e-posta ile iletildi.
@@ -59,10 +60,17 @@ export function AssessmentForm() {
           </section>
         ) : (
           <form
-            className="assessment-form"
+            className={styles.form}
             onSubmit={submit}
             aria-busy={status === 'sending'}
           >
+            <div className={styles.sectionHeading}>
+              <span>01</span>
+              <div>
+                <h2>İletişim bilgileriniz</h2>
+                <p>Size ulaşabileceğimiz bilgileri paylaşın.</p>
+              </div>
+            </div>
             <label>
               Ad soyad
               <input
@@ -83,7 +91,7 @@ export function AssessmentForm() {
                 maxLength={254}
               />
             </label>
-            <label className="form-wide">
+            <label className={styles.wide}>
               Telefon (isteğe bağlı)
               <input
                 name="phone"
@@ -94,6 +102,13 @@ export function AssessmentForm() {
                 placeholder="+90 5xx xxx xx xx"
               />
             </label>
+            <div className={styles.sectionHeading}>
+              <span>02</span>
+              <div>
+                <h2>Kanada planınız</h2>
+                <p>Mevcut durumunuza en yakın seçenekleri işaretleyin.</p>
+              </div>
+            </div>
             {Object.entries(questions).map(([key, question]) => (
               <label key={key}>
                 {question.label}
@@ -109,7 +124,7 @@ export function AssessmentForm() {
                 </select>
               </label>
             ))}
-            <label className="form-wide">
+            <label className={styles.wide}>
               Eklemek istedikleriniz (isteğe bağlı)
               <textarea
                 name="message"
@@ -118,17 +133,17 @@ export function AssessmentForm() {
                 placeholder="Planınızı veya sorunuzu kısaca paylaşın."
               />
             </label>
-            <p className="form-note">
+            <p className={styles.note}>
               Bu form 18 yaş ve üzeri kullanıcılar içindir. Pasaport, kimlik
               numarası, banka bilgisi veya sağlık bilgisi paylaşmayın.
             </p>
-            <div className="form-trap" aria-hidden="true">
+            <div className={styles.trap} hidden aria-hidden="true">
               <label>
                 Web sitesi
                 <input name="website" tabIndex={-1} autoComplete="off" />
               </label>
             </div>
-            <label className="form-consent">
+            <label className={styles.consent}>
               <input type="checkbox" name="consent" required />
               <span>
                 <Link
@@ -147,12 +162,12 @@ export function AssessmentForm() {
                   Kullanım Koşulları
                 </Link>
                 ’nı kabul ediyorum. Bilgilerimin ön değerlendirme talebim için
-                Gmail üzerinden ekibe iletilmesine ve bu talep hakkında benimle
+                e-posta ile ekibe iletilmesine ve bu talep hakkında benimle
                 iletişim kurulmasına onay veriyorum.
               </span>
             </label>
             {error ? (
-              <p className="form-error" role="alert">
+              <p className={styles.error} role="alert">
                 {error}
               </p>
             ) : null}
@@ -161,14 +176,14 @@ export function AssessmentForm() {
                 ? 'Gönderiliyor…'
                 : 'Ön değerlendirme talebini gönder'}
             </button>
-            <p className="form-note">
+            <p className={styles.note}>
               Bilgileriniz yalnızca talebinizi değerlendirmek ve yanıtlamak için
               gönderilir. Pazarlama aboneliği oluşturulmaz.
             </p>
           </form>
         )}
       </div>
-      <aside className="assessment-help">
+      <aside className={styles.help}>
         <h2>Nasıl ilerliyor?</h2>
         <p>
           Kanada planınızı ve iletişim bilgilerinizi paylaşın. Yanıtlarınız ön
