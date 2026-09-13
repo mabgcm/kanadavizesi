@@ -24,9 +24,8 @@ export default function Page() {
         </p>
         <h2>Bilgi ve yorumun ayrılması</h2>
         <p>
-          Genel açıklamalar ve hazırlık önerileri kişisel durumunuza ilişkin
-          uygunluk kararı değildir. Bir seçenek için verilen örnekler herkes
-          için aynı sonucu garanti etmez. Avantajlar, sınırlamalar ve
+          Genel açıklamalar ve hazırlık önerileri, ilgili resmî kaynaklar ve
+          sayfadaki bağlamla birlikte okunmalıdır. Avantajlar, sınırlamalar ve
           belirsizlikler birlikte ele alınmalıdır.
         </p>
         <h2>Güncellik</h2>

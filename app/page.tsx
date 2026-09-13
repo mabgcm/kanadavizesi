@@ -121,10 +121,6 @@ const guides = [
 ];
 const faqs = [
   [
-    'Ön değerlendirme sonucu resmî uygunluk kararı mıdır?',
-    'Hayır. Ön değerlendirme yalnızca verdiğiniz bilgiler üzerinden ilgili bilgi başlıklarının ve ihtiyaç halinde profesyonel destek seçeneklerinin belirlenmesine yardımcı olur. Bir programa uygunluk veya başvuru sonucu anlamına gelmez.',
-  ],
-  [
     'Hangi bilgiler değerlendirmeyi etkiler?',
     'Kanada’ya geliş amacınız, yaşınız, eğitiminiz, iş deneyiminiz, dil seviyeniz, aile durumunuz, mali koşullarınız ve önceki Kanada başvurularınız başlangıç değerlendirmesinde dikkate alınabilir.',
   ],
@@ -139,10 +135,6 @@ const faqs = [
   [
     'Kanada’ya geldikten sonraki yaşam hakkında bilgi bulabilir miyim?',
     'Evet. İş arama, Kanada formatında CV, konut, yaşam maliyeti, şehir seçimi, sağlık, eğitim ve ilk 90 gün hakkında ayrı rehberler bulunmaktadır.',
-  ],
-  [
-    'Sitedeki bilgiler kişisel göçmenlik tavsiyesi sayılır mı?',
-    'Hayır. Sitedeki içerikler genel bilgilendirme amacı taşır. Kişisel durumunuza özel değerlendirme için yetkili bir profesyonelle görüşmeniz gerekir.',
   ],
 ];
 
@@ -388,10 +380,6 @@ export default function Home() {
           <Link href="/on-degerlendirme">
             Ön değerlendirme formunu doldurun
           </Link>
-          <p className="home-disclaimer">
-            Formun gönderilmesi hizmet sözleşmesi, uygunluk kararı veya sonuç
-            garantisi oluşturmaz.
-          </p>
         </div>
       </section>
     </main>

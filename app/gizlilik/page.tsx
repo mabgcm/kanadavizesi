@@ -38,8 +38,7 @@ export default function Privacy() {
           Form bilgileri talebinizi incelemek ve talebinizle ilgili sizinle
           iletişim kurmak amacıyla kullanılır. Gönderimden önce bu işleme için
           onayınız alınır. Formu doldurmak pazarlama e-postalarına abonelik
-          oluşturmaz. Form üzerinden otomatik vize uygunluk kararı veya puanlama
-          yapılmaz.
+          oluşturmaz. Form üzerinden otomatik puanlama yapılmaz.
         </p>
         <h2>E-posta ile aktarım ve hizmet sağlayıcılar</h2>
         <p>

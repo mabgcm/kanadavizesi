@@ -25,9 +25,8 @@ export default function Terms() {
         </p>
         <h2>Bilgilendirme içerikleri</h2>
         <p>
-          Rehberler genel bilgi amaçlıdır; kişiye özel hukuki veya göçmenlik
-          danışmanlığı yerine geçmez. Program koşulları, ücretler ve uygulamalar
-          değişebilir. Başvuru yapmadan önce{' '}
+          Program koşulları, ücretler ve uygulamalar değişebilir. Başvuru
+          yapmadan önce{' '}
           <a href="https://www.canada.ca/en/immigration-refugees-citizenship.html">
             Kanada Göçmenlik, Mülteciler ve Vatandaşlık Bakanlığı (IRCC)
           </a>{' '}
@@ -36,10 +35,8 @@ export default function Terms() {
         <h2>Ön değerlendirme talebi</h2>
         <p>
           Form 18 yaş ve üzeri kullanıcılara yöneliktir. Gönderilen bilgiler
-          e-posta ile ekibe iletilir. Formun gönderilmesi resmi başvuru,
-          danışmanlık sözleşmesi, temsil ilişkisi veya hizmet satın alımı
-          oluşturmaz. Kabul, vize, çalışma izni ya da kalıcı oturum garantisi
-          verilmez. Form otomatik bir uygunluk kararı üretmez.
+          e-posta ile ekibe iletilir. Form gönderimiyle ilgili işleyiş ve veri
+          işleme bilgileri Gizlilik Politikası’nda açıklanır.
         </p>
         <p>
           Başarılı gönderim bildirimi, e-posta hizmetinin iletiyi kabul ettiğini

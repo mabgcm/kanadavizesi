@@ -52,10 +52,6 @@ export function AssessmentForm() {
               Talebiniz hakkında belirttiğiniz iletişim bilgileri üzerinden size
               ulaşabiliriz.
             </p>
-            <p>
-              Bu gönderim bir vize başvurusu değildir ve uygunluk kararı
-              içermez.
-            </p>
             <Link href="/rehberler">Kanada rehberlerini inceleyin</Link>
           </section>
         ) : (
