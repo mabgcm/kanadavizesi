@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import ts from 'typescript';
 import nodemailer from 'nodemailer';
+import { botState } from './fixtures/botid.mjs';
 import { validateAssessment, assessmentEmail } from '../lib/assessment.ts';
 
 const valid = {
@@ -49,6 +50,10 @@ test('API validates requests and handles SMTP acceptance, failures and rate limi
       'utf8',
     )
   )
+    .replace(
+      "'botid/server'",
+      JSON.stringify(new URL('./fixtures/botid.mjs', import.meta.url).href),
+    )
     .replace(
       "'@/lib/assessment'",
       JSON.stringify(new URL('../lib/assessment.ts', import.meta.url).href),
@@ -106,7 +111,15 @@ test('API validates requests and handles SMTP acceptance, failures and rate limi
       },
       close() {},
     });
+    botState.mode = 'bot';
+    assert.equal((await send(valid)).status, 403);
+    assert.equal(mail, undefined);
+    botState.mode = 'error';
+    assert.equal((await send(valid)).status, 503);
+    assert.equal(mail, undefined);
+    botState.mode = 'human';
     assert.equal((await send(valid)).status, 200);
+    assert.equal((await send(valid)).status, 409);
     assert.equal(mail.to, 'inbox@example.com');
     assert.equal(mail.from.address, 'sender@example.com');
     assert.equal(mail.replyTo.address, valid.email);
@@ -116,16 +129,28 @@ test('API validates requests and handles SMTP acceptance, failures and rate limi
       },
       close() {},
     });
-    const failure = await send(valid);
+    const failure = await send({ ...valid, message: 'retry' });
     assert.equal(failure.status, 502);
     assert.doesNotMatch(await failure.text(), /SMTP secret/);
     nodemailer.createTransport = () => ({
       sendMail: async () => ({ accepted: [] }),
       close() {},
     });
-    assert.equal((await send(valid)).status, 502);
-    assert.equal((await send(valid)).status, 429);
+    assert.equal((await send({ ...valid, message: 'retry' })).status, 502);
+    const limited = await send({ ...valid, message: 'retry' });
+    assert.equal(limited.status, 429);
+    assert.equal(limited.headers.get('Retry-After'), '900');
+    for (let i = 0; i < 20; i++)
+      assert.equal(
+        (await send({}, { 'x-forwarded-for': '192.0.2.5' })).status,
+        400,
+      );
+    assert.equal(
+      (await send({}, { 'x-forwarded-for': '192.0.2.5' })).status,
+      429,
+    );
   } finally {
+    botState.mode = 'human';
     nodemailer.createTransport = original;
     for (const key of [
       'GMAIL_USER',

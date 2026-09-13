@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { checkBotId } from 'botid/server';
 import { createHash } from 'node:crypto';
 import {
   assessmentEmail,
@@ -10,16 +11,53 @@ export const runtime = 'nodejs';
 export const maxDuration = 30;
 // Best-effort per-instance protection; no raw IP addresses or form answers are stored.
 const attempts = new Map<string, { count: number; expires: number }>();
+const requests = new Map<string, { count: number; expires: number }>();
+const submissions = new Map<string, number>();
+const digest = (value: string) =>
+  createHash('sha256').update(value).digest('hex');
 const reply = (error: string, status: number) =>
   Response.json(
     { error },
-    { status, headers: { 'Cache-Control': 'no-store' } },
+    {
+      status,
+      headers: {
+        'Cache-Control': 'no-store',
+        ...(status === 429 ? { 'Retry-After': '900' } : {}),
+      },
+    },
   );
 export async function POST(request: Request) {
   if (request.headers.get('origin') !== new URL(request.url).origin)
     return reply('Geçersiz istek kaynağı.', 403);
   if (!request.headers.get('content-type')?.startsWith('application/json'))
     return reply('Geçersiz içerik türü.', 415);
+  if (request.headers.get('sec-fetch-site') === 'cross-site')
+    return reply('Geçersiz istek kaynağı.', 403);
+  const now = Date.now();
+  for (const map of [requests, attempts]) {
+    for (const [key, entry] of map) if (entry.expires <= now) map.delete(key);
+  }
+  for (const [key, expires] of submissions)
+    if (expires <= now) submissions.delete(key);
+  // Vercel overwrites this header at the edge; don't trust client-supplied IP headers.
+  const ip =
+    (process.env.VERCEL === '1'
+      ? request.headers.get('x-vercel-forwarded-for')
+      : request.headers.get('x-forwarded-for')
+    )
+      ?.split(',')[0]
+      ?.trim() || 'unknown';
+  const requestKey = digest(ip);
+  const incoming = requests.get(requestKey);
+  if ((incoming?.count || 0) >= 20 || requests.size >= 10000)
+    return reply(
+      'Çok fazla deneme yaptınız. Lütfen 15 dakika sonra tekrar deneyin.',
+      429,
+    );
+  requests.set(requestKey, {
+    count: (incoming?.count || 0) + 1,
+    expires: incoming?.expires || now + 900000,
+  });
   const reader = request.body?.getReader();
   if (!reader) return reply('Form verileri eksik.', 400);
   let body = '';
@@ -50,6 +88,21 @@ export async function POST(request: Request) {
   const data = validateAssessment(raw);
   if (!data)
     return reply('Zorunlu alanları ve onay kutusunu kontrol edin.', 400);
+  try {
+    const verification = await checkBotId({
+      advancedOptions: { checkLevel: 'basic' },
+    });
+    if (verification.isBot || verification.isHuman !== true)
+      return reply(
+        'Güvenlik doğrulaması başarısız oldu. Sayfayı yenileyip tekrar deneyin.',
+        403,
+      );
+  } catch {
+    return reply(
+      'Güvenlik doğrulaması şu anda tamamlanamıyor. Lütfen daha sonra tekrar deneyin.',
+      503,
+    );
+  }
   const user = process.env.GMAIL_USER?.trim();
   const pass = process.env.GMAIL_APP_PASSWORD?.replace(/\s/g, '');
   const to = process.env.ASSESSMENT_TO_EMAIL?.trim() || user;
@@ -64,11 +117,12 @@ export async function POST(request: Request) {
       'Form gönderimi şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin veya bilgi@kanadavizesi.ca adresine yazın.',
       503,
     );
-  const now = Date.now();
-  for (const [key, entry] of attempts)
-    if (entry.expires <= now) attempts.delete(key);
-  const ip =
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+  const submissionKey = digest(JSON.stringify(data));
+  if (submissions.has(submissionKey))
+    return reply(
+      'Bu form kısa süre önce gönderildi veya hâlâ gönderiliyor. Lütfen tekrar göndermeyin.',
+      409,
+    );
   const keys = [ip, data.email.toLowerCase()].map((value) =>
     createHash('sha256').update(value).digest('hex'),
   );
@@ -87,6 +141,12 @@ export async function POST(request: Request) {
       expires: entry?.expires || now + 900000,
     });
   }
+  if (submissions.size >= 10000)
+    return reply(
+      'Çok fazla deneme yapıldı. Lütfen daha sonra tekrar deneyin.',
+      429,
+    );
+  submissions.set(submissionKey, now + 900000);
   const transport = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -112,6 +172,7 @@ export async function POST(request: Request) {
       { headers: { 'Cache-Control': 'no-store' } },
     );
   } catch {
+    submissions.delete(submissionKey);
     return reply(
       'Gönderim tamamlanamadı. Bilgileriniz formda duruyor; biraz sonra tekrar deneyin veya bilgi@kanadavizesi.ca adresine yazın.',
       502,

@@ -24,7 +24,8 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://kanadavizesi.ca'),
   title: 'KanadaVizesi.ca | Kanada’ya Gel, Kanada’da Hayat Kur',
-  description: 'Kanada vizesi ve göçmenlik seçenekleri için Türkçe danışmanlık; başvurudan yerleşim ve kariyer desteğine uzanan yol haritası.',
+  description:
+    'Ziyaretçi vizesi, eğitim, çalışma, göçmenlik ve Kanada’daki günlük yaşam hakkında anlaşılır Türkçe rehberler.',
 };
 
 export default function RootLayout({

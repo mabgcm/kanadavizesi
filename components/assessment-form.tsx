@@ -177,6 +177,9 @@ export function AssessmentForm() {
                 : 'Ön değerlendirme talebini gönder'}
             </button>
             <p className={styles.note}>
+              Gönderimler otomatik spam ve bot kontrolünden geçirilir.
+            </p>
+            <p className={styles.note}>
               Bilgileriniz yalnızca talebinizi değerlendirmek ve yanıtlamak için
               gönderilir. Pazarlama aboneliği oluşturulmaz.
             </p>

@@ -1,3 +1,43 @@
 import type { MetadataRoute } from 'next';
 import { articles, SITE_URL } from '@/lib/content';
-export default function sitemap():MetadataRoute.Sitemap{return [{url:SITE_URL,lastModified:new Date('2026-09-11'),priority:1},{url:`${SITE_URL}/rehberler`,lastModified:new Date('2026-09-11'),priority:.9},{url:`${SITE_URL}/on-degerlendirme`,lastModified:new Date('2026-09-11'),priority:.8},{url:`${SITE_URL}/gizlilik`,lastModified:new Date('2026-09-11'),priority:.3},{url:`${SITE_URL}/kullanim-kosullari`,lastModified:new Date('2026-09-11'),priority:.3},...articles.map(a=>({url:`${SITE_URL}${a.path}`,lastModified:new Date('2026-09-11'),changeFrequency:'monthly' as const,priority:a.isPillar?.9:.7}))]}
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    { url: SITE_URL, lastModified: new Date('2026-09-11'), priority: 1 },
+    {
+      url: `${SITE_URL}/rehberler`,
+      lastModified: new Date('2026-09-11'),
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/on-degerlendirme`,
+      lastModified: new Date('2026-09-11'),
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/gizlilik`,
+      lastModified: new Date('2026-09-11'),
+      priority: 0.3,
+    },
+    {
+      url: `${SITE_URL}/kullanim-kosullari`,
+      lastModified: new Date('2026-09-11'),
+      priority: 0.3,
+    },
+    ...[
+      'yasal-uyari',
+      'kaynak-politikasi',
+      'guncel-bilgiler',
+      'saglik-ve-egitim',
+    ].map((path) => ({
+      url: `${SITE_URL}/${path}`,
+      lastModified: new Date('2026-09-12'),
+      priority: 0.3,
+    })),
+    ...articles.map((a) => ({
+      url: `${SITE_URL}${a.path}`,
+      lastModified: new Date('2026-09-11'),
+      changeFrequency: 'monthly' as const,
+      priority: a.isPillar ? 0.9 : 0.7,
+    })),
+  ];
+}

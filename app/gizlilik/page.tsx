@@ -77,13 +77,23 @@ export default function Privacy() {
           </a>{' '}
           inceleyebilirsiniz.
         </p>
+        <h2>Spam ve bot koruması</h2>
+        <p>
+          Ön değerlendirme gönderimlerini otomatik kötüye kullanımdan korumak
+          için Vercel BotID temel doğrulaması kullanılır. Bu hizmet tarayıcı ve
+          istek sinyallerini güvenlik amacıyla değerlendirebilir. Doğrulama
+          tamamlanamazsa form gönderimi durdurulur. Bu kontrol pazarlama
+          amacıyla kullanılmaz.
+        </p>
         <h2>Güvenlik ve saklama</h2>
         <p>
           E-posta hizmetine bağlantı şifreli olarak kurulur. Uygulama form
           içeriğini hata günlüklerine yazmaz. Kötüye kullanımı azaltmak için IP
           adresi ve e-posta adresinden üretilen özet değerler, sunucu belleğinde
-          15 dakikalık gönderim sınırı amacıyla geçici olarak tutulur.
-          Barındırma sağlayıcısı ayrıca teknik erişim günlükleri işleyebilir.
+          15 dakikalık gönderim sınırı amacıyla geçici olarak tutulur. Aynı
+          talebin tekrar gönderilmesini azaltmak için form içeriğinin özet
+          değeri de bu süre boyunca sunucu belleğinde saklanır. Barındırma
+          sağlayıcısı ayrıca teknik erişim günlükleri işleyebilir.
         </p>
         <p>
           E-posta kayıtlarının saklanması ve silinmesi site yönetimi tarafından

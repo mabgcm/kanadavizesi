@@ -36,3 +36,9 @@ Gerçek gönderimi doğrulamak için ortam değişkenlerini ekledikten sonra `/o
 API, zorunlu alanları ve seçenekleri sunucuda doğrular; onaysız, farklı kaynaktan gelen ve 16 KB üzeri istekleri reddeder. Gizli bot alanı ve sunucu örneği başına IP/e-posta özeti üzerinden 15 dakikada 3 deneme sınırı bulunur. Bu bellek sınırı Vercel örnekleri arasında paylaşılmaz ve yeniden başlatmalarda sıfırlanır; yüksek trafikte Vercel Firewall üzerinde ayrıca hız sınırı uygulanabilir. Form içeriği loglanmaz veya uygulama veritabanına kaydedilmez. E-posta kutularındaki kayıtların erişimi, saklanması ve silinmesi işletmeci tarafından yönetilir.
 
 Gmail bilgileri olmadan build çalışır; form gönderimi yapılandırma tamamlanana kadar 503 döner. SMTP hata durumunda 502 döner ve arayüz formu korur. `bilgi@kanadavizesi.ca` sitedeki iletişim adresidir; bu posta kutusunun alım ve takibi işletmeci tarafından sağlanmalıdır.
+
+## Spam koruması
+
+Vercel BotID, istemcide `instrumentation-client.ts` ve sunucuda `checkBotId` ile aynı `basic` seviyesinde çalışır. Next yapılandırması `withBotId` ile sarılmıştır. Ek ortam değişkeni gerekmez; canlı bot doğrulaması Vercel üzerinde çalışır. Yerel geliştirmede BotID varsayılan olarak insan yanıtı döndürür. Doğrulama hatasında gönderim engellenir; kullanıcı form yanıtlarını kaybetmeden yeniden deneyebilir. [BotID yapılandırması](https://vercel.com/docs/botid/advanced-configuration).
+
+Ek kontroller: istek gövdesi okunmadan IP başına 15 dakikada 20 istek, geçerli gönderimlerde IP/e-posta başına 3 deneme, 16 KB gövde sınırı, aynı kaynaktan gelme kontrolü, gizli bot alanı ve 15 dakikalık aynı-form tekrar kontrolü. 429 yanıtları Retry-After başlığı içerir. Vercel üzerinde platformun yazdığı `x-vercel-forwarded-for` kullanılır. Bellek tabanlı sınırlar ve tekrar kontrolü örnekler arasında paylaşılmaz; dağıtık saldırılara karşı tek başına kesin bir sınır değildir. BotID platform doğrulaması bu yerel kontrollere ek bir katmandır.
