@@ -1640,3 +1640,215 @@ input {
     content: 'Kalıcı oturum garantisi';
   }
 }
+
+/* Visitor guide: extend the shared editorial layout. */
+.visitor-page .guide-layout {
+  column-gap: 48px;
+  position: relative;
+}
+.visitor-page .guide-layout p,
+.visitor-page .guide-layout li {
+  font-size: 17px;
+  line-height: 1.7;
+}
+.visitor-page h2 {
+  text-wrap: balance;
+}
+.visitor-page section[id] {
+  scroll-margin-top: 100px;
+}
+.visitor-page .visitor-micro {
+  font-size: 14px;
+}
+.visitor-independence {
+  border-left-color: #65778a;
+  background: #f3f5f7;
+}
+.visitor-official {
+  display: inline;
+  overflow-wrap: anywhere;
+}
+.visitor-official svg {
+  display: inline;
+  vertical-align: middle;
+}
+.visitor-source-label {
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 8px;
+  color: #425466;
+  font-weight: 600;
+}
+.visitor-facts {
+  margin: 28px 0;
+  gap: 16px;
+}
+.visitor-facts > div {
+  border: 1px solid #d8dfe5;
+  padding: 20px;
+  background: #f8fafb;
+}
+.visitor-facts strong {
+  font-size: 21px;
+}
+.visitor-facts p {
+  margin: 8px 0;
+}
+.visitor-callout {
+  margin: 24px 0;
+}
+.visitor-danger {
+  border-left-color: #ad202a;
+  background: #fff4f4;
+}
+.visitor-table {
+  margin: 24px 0;
+}
+.visitor-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+.visitor-table caption {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.visitor-table th,
+.visitor-table td {
+  padding: 14px;
+  text-align: left;
+  border: 1px solid #d8dfe5;
+  vertical-align: top;
+}
+.visitor-table thead {
+  background: #edf1f4;
+}
+.visitor-page .visitor-bullet-list,
+.visitor-page .visitor-numbered-list {
+  margin-block: 18px 24px;
+  padding-inline-start: 26px;
+  list-style-position: outside;
+}
+.visitor-page .visitor-bullet-list {
+  list-style-type: disc;
+}
+.visitor-page .visitor-numbered-list,
+.visitor-page .visitor-stepper {
+  list-style-type: decimal;
+}
+.visitor-page .visitor-bullet-list > li,
+.visitor-page .visitor-numbered-list > li {
+  padding-inline-start: 6px;
+  margin-bottom: 10px;
+}
+.visitor-page .visitor-bullet-list > li::marker,
+.visitor-page .visitor-numbered-list > li::marker,
+.visitor-page .visitor-stepper > li::marker {
+  color: var(--red);
+  font-weight: 700;
+}
+.visitor-stepper {
+  padding-left: 32px;
+}
+.visitor-stepper li {
+  padding: 8px 0 20px 12px;
+  border-bottom: 1px solid #d8dfe5;
+}
+.visitor-stepper strong {
+  display: block;
+}
+.visitor-checklist {
+  list-style: none;
+  padding: 0;
+}
+.visitor-checklist label {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.visitor-checklist input {
+  margin-top: 6px;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  accent-color: #ad202a;
+}
+.visitor-page a[aria-current='location'] {
+  color: #a51d2d;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.visitor-mobile-toc {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .visitor-page .guide-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .visitor-page .guide-layout > article {
+    order: 2;
+    width: 100%;
+  }
+  .visitor-desktop-toc {
+    display: none;
+  }
+  .visitor-mobile-toc {
+    display: block;
+    order: 1;
+    width: 100%;
+    border: 1px solid #d8dfe5;
+    padding: 16px;
+  }
+  .visitor-mobile-toc button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    text-align: left;
+  }
+  .visitor-mobile-toc ol {
+    padding: 12px 0 0 24px;
+  }
+}
+@media (max-width: 767px) {
+  .visitor-facts {
+    grid-template-columns: 1fr;
+  }
+  .visitor-table thead {
+    display: none;
+  }
+  .visitor-table table,
+  .visitor-table tbody,
+  .visitor-table tr,
+  .visitor-table td,
+  .visitor-table th {
+    display: block;
+  }
+  .visitor-table tr {
+    border: 1px solid #d8dfe5;
+    margin-bottom: 16px;
+  }
+  .visitor-table td,
+  .visitor-table th {
+    border: 0;
+    padding: 12px;
+  }
+  .visitor-table td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 700;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .visitor-page *,
+  .visitor-page *::before,
+  .visitor-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,674 @@
+{
+  "sections": [
+    {
+      "id": "nedir",
+      "title": "Kanada ziyaretçi vizesi nedir?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kanada ziyaretçi vizesi, resmî adıyla **Temporary Resident Visa (TRV)**, vizeye tabi bir ülkenin vatandaşının Kanada'ya seyahat edebilmek için temel giriş koşullarını başvuru sırasında karşıladığını gösteren ve pasaporta yerleştirilen belgedir. Günlük kullanımda “Kanada turist vizesi” denilse de aynı vize aile ziyareti ve belirli kısa iş ziyaretleri için de kullanılabilir."
+        },
+        {
+          "type": "p",
+          "text": "Ziyaretçi vizesi size Kanada'ya seyahat etme hakkı verir; ülkeye giriş garantisi vermez. Kanada'ya ulaştığınızda giriş koşullarını hâlâ karşıladığınızı değerlendiren sınır görevlisi, ülkeye girip giremeyeceğinize ve ne kadar kalabileceğinize karar verir."
+        },
+        {
+          "type": "h3",
+          "text": "Tek girişli ve çok girişli vize"
+        },
+        {
+          "type": "p",
+          "text": "IRCC, başvurunun koşullarına göre tek girişli veya çok girişli vize düzenleyebilir. Çok girişli vize, geçerlilik dönemi içinde Kanada'ya birden fazla seyahat etmeye imkân sağlayabilir. Ancak vizenin kaç yıllık düzenleneceği başvuranın seçtiği veya garanti edilen bir süre değildir."
+        },
+        {
+          "type": "p",
+          "text": "Ziyaretçi vizesi en fazla 10 yıla kadar düzenlenebilse de pasaport veya biyometri süresinin dolması vize geçerliliğini sınırlayabilir; memur koşullara göre daha kısa süre de belirleyebilir."
+        },
+        {
+          "type": "callout",
+          "text": "**Önemli ayrım:** Pasaporttaki vizenin son kullanma tarihi, Kanada'da o tarihe kadar kesintisiz kalabileceğiniz anlamına gelmez. Her girişte izin verilen kalış süresi ayrıca belirlenir."
+        },
+        {
+          "type": "h3",
+          "text": "Ziyaretçi vizesi ile eTA aynı şey mi?"
+        },
+        {
+          "type": "p",
+          "text": "Hayır. Elektronik Seyahat İzni (eTA), belirli vizeden muaf ülke vatandaşlarının hava yoluyla Kanada'ya seyahatinde kullanılan elektronik izindir. Türkiye, güncel IRCC listesinde vize gereken ülkeler arasındadır. Bu nedenle yalnızca Türk pasaportuyla seyahat eden kişiler genel olarak eTA yerine ziyaretçi vizesine başvurur."
+        },
+        {
+          "type": "p",
+          "text": "Farklı bir ülkenin pasaportuna veya özel bir seyahat statüsüne sahipseniz seyahat belgenize göre gereken izni IRCC'nin resmî aracından yeniden kontrol edin."
+        },
+        {
+          "type": "link",
+          "text": "Kanada vizesi türleri arasındaki farklar",
+          "href": "/kanada-vizesi"
+        }
+      ]
+    },
+    {
+      "id": "kimler",
+      "title": "Kanada ziyaretçi vizesine kimler başvurabilir?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Başvurunun kabul edilmesi için tek bir puan tablosu yoktur. Vize memuru kişisel koşullarınızı ve sunduğunuz kanıtların bütününü değerlendirir. IRCC'nin açıkladığı temel gereklilikler şunlardır:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Geçerli bir pasaport veya kabul edilen seyahat belgesine sahip olmak",
+            "Sağlık koşullarını karşılamak",
+            "Girişe engel oluşturabilecek adli veya göçmenlik ihlalinin bulunmaması",
+            "Ziyaret sonunda Kanada'dan ayrılacağınızı göstermek",
+            "İş, aile, konut veya finansal varlıklar gibi geri dönüş bağlarını açıklamak",
+            "Seyahat ve konaklama masraflarını karşılayacak yeterli kaynağa sahip olmak",
+            "Başvurudaki bilgi ve belgeleri doğru, eksiksiz ve birbiriyle tutarlı sunmak"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Bazı kişilerden sağlık muayenesi, polis belgesi, ek bilgi veya görüşme istenebilir. Bu talepler herkes için otomatik değildir ve başvuranın durumuna göre değişir."
+        },
+        {
+          "type": "h3",
+          "text": "Vize memuru başvuruyu nasıl değerlendirir?"
+        },
+        {
+          "type": "p",
+          "text": "Değerlendirme, yalnızca banka hesabındaki son bakiyeye veya davet mektubuna dayanmaz. Genellikle şu sorular birlikte ele alınır:"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Değerlendirme konusu",
+              "Dosyada cevaplanması gereken soru",
+              "Örnek kanıtlar"
+            ],
+            [
+              "Seyahat amacı",
+              "Neden gidiyorsunuz ve plan neden inandırıcı?",
+              "Gezi planı, davet, etkinlik kaydı, konaklama bilgisi"
+            ],
+            [
+              "Finansman",
+              "Masrafları kim, hangi düzenli ve açıklanabilir kaynakla karşılayacak?",
+              "Hesap dökümleri, gelir belgeleri, sponsor kanıtları"
+            ],
+            [
+              "Geri dönüş bağları",
+              "Ziyaret sonunda neden geri döneceksiniz?",
+              "İş, eğitim, işletme, aile sorumluluğu, mal varlığı"
+            ],
+            [
+              "Seyahat geçmişi",
+              "Önceki vizelere ve kalış koşullarına uydunuz mu?",
+              "Eski pasaportlar, vizeler, giriş-çıkış damgaları"
+            ],
+            [
+              "Tutarlılık",
+              "Formlar, tarihler, mektuplar ve mali bilgiler aynı hikâyeyi anlatıyor mu?",
+              "Birbiriyle uyumlu başvuru dosyası"
+            ]
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "**Yanlış beklenti:** Ev, araç veya yüksek bakiye tek başına vize onayı sağlamaz. Bu belgeler, ancak seyahat planı ve kişisel koşullarla birlikte tutarlı bir dosyanın parçası olduğunda anlamlıdır."
+        }
+      ]
+    },
+    {
+      "id": "belgeler",
+      "title": "Kanada ziyaretçi vizesi için gerekli belgeler",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kesin belge listesi; seyahat amacı, aile durumu, çalışma biçimi, masrafları kimin karşılayacağı ve başvurunun yapıldığı ülkeye göre değişir. Online başvuru sırasında IRCC Portal kişiye özel bir belge listesi oluşturur. Aşağıdaki liste, Türkiye'den yapılan tipik bir ziyaret başvurusunda değerlendirilmesi gereken ana grupları gösterir; portalda oluşturulan kişisel listenin yerine geçmez."
+        },
+        {
+          "type": "h3",
+          "text": "Kimlik ve seyahat belgeleri"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Geçerli pasaportun kimlik sayfası",
+            "Pasaporttaki vize, damga ve işaret bulunan sayfalar",
+            "Varsa eski pasaportlar ve son yıllardaki seyahat geçmişi",
+            "Uygun ölçü ve teknik özelliklerde dijital fotoğraf",
+            "Medeni durum ve aile bağlarını gösteren belgeler, gerektiğinde",
+            "Reşit olmayan çocuklar için seyahat izinleri ve velayet belgeleri, duruma göre"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "IRCC, kullanılacak pasaport veya seyahat belgesinin planlanan seyahat tarihinden itibaren en az altı ay geçerli olmasını istemektedir. Pasaport süreniz kısaysa başvurudan önce yenilemeyi değerlendirin; vize süresi pasaport geçerliliğini aşamaz."
+        },
+        {
+          "type": "h3",
+          "text": "Seyahat amacını gösteren belgeler"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Gün gün veya ana hatlarıyla gerçekçi gezi planı",
+            "Tahmini gidiş-dönüş uçuş bilgileri",
+            "Otel veya konaklama planı",
+            "Aile/arkadaş ziyareti için davet mektubu",
+            "Konferans, fuar, toplantı veya etkinlik kaydı",
+            "Kanada'da ziyaret edilecek kişi veya kurumla ilişkinin kanıtı"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Başvurudan önce iadesiz uçak bileti satın almak zorunlu değildir. Seyahat planı; tarihler, bütçe ve ziyaret amacı bakımından inandırıcı ve diğer belgelerle uyumlu olmalıdır."
+        },
+        {
+          "type": "h3",
+          "text": "Çalışma ve Türkiye'ye bağları gösteren belgeler"
+        },
+        {
+          "type": "p",
+          "text": "**Ücretli çalışanlar için:**"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "İşveren yazısı",
+            "Pozisyon, işe başlama tarihi ve güncel maaş bilgisi",
+            "Onaylanan izin tarihleri ve işbaşı tarihi",
+            "Maaş bordroları ve SGK hizmet kayıtları gibi destekleyici belgeler"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "IRCC rehberine göre işveren yazısı, mümkünse başvurudan önceki üç ay içinde düzenlenmiş, kurumsal antetli ve yetkili kişi tarafından imzalanmış olmalı; işverenin ve imzalayan kişinin iletişim bilgilerini içermelidir."
+        },
+        {
+          "type": "p",
+          "text": "**İşletme sahipleri ve serbest çalışanlar için:**"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Şirket kayıtları ve faaliyet belgeleri",
+            "Vergi kayıtları",
+            "Düzenli ticari faaliyeti gösteren faturalar veya sözleşmeler",
+            "İşletme ve kişisel hesap hareketleri",
+            "Ziyaret sırasında işin nasıl devam edeceğine ilişkin kısa açıklama"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Öğrenciler için:**"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Güncel öğrenci belgesi",
+            "Eğitim takvimi ve devam durumu",
+            "Seyahat tatil dönemindeyse bunu gösteren bilgi",
+            "Masrafları aile karşılıyorsa sponsorun gelir ve yakınlık belgeleri"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Emekliler için:**"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Emeklilik belgesi",
+            "Düzenli emekli aylığını gösteren hesap hareketleri",
+            "Finansal kaynaklar ve Türkiye'deki yaşam bağları"
+          ]
+        },
+        {
+          "type": "link",
+          "text": "Kanada vizesi için gerekli belgelerin ayrıntılı listesi",
+          "href": "/kanada-vizesi/gerekli-belgeler"
+        },
+        {
+          "type": "h3",
+          "text": "Belgelerin çevirisi"
+        },
+        {
+          "type": "p",
+          "text": "Türkçe belgeler için başvuru kılavuzu ve ilgili vize ofisinin güncel çeviri talimatlarını izleyin. İngilizce veya Fransızca olmayan belgelerde gereken çeviri ve destekleyici belgeleri IRCC kurallarından doğrulayın."
+        },
+        {
+          "type": "link",
+          "text": "IRCC belge çevirisi kuralları",
+          "href": "https://www.ircc.canada.ca/english/helpcentre/answer.asp?qnum=18"
+        }
+      ]
+    },
+    {
+      "id": "finans",
+      "title": "Banka hesabında ne kadar para olmalı?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kanada ziyaretçi vizesi için bütün başvuranlara uygulanan resmî ve sabit bir minimum banka bakiyesi açıklanmamıştır. Gerekli tutar; seyahatin süresine, konaklama biçimine, kişi sayısına, uçuş ve günlük harcamalara ve masrafları kimin karşılayacağına göre değişir."
+        },
+        {
+          "type": "p",
+          "text": "Bu nedenle amaç, internette dolaşan tek bir rakama ulaşmak değil; planlanan seyahatin gerçek maliyetini karşılayabilecek, kaynağı anlaşılır ve kişisel mali durumunuzla uyumlu bir finansal tablo göstermektir."
+        },
+        {
+          "type": "h3",
+          "text": "Banka dökümünde nelere bakılır?"
+        },
+        {
+          "type": "p",
+          "text": "IRCC, destekleyici belge rehberinde en az altı aylık hesap ayrıntılarının mali durumu anlamaya yardımcı olduğunu belirtir. Dökümde hesabın size ait olduğu, bankanın adı ve iletişim bilgileri, hareketler ve bakiyeler açıkça görünmelidir."
+        },
+        {
+          "type": "p",
+          "text": "Dosyayı güçlendiren unsurlar:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Düzenli gelirle uyumlu hesap hareketleri",
+            "Seyahat bütçesinin kişi sayısı ve süreyle tutarlı olması",
+            "Büyük veya olağandışı para girişlerinin kaynağının belgelenmesi",
+            "Sponsor varsa sponsorun ödeme gücü ve sizinle ilişkisinin açıklanması",
+            "Kullanılabilir paranın borç, geçici transfer veya açıklamasız emanetten ibaret olmaması"
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "**Dikkat:** Başvurudan hemen önce hesaba yatırılan yüksek tutar kendiliğinden ret nedeni değildir; ancak kaynağı açıklanmazsa dosyada soru işareti yaratabilir. Para satıştan, birikim hesabından, ikramiyeden veya aile desteğinden geldiyse uygun kanıtla açıklayın."
+        },
+        {
+          "type": "link",
+          "text": "Kanada vizesi için banka hesabı ve para kaynağı rehberi",
+          "href": "/kanada-vizesi/banka-hesabi-ne-kadar-olmali"
+        }
+      ]
+    },
+    {
+      "id": "mektuplar",
+      "title": "Davet mektubu ve niyet mektubu nasıl hazırlanır?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Davet mektubu ile başvuranın açıklama/niyet mektubu farklı işlevlere sahiptir. Davet mektubunu Kanada'daki kişi veya kurum yazar; açıklama mektubunu ise başvuran kendi seyahatini ve dosyasını anlaşılır hale getirmek için sunar."
+        },
+        {
+          "type": "h3",
+          "text": "Davet mektubunda bulunması gerekenler"
+        },
+        {
+          "type": "p",
+          "text": "Davet eden kişi mektupta genel olarak şu bilgileri vermelidir:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Davet edilen kişinin adı, doğum tarihi, iletişim bilgileri ve davet edenle ilişkisi",
+            "Seyahatin amacı ve planlanan tarihleri",
+            "Nerede kalınacağı ve masrafları kimin karşılayacağı",
+            "Planlanan ayrılış tarihi",
+            "Davet edenin Kanada'daki adı, adresi, telefonu ve mesleği",
+            "Davet edenin Kanada vatandaşlığı veya daimi oturum gibi statüsünün kanıtı"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Davet mektubu vize garantisi değildir ve başvuranın kendi şartlarını gösterme sorumluluğunu ortadan kaldırmaz. Davet eden kişi masrafları üstleniyorsa bunu söylemekle kalmamalı; mali kapasitesini gösteren uygun belgeler de eklenmelidir."
+        },
+        {
+          "type": "link",
+          "text": "Kanada ziyaretçi vizesi davet mektubu örneği ve kontrol listesi",
+          "href": "/kanada-vizesi/davet-mektubu"
+        },
+        {
+          "type": "h3",
+          "text": "Açıklama veya niyet mektubu ne anlatmalı?"
+        },
+        {
+          "type": "p",
+          "text": "İyi bir açıklama mektubu dosyada zaten görülebilen bilgileri uzun uzun tekrarlamaz. Şu noktaları kısa ve tutarlı biçimde bir araya getirir:"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Seyahatin amacı ve tarihleri",
+            "Kanada'da nerede ve kiminle kalınacağı",
+            "Tahmini bütçe ve masrafları kimin karşılayacağı",
+            "Türkiye'deki iş, aile, eğitim ve mali bağlar",
+            "Ziyaret sonunda dönüş planı",
+            "Dosyada açıklama gerektiren para hareketi, önceki ret veya seyahat geçmişi gibi konular"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Abartılı duygusal ifadeler, garanti talebi veya gerçeğe aykırı iddialar yerine kanıtlarla desteklenen sade bir anlatım kullanın."
+        },
+        {
+          "type": "link",
+          "text": "Kanada vizesi niyet mektubu hazırlama rehberi",
+          "href": "/kanada-vizesi/niyet-mektubu"
+        }
+      ]
+    },
+    {
+      "id": "basvuru",
+      "title": "Kanada ziyaretçi vizesi başvurusu nasıl yapılır?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Başvuru çoğu durumda online yapılır. Kâğıt başvuru yalnızca IRCC'nin belirlediği sınırlı durumlarda, örneğin engellilik nedeniyle online başvuru yapılamaması veya belirli özel seyahat belgeleriyle seyahat edilmesi halinde kullanılabilir."
+        },
+        {
+          "type": "h3",
+          "text": "Adım adım başvuru süreci"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "**Seyahat amacını ve tarihlerini belirleyin** Turistik gezi, aile ziyareti veya iş ziyareti gibi doğru kategoriyi seçin. Seyahat süresi ile bütçeyi gerçekçi planlayın.",
+            "**IRCC'nin kişisel belge listesini oluşturun** Resmî portalda soruları doğru yanıtlayın. Portalın ürettiği listeyi bu sayfadaki genel listeye tercih edin.",
+            "**Formları ve destekleyici belgeleri hazırlayın** Pasaport, mali belgeler, seyahat planı, bağ kanıtları ve amaca özel belgeleri okunabilir dosyalar halinde düzenleyin.",
+            "**Başvuruyu yükleyin ve ücretleri ödeyin** Bilgileri son kez karşılaştırın; eksik veya çelişkili alanları düzeltin. Ödeme makbuzlarını saklayın.",
+            "**Biyometri talimatını izleyin** Biyometri Talimat Mektubu geldikten sonra yetkili merkezden randevu alın ve belirtilen süreyi kaçırmayın.",
+            "**Başvuruyu takip edin ve ek talepleri yanıtlayın** IRCC hesabınızı düzenli kontrol edin. Ek belge, sağlık muayenesi, polis belgesi veya görüşme talebi gelirse verilen süre içinde yanıtlayın.",
+            "**Onay halinde pasaport talimatını uygulayın** Online başvuru onaylandığında gelen pasaport gönderme talimatına göre ilerleyin. Pasaporta vize yerleştirilmeden Kanada'ya seyahat edemezsiniz."
+          ]
+        },
+        {
+          "type": "link",
+          "text": "IRCC üzerinden ziyaretçi vizesine başvurun",
+          "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/apply-visitor-visa.html"
+        },
+        {
+          "type": "callout",
+          "text": "**Güvenlik uyarısı:** Başvuru hesabı açarken ve ücret öderken alan adını kontrol edin. Kanada Hükümetinin resmî sayfaları `canada.ca` alan adını kullanır. Vize sonucu veya hızlandırma garantisi veren kişilere ödeme yapmayın."
+        }
+      ]
+    },
+    {
+      "id": "ucret",
+      "title": "Biyometri, ücret ve işlem süresi",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Biyometri nasıl verilir?"
+        },
+        {
+          "type": "p",
+          "text": "Biyometri, kimlik doğrulaması için alınan parmak izi ve fotoğraftır. Muaf değilseniz başvurudan sonra Biyometri Talimat Mektubu alır, ardından yetkili başvuru merkezinden randevu alırsınız. Talimat mektubu gelmeden biyometri randevusuna gitmeyin."
+        },
+        {
+          "type": "p",
+          "text": "14 yaşından küçükler ve 79 yaşından büyük başvuranlar gibi bazı gruplar biyometriden muaf olabilir. Önceden verdiğiniz geçerli biyometrinin kullanılıp kullanılamayacağını IRCC'nin kontrol aracından doğrulayın; bazı durumlarda yeniden biyometri istenebilir."
+        },
+        {
+          "type": "link",
+          "text": "Kanada vizesi biyometri işlemleri",
+          "href": "/kanada-vizesi/biyometri"
+        },
+        {
+          "type": "h3",
+          "text": "Başvuru ücretleri"
+        },
+        {
+          "type": "fees"
+        },
+        {
+          "type": "link",
+          "text": "Güncel IRCC ücretlerini kontrol edin",
+          "href": "https://ircc.canada.ca/english/information/fees/fees.asp"
+        },
+        {
+          "type": "h3",
+          "text": "Kanada ziyaretçi vizesi kaç günde çıkar?"
+        },
+        {
+          "type": "p",
+          "text": "Tek ve garanti bir sonuç süresi yoktur. IRCC işlem süreleri başvurunun yapıldığı ülkeye, dosyanın eksiksizliğine, doğrulama ve ek işlem ihtiyacına ve başvuru yoğunluğuna göre değişebilir. Biyometri için geçen süre, gösterilen tahmine dahil olmayabilir."
+        },
+        {
+          "type": "p",
+          "text": "Ülke ve başvuru türüne göre güncel IRCC tahminini görüntüleyin. Bu süre garanti değildir."
+        },
+        {
+          "type": "link",
+          "text": "Güncel işlem süresini kontrol edin",
+          "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html"
+        }
+      ]
+    },
+    {
+      "id": "onay",
+      "title": "Başvuru onaylandıktan sonra ne olur?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Online başvuru kabul edildiğinde IRCC hesabınıza pasaportun nasıl gönderileceğini açıklayan bir yazı gelir. Bu yazı tek başına seyahat belgesi değildir; vize pasaporta yerleştirilmeden Kanada'ya seyahat edemezsiniz."
+        },
+        {
+          "type": "p",
+          "text": "Vizeyi aldıktan sonra şu bilgileri kontrol edin:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Ad ve pasaport numarası",
+            "Vizenin geçerlilik tarihleri",
+            "Tek veya çok giriş bilgisi",
+            "Pasaportunuzun seyahat boyunca geçerliliği"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Uçuş öncesinde davet mektubu, konaklama adresi, dönüş planı ve masrafları karşılayabileceğinizi gösteren temel belgeleri erişilebilir biçimde yanınızda bulundurun. Sınır görevlisi ziyaret amacınız hakkında soru sorabilir."
+        },
+        {
+          "type": "h3",
+          "text": "Kanada'da ne kadar kalabilirsiniz?"
+        },
+        {
+          "type": "p",
+          "text": "Çoğu ziyaretçi Kanada'da **altı aya kadar** kalabilir. Fakat sınır görevlisi daha kısa veya daha uzun bir süre belirleyebilir. Pasaportunuza çıkış tarihi yazılmışsa veya size visitor record verilmişse o tarih geçerlidir."
+        },
+        {
+          "type": "p",
+          "text": "Pasaportunuzda damga ya da farklı bir belge yoksa kalış süresi çoğunlukla giriş tarihinden itibaren altı ay veya pasaport/biyometri süresinin dolduğu tarihe kadar — hangisi önceyse — devam eder. Kendi kaydınız için giriş belgelerinizi kontrol edin."
+        },
+        {
+          "type": "p",
+          "text": "Kanada'da daha uzun kalmanız gerekiyorsa ziyaretçi statünüzü uzatmak için yetkili kalış süreniz sona ermeden başvurmanız gerekir. IRCC, genel olarak bitiş tarihinden en az 30 gün önce başvurulmasını önerir."
+        },
+        {
+          "type": "link",
+          "text": "Kanada'da ziyaretçi statüsü uzatma rehberi",
+          "href": "/kanada-vizesi/ziyaretci-statusu-uzatma"
+        }
+      ]
+    },
+    {
+      "id": "sinirlar",
+      "title": "Turist vizesiyle Kanada'da çalışılabilir veya eğitim alınabilir mi?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ziyaretçi vizesi genel bir çalışma izni değildir. Kanada iş piyasasına giren bir işte çalışmak için, istisna kapsamına girmiyorsanız, uygun bir çalışma iznine ihtiyacınız vardır. Ziyaretçi olarak Kanada'ya gidip izinsiz çalışmak statü ihlaline ve sonraki başvuruları etkileyebilecek sonuçlara yol açabilir."
+        },
+        {
+          "type": "p",
+          "text": "İş toplantısı, fuar veya kısa eğitim gibi bazı faaliyetler “business visitor” kurallarına girebilir. Bunun için kişinin esas iş ve gelir kaynağının Kanada dışında kalması ve Kanada iş piyasasına girmemesi gibi koşullar değerlendirilir. Bir etkinliğe katılmak ile Kanada'daki bir işveren için fiilen çalışmak aynı şey değildir."
+        },
+        {
+          "type": "p",
+          "text": "Benzer şekilde, altı ay veya daha kısa bazı programlar için eğitim izni gerekmeyebilir; ancak programın niteliği ve diğer koşullar önemlidir. Uzun süreli eğitim planını ziyaretçi vizesi üzerinden kurmayın."
+        },
+        {
+          "type": "link",
+          "text": "Kanada çalışma izni türleri",
+          "href": "/kanadada-calisma/calisma-izni"
+        },
+        {
+          "type": "link",
+          "text": "Kanada eğitim izni rehberi",
+          "href": "/kanadada-egitim/egitim-izni"
+        },
+        {
+          "type": "link",
+          "text": "Türkiye'den Kanada'da iş bulmak",
+          "href": "/kanadada-calisma/turkiyeden-kanadada-is-bulmak"
+        }
+      ]
+    },
+    {
+      "id": "ret",
+      "title": "En yaygın ret nedenleri ve kaçınılması gereken hatalar",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "IRCC'nin temel ölçütlerinden biri, ziyaretçinin yetkili kalış süresi sonunda Kanada'dan ayrılacağına memuru ikna etmesidir. Ret mektubundaki gerekçeler dosyaya göre değişse de aşağıdaki sorunlar sık görülür:"
+        },
+        {
+          "type": "h3",
+          "text": "Dosyanın zayıflayabileceği durumlar"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Seyahat amacının belirsiz veya kişisel koşullarla uyumsuz olması",
+            "Uzun seyahat süresi için yetersiz açıklama veya bütçe",
+            "İş, aile, eğitim veya mali bağların yeterince gösterilmemesi",
+            "Banka hesabındaki büyük para girişlerinin açıklanmaması",
+            "Sponsorun mali kapasitesinin ya da yakınlığının belgelenmemesi",
+            "Formlar, tarihler ve mektuplar arasında çelişki",
+            "Önceki ret, vize ihlali veya adli konuların gizlenmesi",
+            "Sahte veya değiştirilmiş belge sunulması",
+            "Başvurunun eksik olması veya ek belge talebinin zamanında karşılanmaması"
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "**Kırmızı uyarı:** Yanlış bilgi vermek veya önemli bir bilgiyi gizlemek “misrepresentation” olarak değerlendirilebilir. Bu yalnızca mevcut başvurunun reddine değil, Kanada'ya kabul edilemezlik gibi daha ciddi sonuçlara da yol açabilir. Emin olmadığınız bir bilgiyi tahmin ederek yazmayın."
+        },
+        {
+          "type": "h3",
+          "text": "Ret aldıktan sonra yeniden başvuru"
+        },
+        {
+          "type": "p",
+          "text": "Ret aldıysanız aynı form ve belgeleri değişiklik yapmadan yeniden göndermek çoğu zaman farklı sonuç yaratmaz. Önce ret mektubundaki gerekçeyi, başvuruda sunulan kanıtları ve varsa yeni bilgileri birlikte değerlendirin. Yeniden başvuru ancak ret nedenini karşılayacak anlamlı açıklama veya değişiklik varsa düşünülmelidir."
+        },
+        {
+          "type": "link",
+          "text": "Kanada vize reddi nedenleri ve ret sonrası seçenekler",
+          "href": "/kanada-vizesi/vize-reddi"
+        }
+      ]
+    },
+    {
+      "id": "kaynaklar",
+      "title": "Resmî kaynaklar ve son doğrulama",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bu rehber genel bilgilendirme içindir. Kurallar, ücretler, formlar ve işlem süreleri değişebilir. Başvurudan hemen önce aşağıdaki resmî kaynakları kontrol edin:"
+        },
+        {
+          "type": "link",
+          "text": "IRCC ziyaretçi vizesi ana sayfası",
+          "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/visitor-visa.html"
+        },
+        {
+          "type": "link",
+          "text": "Kimler ziyaretçi vizesine başvurabilir?",
+          "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eligibility.html"
+        },
+        {
+          "type": "link",
+          "text": "Ziyaretçi vizesine nasıl başvurulur?",
+          "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/apply-visitor-visa.html"
+        },
+        {
+          "type": "link",
+          "text": "Başvurudan sonraki işlemler",
+          "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/after-apply-next-steps.html"
+        },
+        {
+          "type": "link",
+          "text": "Ülkeye göre giriş belgesi gerekliliği",
+          "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/entry-requirements-country.html"
+        },
+        {
+          "type": "link",
+          "text": "Biyometri bilgileri",
+          "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/biometrics.html"
+        },
+        {
+          "type": "link",
+          "text": "Güncel işlem süreleri",
+          "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html"
+        },
+        {
+          "type": "link",
+          "text": "IMM 5484 ziyaretçi vizesi belge kontrol listesi",
+          "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5484.html"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Türk vatandaşlarının Kanada'ya gitmek için vize alması gerekir mi?",
+      "answer": "Evet. Türkiye güncel IRCC listesinde vize gereken ülkeler arasındadır. Yalnızca Türk pasaportuyla ziyaret eden kişiler genel olarak Kanada ziyaretçi vizesine başvurmalıdır. Başka ülke pasaportunuz veya özel seyahat statünüz varsa gereken belge değişebilir."
+    },
+    {
+      "question": "Kanada turist vizesi için hesapta ne kadar para olmalı?",
+      "answer": "Herkes için geçerli sabit bir asgari tutar yoktur. Bakiye; seyahat süresi, konaklama, kişi sayısı, uçuş ve günlük giderlerle uyumlu olmalı, paranın kaynağı anlaşılabilmeli ve hesap hareketleri başvuranın genel mali durumuyla tutarlı görünmelidir."
+    },
+    {
+      "question": "Kanada'dan davet mektubu almak vizeyi garanti eder mi?",
+      "answer": "Hayır. Davet mektubu ziyaret amacını ve konaklama planını destekleyebilir; ancak IRCC başvuranın tüm koşullarını değerlendirir. Resmî IRCC açıklaması da davet mektubunun vize garantisi olmadığını belirtir."
+    },
+    {
+      "question": "Kanada ziyaretçi vizesi kaç yıllık verilir?",
+      "answer": "Vize tek veya çok girişli ve farklı sürelerle düzenlenebilir. En fazla 10 yıla kadar geçerli olabilse de pasaport ve biyometri bitiş tarihi süreyi sınırlayabilir. Nihai geçerlilik süresini vize memuru belirler."
+    },
+    {
+      "question": "Vize 10 yıllıksa Kanada'da 10 yıl kalabilir miyim?",
+      "answer": "Hayır. Vize geçerliliği ülkeye hangi tarihe kadar seyahat edebileceğinizi gösterir; her girişteki kalış süresi ayrıdır. Çoğu ziyaretçi bir girişte altı aya kadar kalabilir, fakat sınır görevlisi başka bir süre belirleyebilir."
+    },
+    {
+      "question": "Kanada vizesi için uçak bileti almak zorunlu mu?",
+      "answer": "IRCC seyahat planını destekleyen uçuş ayrıntılarını isteyebilir; ancak başvuru sonucu çıkmadan iadesiz bilet satın almak zorunlu değildir. Tarihleri ve tahmini ulaşım planını tutarlı biçimde göstermek önemlidir."
+    },
+    {
+      "question": "Ailece başvururken herkes için ayrı başvuru gerekir mi?",
+      "answer": "Her aile üyesi giriş koşullarını karşılamalı ve kendi başvuru bilgilerini sunmalıdır. Başvurular birlikte gönderilebilse de her kişi ayrı değerlendirilir. Aynı anda başvuran uygun aileler için bazı ücret üst sınırları bulunabilir."
+    },
+    {
+      "question": "Ziyaretçi vizesiyle Kanada'da iş aranabilir mi?",
+      "answer": "İş ilanlarını incelemek veya görüşme yapmak ile fiilen çalışmak aynı değildir. Ziyaretçi vizesi çalışma yetkisi vermez. Kanada'da bir işte çalışmaya başlamadan önce uygun çalışma izninin gerekli olup olmadığını resmî kurallardan doğrulayın."
+    },
+    {
+      "question": "Ret aldıktan hemen sonra tekrar başvurabilir miyim?",
+      "answer": "Genel bir bekleme süresi olmayabilir; ancak ret gerekçesini karşılamadan aynı bilgilerle yeniden başvurmak genellikle sonucu değiştirmez. Yeni başvurudan önce neyin eksik veya ikna edici bulunmadığını değerlendirin."
+    }
+  ],
+  "checklist": [
+    "Pasaportum planlanan seyahat için yeterli süreyle geçerli",
+    "Seyahat amacım, tarihlerim ve kalış planım açık",
+    "Bütçem seyahat süresi ve kişi sayısıyla uyumlu",
+    "Banka hesabındaki önemli para hareketlerini açıkladım",
+    "Türkiye'deki iş, aile, eğitim veya mali bağlarımı belgeledim",
+    "Davet/sponsor varsa ilişkiyi ve ödeme gücünü gösterdim",
+    "Formlar, mektuplar ve belgelerdeki tarihler birbiriyle tutarlı",
+    "Önceki retleri ve seyahat geçmişini doğru beyan ettim",
+    "Belgeler okunabilir, doğru yönde ve uygun dosya boyutunda",
+    "Portalın oluşturduğu kişisel belge listesindeki her maddeyi kontrol ettim"
+  ]
+}

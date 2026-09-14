@@ -514,7 +514,10 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
         { label: title, href: path },
       ],
       isPillar: i === 0,
-      contentStatus: 'starter',
+      contentStatus:
+        path === '/kanada-vizesi/kanada-ziyaretci-vizesi'
+          ? 'complete'
+          : 'starter',
     };
   });
 });

@@ -4,15 +4,21 @@ import { useId, useState } from 'react';
 
 export type GuideFaqItem = { question: string; answer: React.ReactNode };
 
-export function GuideFaq({ items }: { items: GuideFaqItem[] }) {
-  const [open, setOpen] = useState(0);
+export function GuideFaq({
+  items,
+  initiallyExpanded = false,
+}: {
+  items: GuideFaqItem[];
+  initiallyExpanded?: boolean;
+}) {
+  const [open, setOpen] = useState(initiallyExpanded ? -2 : 0);
   const baseId = useId();
 
   return (
     <div className="guide-faq">
       {items.map((item, index) => {
         const panelId = `${baseId}-${index}`;
-        const expanded = open === index;
+        const expanded = open === -2 || open === index;
         return (
           <section key={item.question}>
             <h3>

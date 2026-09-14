@@ -1,3 +1,4 @@
+import { visitorVisaPath, visitorVisaFacts } from '@/lib/visitor-visa';
 import type { MetadataRoute } from 'next';
 import { articles, SITE_URL, TURKIYE_KANADA_GUIDE_DATES } from '@/lib/content';
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -33,12 +34,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date('2026-09-12'),
       priority: 0.3,
     })),
+    {
+      url: `${SITE_URL}/kanada-vizesi`,
+      lastModified: new Date(visitorVisaFacts.reviewedAt),
+      priority: 0.8,
+    },
     ...articles.map((a) => ({
       url: `${SITE_URL}${a.path}`,
       lastModified: new Date(
         a.path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir'
           ? TURKIYE_KANADA_GUIDE_DATES.modified
-          : '2026-09-11',
+          : a.path === visitorVisaPath
+            ? visitorVisaFacts.reviewedAt
+            : '2026-09-11',
       ),
       changeFrequency: 'monthly' as const,
       priority: a.isPillar ? 0.9 : 0.7,

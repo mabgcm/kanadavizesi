@@ -1,3 +1,10 @@
+import { VisitorVisaGuide } from '@/components/visitor-visa-guide';
+import {
+  visitorVisaPath,
+  visitorVisaTitle,
+  visitorVisaDescription,
+  visitorVisaFacts,
+} from '@/lib/visitor-visa';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArticleTemplate } from '@/components/article-template';
@@ -13,6 +20,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = articleMap.get(`/${slug.join('/')}`);
   if (!article) return {};
   const canonical = `${SITE_URL}${article.path}`;
+  if (article.path === visitorVisaPath)
+    return {
+      title: `Kanada Ziyaretçi Vizesi ${visitorVisaFacts.seoYear}: Şartlar ve Belgeler`,
+      description: visitorVisaDescription,
+      alternates: { canonical },
+      robots: { index: true, follow: true },
+      openGraph: {
+        type: 'article',
+        url: canonical,
+        title: visitorVisaTitle,
+        description:
+          "Türkiye'den Kanada ziyaretçi vizesi başvurusu yapmadan önce bilmeniz gereken şartları, belgeleri ve başvuru adımlarını inceleyin.",
+        locale: 'tr_TR',
+        modifiedTime: visitorVisaFacts.reviewedAt,
+      },
+      twitter: {
+        card: 'summary',
+        title: visitorVisaTitle,
+        description: visitorVisaDescription,
+      },
+    };
   if (article.path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir')
     return {
       title:
@@ -60,5 +88,6 @@ export default async function ContentPage({ params }: Props) {
   if (!article) notFound();
   if (article.path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir')
     return <TurkiyeKanadaGuide />;
+  if (article.path === visitorVisaPath) return <VisitorVisaGuide />;
   return <ArticleTemplate article={article} />;
 }
