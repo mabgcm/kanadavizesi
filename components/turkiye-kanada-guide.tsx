@@ -1,3 +1,4 @@
+import { publisher, SOCIAL_IMAGE } from '@/lib/seo';
 import Link from 'next/link';
 import { Check, CircleAlert } from 'lucide-react';
 import { GuideFaq, type GuideFaqItem } from './guide-faq';
@@ -171,6 +172,7 @@ export function TurkiyeKanadaGuide() {
     '@graph': [
       {
         '@type': 'Article',
+        inLanguage: 'tr-TR',
         headline: 'Türkiye’den Kanada’ya Nasıl Gidilir? 2026 Başlangıç Rehberi',
         description:
           'Türkiye’den Kanada’ya ziyaret, eğitim, çalışma veya kalıcı oturum yoluyla nasıl gidilebileceğini karşılaştırın; koşulları, bütçeyi ve sonraki adımları öğrenin.',
@@ -178,8 +180,11 @@ export function TurkiyeKanadaGuide() {
         dateModified: TURKIYE_KANADA_GUIDE_DATES.modified,
         mainEntityOfPage:
           'https://kanadavizesi.ca/rehberler/turkiyeden-kanadaya-nasil-gidilir',
-        author: { '@type': 'Organization', name: 'KanadaVizesi.ca' },
-        publisher: { '@type': 'Organization', name: 'KanadaVizesi.ca' },
+        author: publisher,
+        publisher,
+        image: SOCIAL_IMAGE.url,
+        isAccessibleForFree: true,
+        publishingPrinciples: 'https://kanadavizesi.ca/kaynak-politikasi',
       },
       {
         '@type': 'BreadcrumbList',

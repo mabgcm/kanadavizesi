@@ -1,12 +1,27 @@
 import Link from 'next/link';
 import { articles } from '@/lib/content';
-export const metadata = {
-  title: 'Kanada Vizesi Türleri ve Başvuru Rehberleri',
-  alternates: { canonical: 'https://kanadavizesi.ca/kanada-vizesi' },
-};
+import { pageMetadata, collectionSchema } from '@/lib/seo';
+import { JsonLd } from '@/components/json-ld';
+export const metadata = pageMetadata({
+  path: '/kanada-vizesi',
+  title: 'Kanada Vizesi: Başvuru ve Ziyaretçi Vizesi Rehberleri',
+  description:
+    'Türkiye’den Kanada vizesi araştırmanıza başlayın. Ziyaretçi vizesi başvuru adımları, gerekli belgeler, ücretler ve resmî kaynaklar için rehbere ulaşın.',
+});
 export default function VisaHub() {
   return (
     <main className="guide-page">
+      <JsonLd
+        data={collectionSchema(
+          '/kanada-vizesi',
+          'Kanada Vizesi',
+          articles.filter(
+            (a) =>
+              a.category === 'Ziyaretçi Vizesi' &&
+              a.contentStatus === 'complete',
+          ),
+        )}
+      />
       <div className="container guide-shell">
         <nav className="article-breadcrumb" aria-label="İçerik yolu">
           <Link href="/">Ana Sayfa</Link> {' > '}
@@ -28,6 +43,9 @@ export default function VisaHub() {
                   <Link href={a.path}>{a.title}</Link>
                 </h2>
                 <p>{a.description}</p>
+                {a.contentStatus === 'starter' && (
+                  <small>Başlangıç notları</small>
+                )}
               </article>
             ))}
         </div>

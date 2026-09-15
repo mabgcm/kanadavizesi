@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "oxlint",
     "format": "oxfmt",
-    "test:assessment": "node --experimental-strip-types --test tests/assessment.test.mjs"
+    "test:assessment": "node --experimental-strip-types --test tests/assessment.test.mjs",
+    "test:seo": "node --experimental-strip-types scripts/check-seo.mjs"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",

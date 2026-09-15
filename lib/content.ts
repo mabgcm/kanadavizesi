@@ -515,7 +515,8 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
       ],
       isPillar: i === 0,
       contentStatus:
-        path === '/kanada-vizesi/kanada-ziyaretci-vizesi'
+        path === '/kanada-vizesi/kanada-ziyaretci-vizesi' ||
+        path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir'
           ? 'complete'
           : 'starter',
     };

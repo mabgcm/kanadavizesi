@@ -1,11 +1,12 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/gizlilik',
   title: 'Gizlilik Politikası | KanadaVizesi.ca',
   description:
     'Ön değerlendirme formu, e-posta iletişimi ve site kullanım verilerine ilişkin gizlilik politikası.',
-};
+});
 export default function Privacy() {
   return (
     <main className="legal-page">

@@ -1,11 +1,12 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/kullanim-kosullari',
   title: 'Kullanım Koşulları | KanadaVizesi.ca',
   description:
     'KanadaVizesi.ca içerikleri ve ön değerlendirme formunun kullanım koşulları.',
-};
+});
 export default function Terms() {
   return (
     <main className="legal-page">

@@ -1,10 +1,11 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/guncel-bilgiler',
   title: 'Güncel Bilgiler ve Resmî Kaynaklar | KanadaVizesi.ca',
   description:
     'Kanada araştırmanız sırasında güncel başvuru koşullarını doğrulayabileceğiniz resmî kaynaklar.',
-};
+});
 export default function Page() {
   return (
     <main className="legal-page">

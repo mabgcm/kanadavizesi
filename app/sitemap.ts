@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next';
 import { articles, SITE_URL, TURKIYE_KANADA_GUIDE_DATES } from '@/lib/content';
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    { url: SITE_URL, lastModified: new Date('2026-09-11'), priority: 1 },
+    { url: SITE_URL, lastModified: new Date('2026-09-14'), priority: 1 },
     {
       url: `${SITE_URL}/rehberler`,
       lastModified: new Date('2026-09-11'),
@@ -24,6 +24,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date('2026-09-11'),
       priority: 0.3,
     },
+    {
+      url: `${SITE_URL}/hakkimizda`,
+      lastModified: new Date('2026-09-14'),
+      priority: 0.3,
+    },
     ...[
       'yasal-uyari',
       'kaynak-politikasi',
@@ -39,17 +44,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(visitorVisaFacts.reviewedAt),
       priority: 0.8,
     },
-    ...articles.map((a) => ({
-      url: `${SITE_URL}${a.path}`,
-      lastModified: new Date(
-        a.path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir'
-          ? TURKIYE_KANADA_GUIDE_DATES.modified
-          : a.path === visitorVisaPath
-            ? visitorVisaFacts.reviewedAt
-            : '2026-09-11',
-      ),
-      changeFrequency: 'monthly' as const,
-      priority: a.isPillar ? 0.9 : 0.7,
-    })),
+    ...articles
+      .filter((a) => a.contentStatus === 'complete')
+      .map((a) => ({
+        url: `${SITE_URL}${a.path}`,
+        lastModified: new Date(
+          a.path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir'
+            ? TURKIYE_KANADA_GUIDE_DATES.modified
+            : a.path === visitorVisaPath
+              ? visitorVisaFacts.reviewedAt
+              : '2026-09-11',
+        ),
+        changeFrequency: 'monthly' as const,
+        priority: a.isPillar ? 0.9 : 0.7,
+      })),
   ];
 }

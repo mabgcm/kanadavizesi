@@ -1,3 +1,11 @@
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  path: '/',
+  title: 'Kanada Vizesi ve Türkiye’den Kanada’ya Gitme Rehberi',
+  description:
+    'Türkiye’den Kanada vizesi başvurusu, ziyaretçi vizesi, eğitim, çalışma ve göçmenlik yollarını Türkçe rehberlerle karşılaştırın; resmî kaynaklara ulaşın.',
+});
 import Link from 'next/link';
 import { ArrowRight, HelpCircle } from 'lucide-react';
 
@@ -142,7 +150,7 @@ export default function Home() {
   return (
     <main className="home-page">
       <div className="container intro">
-        <h1>Kanada’ya gelme ve Kanada’da yaşam rehberi</h1>
+        <h1>Kanada vizesi ve Türkiye’den Kanada’ya gitme rehberi</h1>
         <span className="red-rule" />
         <p>
           Ziyaretçi vizesi, eğitim, çalışma, göçmenlik ve Kanada’daki günlük

@@ -61,6 +61,7 @@ export function SiteFooter() {
       </div>
       <div className="footer-bottom">
         <div className="container">
+          <Link href="/hakkimizda">Hakkımızda ve İletişim</Link>
           <Link href="/gizlilik">Gizlilik</Link>
           <Link href="/kullanim-kosullari">Kullanım Koşulları</Link>
           <Link href="/yasal-uyari">Yasal Uyarı</Link>

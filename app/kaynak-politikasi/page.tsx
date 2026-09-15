@@ -1,10 +1,11 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/kaynak-politikasi',
   title: 'Kaynak Politikası | KanadaVizesi.ca',
   description:
     'Rehberlerde kaynak kullanımı, güncellik ve düzeltme yaklaşımımız.',
-};
+});
 export default function Page() {
   return (
     <main className="legal-page">

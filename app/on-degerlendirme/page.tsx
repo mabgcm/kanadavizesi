@@ -1,12 +1,13 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { AssessmentForm } from '@/components/assessment-form';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/on-degerlendirme',
   title: 'Kanada Ön Değerlendirme | KanadaVizesi.ca',
   description:
     'Hedef, eğitim, deneyim, dil ve bütçe bilgilerinize göre Kanada planınız için başlangıç yolunu belirleyin.',
-};
+});
 export default function AssessmentPage() {
   return (
     <main className="legal-page">

@@ -1,10 +1,11 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/saglik-ve-egitim',
   title: 'Kanada’da Sağlık ve Eğitim | KanadaVizesi.ca',
   description:
     'Sağlık sistemi, çocukların eğitimi ve bakım seçenekleri hakkında başlangıç rehberleri.',
-};
+});
 export default function Page() {
   return (
     <main className="legal-page">

@@ -21,16 +21,6 @@ export function ArticleTemplate({ article }: { article: Article }) {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'Article',
-        headline: article.title,
-        description: article.description,
-        dateModified: '2026-09-11',
-        datePublished: '2026-09-11',
-        mainEntityOfPage: `${SITE_URL}${article.path}`,
-        author: { '@type': 'Organization', name: 'KanadaVizesi.ca' },
-        publisher: { '@type': 'Organization', name: 'KanadaVizesi.ca' },
-      },
-      {
         '@type': 'BreadcrumbList',
         itemListElement: article.breadcrumbs.map((b, i) => ({
           '@type': 'ListItem',
@@ -67,8 +57,19 @@ export function ArticleTemplate({ article }: { article: Article }) {
             <div className="article-meta">
               <span>Son güncelleme: 11 Eylül 2026</span>
               <span>Yazar: KanadaVizesi.ca İçerik Ekibi</span>
-              <span>RCIC incelemesi: Profesyonel inceleme alanı</span>
+              <span>İçerik durumu: Başlangıç notları</span>
             </div>
+            <p role="note">
+              Bu sayfa başlangıç notları içerir. Ayrıntılı bilgi için{' '}
+              <Link href="/rehberler/turkiyeden-kanadaya-nasil-gidilir">
+                Türkiye’den Kanada’ya gitme rehberini
+              </Link>{' '}
+              ve{' '}
+              <Link href="/kanada-vizesi/kanada-ziyaretci-vizesi">
+                ziyaretçi vizesi rehberini
+              </Link>{' '}
+              okuyabilirsiniz.
+            </p>
             <h2>{article.title} hakkında temel çerçeve</h2>
             <p>
               {p} <Link href={article.pillar}>{label(article.pillar)}</Link>{' '}

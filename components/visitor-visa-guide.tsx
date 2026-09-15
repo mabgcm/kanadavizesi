@@ -1,3 +1,4 @@
+import { publisher, SOCIAL_IMAGE } from '@/lib/seo';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import data from '@/lib/visitor-visa-article.json';
@@ -284,8 +285,11 @@ export function VisitorVisaGuide() {
         inLanguage: 'tr-TR',
         dateModified: facts.reviewedAt,
         ...(facts.publishedAt ? { datePublished: facts.publishedAt } : {}),
-        author: { '@type': 'Organization', name: 'KanadaVizesi.ca' },
-        publisher: { '@type': 'Organization', name: 'KanadaVizesi.ca' },
+        author: publisher,
+        publisher,
+        image: SOCIAL_IMAGE.url,
+        isAccessibleForFree: true,
+        publishingPrinciples: 'https://kanadavizesi.ca/kaynak-politikasi',
       },
       {
         '@type': 'BreadcrumbList',

@@ -1,15 +1,19 @@
 import { VisitorVisaGuide } from '@/components/visitor-visa-guide';
 import {
   visitorVisaPath,
-  visitorVisaTitle,
   visitorVisaDescription,
   visitorVisaFacts,
 } from '@/lib/visitor-visa';
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArticleTemplate } from '@/components/article-template';
 import { TurkiyeKanadaGuide } from '@/components/turkiye-kanada-guide';
-import { articleMap, articles, SITE_URL } from '@/lib/content';
+import {
+  articleMap,
+  articles,
+  TURKIYE_KANADA_GUIDE_DATES,
+} from '@/lib/content';
 
 type Props = { params: Promise<{ slug: string[] }> };
 export function generateStaticParams() {
@@ -19,68 +23,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = articleMap.get(`/${slug.join('/')}`);
   if (!article) return {};
-  const canonical = `${SITE_URL}${article.path}`;
   if (article.path === visitorVisaPath)
-    return {
+    return pageMetadata({
+      path: article.path,
       title: `Kanada Ziyaretçi Vizesi ${visitorVisaFacts.seoYear}: Şartlar ve Belgeler`,
       description: visitorVisaDescription,
-      alternates: { canonical },
-      robots: { index: true, follow: true },
-      openGraph: {
-        type: 'article',
-        url: canonical,
-        title: visitorVisaTitle,
-        description:
-          "Türkiye'den Kanada ziyaretçi vizesi başvurusu yapmadan önce bilmeniz gereken şartları, belgeleri ve başvuru adımlarını inceleyin.",
-        locale: 'tr_TR',
-        modifiedTime: visitorVisaFacts.reviewedAt,
-      },
-      twitter: {
-        card: 'summary',
-        title: visitorVisaTitle,
-        description: visitorVisaDescription,
-      },
-    };
+      article: true,
+      modified: visitorVisaFacts.reviewedAt,
+    });
   if (article.path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir')
-    return {
-      title:
-        'Türkiye’den Kanada’ya Nasıl Gidilir? 2026 Rehberi | KanadaVizesi.ca',
+    return pageMetadata({
+      path: article.path,
+      title: 'Türkiye’den Kanada’ya Nasıl Gidilir? 2026 Rehberi',
       description:
-        'Türkiye’den Kanada’ya ziyaret, eğitim, çalışma veya kalıcı oturum yoluyla nasıl gidilebileceğini karşılaştırın; koşulları, bütçeyi ve sonraki adımları öğrenin.',
-      alternates: { canonical },
-      robots: { index: true, follow: true },
-      openGraph: {
-        type: 'article',
-        url: canonical,
-        title: 'Türkiye’den Kanada’ya Nasıl Gidilir? Başlangıç Rehberi',
-        description:
-          'Kanada’ya gelmenin başlıca yollarını, temel koşullarını ve hangi seçeneği neden araştırmanız gerektiğini anlaşılır Türkçe ile inceleyin.',
-        siteName: 'KanadaVizesi.ca',
-      },
-      twitter: {
-        card: 'summary',
-        title: 'Türkiye’den Kanada’ya Nasıl Gidilir? Başlangıç Rehberi',
-        description:
-          'Kanada’ya gelmenin başlıca yollarını, temel koşullarını ve hangi seçeneği neden araştırmanız gerektiğini anlaşılır Türkçe ile inceleyin.',
-      },
-    };
-  return {
-    title: `${article.title} | KanadaVizesi.ca`,
+        'Türkiye’den Kanada’ya ziyaret, eğitim, çalışma veya kalıcı oturum yollarını karşılaştırın; koşulları, bütçeyi ve sonraki adımları öğrenin.',
+      article: true,
+      modified: TURKIYE_KANADA_GUIDE_DATES.modified,
+      published: TURKIYE_KANADA_GUIDE_DATES.published,
+    });
+  return pageMetadata({
+    path: article.path,
+    title: article.title,
     description: article.description,
-    alternates: { canonical },
-    openGraph: {
-      type: 'article',
-      url: canonical,
-      title: article.title,
-      description: article.description,
-      siteName: 'KanadaVizesi.ca',
-    },
-    twitter: {
-      card: 'summary',
-      title: article.title,
-      description: article.description,
-    },
-  };
+    index: article.contentStatus === 'complete',
+    article: article.contentStatus === 'complete',
+  });
 }
 export default async function ContentPage({ params }: Props) {
   const { slug } = await params;
