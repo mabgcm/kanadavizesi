@@ -1646,8 +1646,8 @@ input {
   column-gap: 48px;
   position: relative;
 }
-.visitor-page .guide-layout p,
-.visitor-page .guide-layout li {
+.visitor-page .guide-layout > article p,
+.visitor-page .guide-layout > article li {
   font-size: 17px;
   line-height: 1.7;
 }
@@ -1780,39 +1780,6 @@ input {
   color: #a51d2d;
   font-weight: 700;
   text-decoration: underline;
-}
-.visitor-mobile-toc {
-  display: none;
-}
-@media (max-width: 1100px) {
-  .visitor-page .guide-layout {
-    display: flex;
-    flex-direction: column;
-  }
-  .visitor-page .guide-layout > article {
-    order: 2;
-    width: 100%;
-  }
-  .visitor-desktop-toc {
-    display: none;
-  }
-  .visitor-mobile-toc {
-    display: block;
-    order: 1;
-    width: 100%;
-    border: 1px solid #d8dfe5;
-    padding: 16px;
-  }
-  .visitor-mobile-toc button {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    font-weight: 600;
-    text-align: left;
-  }
-  .visitor-mobile-toc ol {
-    padding: 12px 0 0 24px;
-  }
 }
 @media (max-width: 767px) {
   .visitor-facts {

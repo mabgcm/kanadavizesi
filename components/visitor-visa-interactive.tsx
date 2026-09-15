@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import { GuideFaq } from './guide-faq';
+import { GuideMobileToc } from './guide-mobile-toc';
 
 export function VisitorFaq({
   items,
@@ -91,7 +92,6 @@ export function VisitorToc({
   items: { id: string; title: string }[];
 }) {
   const [active, setActive] = useState('');
-  const [open, setOpen] = useState(false);
   useEffect(() => {
     function update() {
       let current = items[0]?.id || '';
@@ -112,7 +112,6 @@ export function VisitorToc({
           <a
             href={`#${item.id}`}
             aria-current={active === item.id ? 'location' : undefined}
-            onClick={() => setOpen(false)}
           >
             {item.title}
           </a>
@@ -122,22 +121,11 @@ export function VisitorToc({
   );
   return (
     <>
-      <aside className="guide-toc visitor-desktop-toc">
+      <aside className="guide-toc">
         <h2>Bu rehberde</h2>
         {links}
       </aside>
-      <nav className="visitor-mobile-toc" aria-label="Bu rehberde">
-        <button
-          aria-expanded={open}
-          aria-controls="visitor-toc-list"
-          onClick={() => setOpen(!open)}
-        >
-          Bu rehberde <span aria-hidden="true">{open ? '−' : '+'}</span>
-        </button>
-        <div id="visitor-toc-list" hidden={!open}>
-          {links}
-        </div>
-      </nav>
+      <GuideMobileToc items={items.map(({ id, title }) => [id, title] as const)} />
     </>
   );
 }
