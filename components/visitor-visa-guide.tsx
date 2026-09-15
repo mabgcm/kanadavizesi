@@ -289,7 +289,7 @@ export function VisitorVisaGuide() {
         publisher,
         image: SOCIAL_IMAGE.url,
         isAccessibleForFree: true,
-        publishingPrinciples: 'https://kanadavizesi.ca/kaynak-politikasi',
+        publishingPrinciples: `${SITE_URL}/kaynak-politikasi`,
       },
       {
         '@type': 'BreadcrumbList',

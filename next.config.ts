@@ -2,16 +2,8 @@ import type { NextConfig } from 'next';
 import { withBotId } from 'botid/next/config';
 
 const nextConfig: NextConfig = {
-  async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.kanadavizesi.ca' }],
-        destination: 'https://kanadavizesi.ca/:path*',
-        permanent: true,
-      },
-    ];
-  },
+  // Vercel Domains owns apex -> www redirects. Do not add the reverse
+  // redirect here: it creates a production-only redirect loop.
   async headers() {
     return [
       {

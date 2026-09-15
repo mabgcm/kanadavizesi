@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Check, CircleAlert } from 'lucide-react';
 import { GuideFaq, type GuideFaqItem } from './guide-faq';
 import { GuideMobileToc } from './guide-mobile-toc';
-import { TURKIYE_KANADA_GUIDE_DATES } from '@/lib/content';
+import { SITE_URL, TURKIYE_KANADA_GUIDE_DATES } from '@/lib/content';
 
 const paths = [
   [
@@ -178,13 +178,12 @@ export function TurkiyeKanadaGuide() {
           'Türkiye’den Kanada’ya ziyaret, eğitim, çalışma veya kalıcı oturum yoluyla nasıl gidilebileceğini karşılaştırın; koşulları, bütçeyi ve sonraki adımları öğrenin.',
         datePublished: TURKIYE_KANADA_GUIDE_DATES.published,
         dateModified: TURKIYE_KANADA_GUIDE_DATES.modified,
-        mainEntityOfPage:
-          'https://kanadavizesi.ca/rehberler/turkiyeden-kanadaya-nasil-gidilir',
+        mainEntityOfPage: `${SITE_URL}/rehberler/turkiyeden-kanadaya-nasil-gidilir`,
         author: publisher,
         publisher,
         image: SOCIAL_IMAGE.url,
         isAccessibleForFree: true,
-        publishingPrinciples: 'https://kanadavizesi.ca/kaynak-politikasi',
+        publishingPrinciples: `${SITE_URL}/kaynak-politikasi`,
       },
       {
         '@type': 'BreadcrumbList',
@@ -193,19 +192,19 @@ export function TurkiyeKanadaGuide() {
             '@type': 'ListItem',
             position: 1,
             name: 'Ana Sayfa',
-            item: 'https://kanadavizesi.ca/',
+            item: `${SITE_URL}/`,
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Rehberler',
-            item: 'https://kanadavizesi.ca/rehberler',
+            item: `${SITE_URL}/rehberler`,
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: 'Türkiye’den Kanada’ya Nasıl Gidilir?',
-            item: 'https://kanadavizesi.ca/rehberler/turkiyeden-kanadaya-nasil-gidilir',
+            item: `${SITE_URL}/rehberler/turkiyeden-kanadaya-nasil-gidilir`,
           },
         ],
       },

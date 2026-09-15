@@ -133,14 +133,18 @@ const redirect = await new Promise((resolve, reject) => {
   const url = new URL('/rehberler', base);
   const client = url.protocol === 'https:' ? https : http;
   client
-    .get(url, { headers: { Host: 'www.kanadavizesi.ca' } }, (response) => {
+    .get(url, { headers: { Host: new URL(SITE_URL).host } }, (response) => {
       response.resume();
       resolve(response);
     })
     .on('error', reject);
 });
-assert.equal(redirect.statusCode, 308);
-assert.equal(redirect.headers.location, `${SITE_URL}/rehberler`);
+assert.equal(
+  redirect.statusCode,
+  200,
+  'Canonical www host must serve content, never redirect back to apex',
+);
+assert.equal(redirect.headers.location, undefined);
 const api = await get('/api/on-degerlendirme');
 assert(api.headers.get('x-robots-tag')?.includes('noindex'));
 const image = await get('/og.png');
@@ -150,5 +154,5 @@ const png = Buffer.from(await image.arrayBuffer());
 assert.equal(png.readUInt32BE(16), 1200);
 assert.equal(png.readUInt32BE(20), 630);
 console.log(
-  `SEO PASS: ${urls.length} indexable URLs, ${articles.filter((a) => a.contentStatus === 'starter').length} noindex drafts; metadata, schema, internal links, query canonical, real 404, redirect, API and 1200×630 image.`,
+  `SEO PASS: ${urls.length} indexable URLs, ${articles.filter((a) => a.contentStatus === 'starter').length} noindex drafts; metadata, schema, internal links, query canonical, real 404, canonical host response, API and 1200×630 image.`,
 );

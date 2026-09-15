@@ -11,7 +11,7 @@
 - 127 rehber kaydının 2’si tamamlanmış, 125’i aynı şablondan oluşan başlangıç içeriğidir. Başlangıç sayfaları `noindex, follow` olur, site haritasından çıkar ve yayımlanmış Article olarak işaretlenmez. Tamamlanmış Türkiye rehberinin yanlış `starter` kaydı düzeltildi.
 - Sorgulu iç arama sayfaları (`/rehberler?q=...`) noindex olur ve `/rehberler` adresine canonical verir.
 - 13 indekslenebilir URL içeren XML site haritası. Tarihler her istekte yeniden üretilmez.
-- `www.kanadavizesi.ca` → `kanadavizesi.ca` kalıcı 308 yönlendirmesi; API yanıtlarında X-Robots-Tag.
+- Vercel Domains üzerinde `kanadavizesi.ca` → `www.kanadavizesi.ca` yönlendirmesi; uygulama ters yönlendirme yapmaz; API yanıtlarında X-Robots-Tag.
 - Gerçek 404 yanıtı ve yol gösteren Türkçe hata sayfası.
 - Hakkımızda/iletişim sayfası, kaynak politikası bağlantıları; doğrulanmamış RCIC incelemesi yer tutucusu kaldırıldı.
 - Google ve Bing doğrulama kodları için isteğe bağlı ortam değişkenleri.
@@ -22,8 +22,8 @@ Kod değişiklikleri tek başına arama motorlarına yayın veya kayıt işlemi 
 
 1. Değişiklikleri üretime dağıtın. Önizleme ortamının platform düzeyindeki indeksleme korumasını açık tutun; üretimde yanlışlıkla `X-Robots-Tag: noindex`, şifre veya bot challenge bulunmadığını kontrol edin.
 2. Google Search Console’da alan adı mülkünü DNS ile doğrulayın. URL-prefix doğrulaması kullanılacaksa `GOOGLE_SITE_VERIFICATION` değerine verilen ham kodu girip yeniden derleyin. Bing Webmaster Tools için `BING_SITE_VERIFICATION` desteklenir.
-3. Her iki platforma `https://kanadavizesi.ca/sitemap.xml` gönderin. Google URL Denetimi ile ana sayfa, ziyaretçi vizesi ve Türkiye’den Kanada’ya gitme rehberi için canlı URL testi yapın.
-4. DNS, TLS ve hosting ayarlarında apex ve www alan adlarını bağlayın; HTTP → HTTPS yönlendirmesini doğrulayın. Uygulama kuralı, www hostu sunucuya ulaşırsa çalışır; DNS/TLS yerine geçmez.
+3. Her iki platforma `https://www.kanadavizesi.ca/sitemap.xml` gönderin. Google URL Denetimi ile ana sayfa, ziyaretçi vizesi ve Türkiye’den Kanada’ya gitme rehberi için canlı URL testi yapın.
+4. DNS, TLS ve hosting ayarlarında apex ve www alan adlarını bağlayın; HTTP → HTTPS yönlendirmesini doğrulayın. Alan adı yönlendirmesini yalnızca Vercel Domains yönetsin. Canonical, sitemap ve yapılandırılmış veriler www adresini kullanır.
 5. WAF/CDN erişim kayıtlarında doğrulanmış Googlebot/Bingbot/OAI-SearchBot isteklerine 200 verildiğini kontrol edin. Bir user-agent adına güvenerek güvenlik korumasını kapatmayın; sağlayıcıların yayımladığı IP doğrulamasını kullanın.
 6. Search Console performansını Türkiye ülkesi ve mobil cihaz filtresiyle izleyin. İndeks kapsamı, sorgu gösterimi/tıklaması, açılış sayfası ve dönüşümleri başlangıç ölçümüyle karşılaştırın. GA4’te ChatGPT yönlendirmelerini ayrı inceleyin. Sayfa deneyimini saha verisiyle ölçün; bu çalışma bir Core Web Vitals saha puanı iddiası içermez.
 7. Başlangıç sayfalarından gelen mevcut organik trafik varsa bu trafik noindex nedeniyle azalabilir. Bu bilinçli kalite düzenlemesini Search Console’da takip edin; şablonları hemen yeniden indekse açmayın.
@@ -60,10 +60,10 @@ node node_modules/next/dist/bin/next start -p 3100
 # Ayrı terminalde:
 node --experimental-strip-types scripts/check-seo.mjs
 # Farklı sunucu için:
-SEO_BASE_URL=https://kanadavizesi.ca node --experimental-strip-types scripts/check-seo.mjs
+SEO_BASE_URL=https://www.kanadavizesi.ca node --experimental-strip-types scripts/check-seo.mjs
 ```
 
-Denetim: 13 sitemap URL’sinin 200 yanıtı, tek H1, benzersiz title/description, canonical, robotlar, sosyal etiketler, JSON-LD; 125 taslağın noindex durumu; iç bağlantılar; sorgu canonical; gerçek 404; www yönlendirmesi; API noindex ve PNG boyutu. Üretimdeki yönlendirme/CDN yapısı yerelden farklıysa ilgili assertion ayrıca değerlendirilmelidir.
+Denetim: 13 sitemap URL’sinin 200 yanıtı, tek H1, benzersiz title/description, canonical, robotlar, sosyal etiketler, JSON-LD; 125 taslağın noindex durumu; iç bağlantılar; sorgu canonical; gerçek 404; www adresinin yönlendirmesiz yanıtı; API noindex ve PNG boyutu. Üretimdeki yönlendirme/CDN yapısı yerelden farklıysa ilgili assertion ayrıca değerlendirilmelidir.
 
 Doğrulama sonucu: Webpack üretim derlemesi ve TypeScript başarılı; değiştirilen dosyalarda Oxlint başarılı; HTTP SEO denetimi başarılı. Masaüstü ve 390×844 mobil görünüm ile Türkçe rehber araması tarayıcıda doğrulandı. Projenin tamamında mevcut `components/ui/*`, `hooks/use-mobile.ts` ve PostCSS dosyalarında kapsam dışı lint uyarı/hataları var. Turbopack bu makinede CSS alt işlemi için port açarken EPERM veriyor; derleyici tercihi proje genelinde değiştirilmedi.
 
@@ -72,3 +72,9 @@ Doğrulama sonucu: Webpack üretim derlemesi ve TypeScript başarılı; değişt
 - Google AI arama rehberi: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
 - Google uluslararası siteler: https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites
 - OpenAI tarayıcıları: https://developers.openai.com/api/docs/bots
+
+## SEO2 yönlendirme döngüsü düzeltmesi (15 Eylül 2026)
+
+Canlı HTTP yanıtları Vercel’in apex adresini www adresine 308 ile yönlendirdiğini, SEO2 uygulama kuralının ise www adresini apex adresine geri döndürdüğünü gösterdi. Ters uygulama kuralı kaldırıldı. Tek canonical kaynak www oldu; Article/BreadcrumbList içindeki sabit adresler de SITE_URL üzerinden üretiliyor.
+
+Yerel SEO testi artık canonical hostun 200 yanıtını zorunlu tutuyor. Üretim dağıtımından sonra `node scripts/check-domains.mjs` iki alan adının yönlendirme zincirini sınırlandırarak döngü ve yanlış son adres kontrolü yapar. Tek başına yerel test hosting katmanındaki yönlendirmeleri kanıtlamaz.

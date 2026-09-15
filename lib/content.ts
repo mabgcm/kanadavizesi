@@ -529,7 +529,7 @@ export const contentClusters = clusters.map((c) => ({
   pillar: `/${c.prefix}/${c.pillar[0]}`,
   articles: articles.filter((a) => a.category === c.category),
 }));
-export const SITE_URL = 'https://kanadavizesi.ca';
+export const SITE_URL = 'https://www.kanadavizesi.ca';
 export const TURKIYE_KANADA_GUIDE_DATES = {
   published: '2026-09-13',
   modified: '2026-09-13',
