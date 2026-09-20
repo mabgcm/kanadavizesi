@@ -1,3 +1,4 @@
+import { arrivalPath, arrivalDates } from '@/lib/arrival';
 import { visitorVisaPath, visitorVisaFacts } from '@/lib/visitor-visa';
 import type { MetadataRoute } from 'next';
 import { articles, SITE_URL, TURKIYE_KANADA_GUIDE_DATES } from '@/lib/content';
@@ -44,6 +45,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(visitorVisaFacts.reviewedAt),
       priority: 0.8,
     },
+    {
+      url: `${SITE_URL}/kanadada-yasam`,
+      lastModified: new Date(arrivalDates.modified),
+      priority: 0.8,
+    },
     ...articles
       .filter((a) => a.contentStatus === 'complete')
       .map((a) => ({
@@ -53,7 +59,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
             ? TURKIYE_KANADA_GUIDE_DATES.modified
             : a.path === visitorVisaPath
               ? visitorVisaFacts.reviewedAt
-              : '2026-09-11',
+              : a.path === arrivalPath
+                ? arrivalDates.modified
+                : '2026-09-11',
         ),
         changeFrequency: 'monthly' as const,
         priority: a.isPillar ? 0.9 : 0.7,

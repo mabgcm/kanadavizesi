@@ -1,3 +1,5 @@
+import { ArrivalGuide } from '@/components/arrival-guide';
+import { arrivalPath, arrivalDates, arrivalDescription } from '@/lib/arrival';
 import { VisitorVisaGuide } from '@/components/visitor-visa-guide';
 import {
   visitorVisaPath,
@@ -23,6 +25,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = articleMap.get(`/${slug.join('/')}`);
   if (!article) return {};
+  if (article.path === arrivalPath) {
+    const base = pageMetadata({
+      path: arrivalPath,
+      title: 'Kanada’da İlk 90 Gün: Yeni Gelenler İçin Rehber',
+      description: arrivalDescription,
+      article: true,
+      published: arrivalDates.published,
+      modified: arrivalDates.modified,
+    });
+    return {
+      ...base,
+      openGraph: {
+        ...base.openGraph,
+        title: 'Kanada’da İlk 90 Gün: Yapılacaklar Listesi',
+        description:
+          'İlk 48 saatten 90. güne kadar Kanada’da hayat kurarken tamamlamanız gereken işlemler ve resmî kaynaklar.',
+      },
+    };
+  }
   if (article.path === visitorVisaPath)
     return pageMetadata({
       path: article.path,
@@ -53,6 +74,7 @@ export default async function ContentPage({ params }: Props) {
   const { slug } = await params;
   const article = articleMap.get(`/${slug.join('/')}`);
   if (!article) notFound();
+  if (article.path === arrivalPath) return <ArrivalGuide />;
   if (article.path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir')
     return <TurkiyeKanadaGuide />;
   if (article.path === visitorVisaPath) return <VisitorVisaGuide />;

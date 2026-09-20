@@ -1,0 +1,827 @@
+{
+  "sections": [
+    {
+      "id": "hazirlik",
+      "title": "Kanada’ya gelmeden önce hazırlayacağınız dosya",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "İlk 90 günü kolaylaştırmanın en iyi yolu, önemli belgeleri Kanada’ya gelmeden düzenlemektir. Belgelerin aslını el bagajınızda taşıyın; yalnızca bulut hesabında veya kayıtlı bagajda bırakmayın. Şifreli dijital kopyalarını da güvenli bir yerde saklayın."
+        },
+        {
+          "type": "heading",
+          "text": "Yanınızda bulunması yararlı belgeler"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Pasaport ve geçerli vize veya eTA",
+            "Confirmation of Permanent Residence (COPR), çalışma izni ya da study permit onay belgeleri",
+            "Kanada adresi ve sınırda sunmanız gereken diğer belgeler",
+            "Doğum ve evlilik belgeleri",
+            "Çocukların doğum, velayet, okul ve aşı kayıtları",
+            "Diploma, transkript ve mesleki sertifikalar",
+            "İşveren referansları ve çalışma kayıtları",
+            "Güncel reçeteler, sağlık özetleri ve düzenli kullanılan ilaç bilgileri",
+            "Türkiye ehliyeti, sürüş geçmişi ve varsa International Driving Permit",
+            "Finansal erişim bilgileri ve ilk haftalar için kullanılabilir ödeme yöntemi"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Belgelerde adınızın farklı yazımları varsa bunu gösteren resmî bağlantı belgelerini de bulundurun. Pasaport, izin ve uçuş belgelerinizin fotoğrafını açık e-posta eklerinde taşımak yerine güvenli depolama kullanın."
+        },
+        {
+          "type": "internal",
+          "text": "Kanada’ya taşınmadan önce hazırlık listesi",
+          "href": "/kanadada-yasam/kanadaya-tasinma-listesi"
+        }
+      ]
+    },
+    {
+      "id": "ilk-48-saat",
+      "title": "İlk 48 saat: Önce güvenlik, belgeler ve iletişim",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "İlk iki günün amacı bütün hayatınızı kurmak değil; yanlış belge veya iletişim eksikliği nedeniyle sonraki işlemlerin aksamasını önlemektir."
+        },
+        {
+          "type": "heading",
+          "text": "Giriş belgelerinizi kontrol edin"
+        },
+        {
+          "type": "paragraph",
+          "text": "Sınırda verilen work permit veya study permit üzerindeki şu alanlara bakın:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Ad ve soyad yazımı",
+            "Pasaport numarası",
+            "İzin türü",
+            "İşveren, okul veya çalışma koşulları",
+            "İznin sona erme tarihi",
+            "Çalışma hakkına ilişkin ifadeler"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Bir hata görürseniz belgeyi aldıktan hemen sonra görevliye bildirmek en kolay yoldur. Sonradan fark ederseniz IRCC’nin güncel belge düzeltme prosedürünü izleyin."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Daimi oturum sahipleri:** COPR bilgilerinizin doğruluğunu kontrol edin. PR kartının gönderilebilmesi için Kanada adresinizi IRCC’ye verin veya adresiniz henüz belli değilse sonradan bildirin. Kanada adresi varıştan sonraki 180 gün içinde bildirilmezse ilk PR kartı için ayrıca başvuru ve ücret gerekebilir. IRCC fotoğraf veya ek bilgi isterse hesabınızdaki talimatı izleyin."
+        },
+        {
+          "type": "internal",
+          "text": "PR kartı ve Kanada adresi bildirme",
+          "href": "/kanadada-yasam/pr-karti-adres-bildirimi"
+        },
+        {
+          "type": "heading",
+          "text": "Geçici adresinizi ve acil planınızı netleştirin"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kalacağınız yerin tam adresini, binaya giriş yöntemini ve yerel ulaşımı kaydedin. Ailenize ulaştığınızı bildirin. Telefonunuz çalışmıyorsa havaalanı Wi‑Fi’sine bağımlı kalmadan kullanılabilecek geçici eSIM veya ön ödemeli hat seçeneğini değerlendirin."
+        },
+        {
+          "type": "paragraph",
+          "text": "Kanada’da polis, itfaiye veya ambulans gerektiren acil durumlarda genel numara **911**’dir. Acil olmayan sağlık ve belediye hizmetleri eyalet ve şehre göre farklı numaralar kullanabilir."
+        },
+        {
+          "type": "heading",
+          "text": "Belgeleri paylaşırken dikkatli olun"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pasaport, COPR, permit, SIN ve banka belgeleriniz kimlik hırsızlığında kullanılabilir. Ev ilanı, telefon satıcısı veya iş teklifi bahanesiyle bu belgeleri isteyen kişinin kimliğini ve neden istediğini doğrulayın."
+        },
+        {
+          "type": "warning",
+          "text": "**Dolandırıcılık uyarısı:** Devlet görevlisi olduğunu söyleyerek telefonda hemen ödeme isteyen, hediye kartı veya para transferi talep eden ve ödemezseniz sınır dışı edileceğinizi söyleyen kişiler dolandırıcı olabilir. IRCC bu yöntemlerle tehdit ederek para istemez."
+        }
+      ]
+    },
+    {
+      "id": "ilk-2-hafta",
+      "title": "İlk 2 hafta: Temel kayıtları tamamlayın",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Bu dönemde yapılacak işlemlerin sırası statünüze ve bulunduğunuz eyalete göre değişir. Bir işlem için uygun olmadığınız halde başvuru yapmak yerine resmî uygunluk sayfasını kontrol edin."
+        },
+        {
+          "type": "heading",
+          "text": "SIN başvurusu yapın"
+        },
+        {
+          "type": "paragraph",
+          "text": "Social Insurance Number (SIN), Kanada’da yasal olarak çalışmak ve belirli devlet programlarına erişmek için kullanılan dokuz haneli, kişisel ve gizli numaradır. SIN başvurusu ücretsizdir ve Service Canada üzerinden online, posta yoluyla veya uygun bir hizmet merkezinde yapılabilir."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Kimler başvurmalı?**"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Daimi oturum sahipleri",
+            "Çalışma izni sahipleri",
+            "Study permit üzerinde çalışma yetkisini gösteren koşul bulunan uygun öğrenciler",
+            "Başka bir belgeyle açıkça çalışma yetkisi verilen kişiler"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ziyaretçi statüsü tek başına çalışma hakkı veya SIN alma hakkı vermez. Geçici statü sahiplerinin SIN’i genellikle 9 ile başlar ve göçmenlik belgesinin sona erme tarihiyle bağlantılıdır; yeni izin alındığında SIN kaydı güncellenmelidir."
+        },
+        {
+          "type": "paragraph",
+          "text": "SIN’inizi:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "İşe başladıktan sonra işvereninize,",
+            "Gelir bildirimi yapan finans kurumlarına,",
+            "Yetkili devlet programlarına"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "gerektiğinde verin. Ev sahibi, telefon mağazası veya iş başvurusu aşamasındaki sıradan bir kişi SIN’inizi isterse neden gerektiğini sorun. Kartınızın veya numaranızın fotoğrafını açık mesajla göndermeyin."
+        },
+        {
+          "type": "official",
+          "text": "Service Canada üzerinden SIN başvurusu",
+          "href": "https://www.canada.ca/en/employment-social-development/services/sin/apply.html"
+        },
+        {
+          "type": "internal",
+          "text": "Kanada’da SIN alma ve koruma rehberi",
+          "href": "/kanadada-yasam/sin-numarasi"
+        },
+        {
+          "type": "heading",
+          "text": "Banka hesabı açın"
+        },
+        {
+          "type": "paragraph",
+          "text": "Günlük ödemeler, maaş, kira ve faturalar için bir chequing account; birikimler için savings account kullanılabilir. Kanada vatandaşı olmamanız veya henüz işinizin bulunmaması tek başına banka hesabı açmanıza engel değildir. Banka kimliğinizi uygun belgelerle doğrulamak zorundadır."
+        },
+        {
+          "type": "paragraph",
+          "text": "Hesap seçerken yalnız “newcomer” kampanyasına bakmayın. Şunları karşılaştırın:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Aylık hesap ücreti ve ücret muafiyeti koşulları",
+            "Dahil olan işlem sayısı",
+            "ATM ağı ve başka banka ATM ücreti",
+            "Interac e‑Transfer limitleri ve ücretleri",
+            "Uluslararası transfer maliyeti ve döviz kuru farkı",
+            "Minimum bakiye şartı",
+            "Kampanyanın ne zaman biteceği",
+            "Kredi kartı yıllık ücreti ve teminat gerekip gerekmediği"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Orijinal kimlik belgelerinizi götürün ve imzaladığınız hesap sözleşmesinin kopyasını saklayın. SIN gerekliliği ürün ve vergi bildirimi koşullarına göre değişebilir; bankadan hangi belgenin neden istendiğini sorun."
+        },
+        {
+          "type": "internal",
+          "text": "Yeni gelenler için Kanada banka hesabı rehberi",
+          "href": "/kanadada-yasam/banka-hesabi-acmak"
+        },
+        {
+          "type": "heading",
+          "text": "Telefon hattınızı kurun"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hat seçerken yalnız aylık fiyata değil; aktivasyon ücreti, veri limiti, Kanada içi arama, uluslararası kullanım, cihaz finansmanı, sözleşme süresi ve iptal koşullarına bakın. Kredi geçmişiniz yoksa depozito, kredi kontrolü veya ön ödemeli plan önerilebilir."
+        },
+        {
+          "type": "paragraph",
+          "text": "Telefon numaranız iş başvurularında ve iki aşamalı doğrulamada kullanılacağından uzun süre kullanabileceğiniz bir numara seçin. Banka ve devlet hesaplarınız açıldıktan sonra numara değiştirirseniz güvenlik bilgilerini güncelleyin."
+        },
+        {
+          "type": "heading",
+          "text": "Eyalet sağlık sigortasına uygunluğunuzu kontrol edin"
+        },
+        {
+          "type": "paragraph",
+          "text": "Sağlık hizmetleri eyalet ve bölgeler tarafından yönetilir. Uygunluk; bulunduğunuz yer, göçmenlik statünüz, permit süreniz ve ikamet koşullarınıza göre değişebilir. Daimi oturum sahibi olmak başvuru hakkı sağlayabilir; çalışma izni ve öğrenci statüsündeki kişiler için ek şartlar olabilir. Ziyaretçiler genel olarak kamu sağlık sigortasına güvenmemelidir."
+        },
+        {
+          "type": "paragraph",
+          "text": "Uygunsanız sağlık kartına mümkün olduğunca erken başvurun. Bazı eyaletlerde kapsam hemen başlamayabilir ve üç aya kadar bekleme süresi bulunabilir. Başlangıç tarihi ve kapsam netleşene kadar özel sağlık sigortasını değerlendirin."
+        },
+        {
+          "type": "paragraph",
+          "text": "Kamu planları çoğunlukla her hizmeti karşılamaz. Reçeteli ilaçlar, diş, gözlük ve bazı yardımcı sağlık hizmetleri için özel veya işveren planı gerekebilir."
+        },
+        {
+          "type": "official",
+          "text": "Eyalet ve bölge sağlık planlarını bulun",
+          "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/health-care/universal-system.html"
+        },
+        {
+          "type": "internal",
+          "text": "Kanada sağlık sistemi ve sağlık kartı",
+          "href": "/kanadada-yasam/saglik-sistemi"
+        },
+        {
+          "type": "heading",
+          "text": "Ücretsiz newcomer hizmetlerini bulun"
+        },
+        {
+          "type": "paragraph",
+          "text": "Uygun yeni gelenler; yerleşim kuruluşlarından dil değerlendirmesi, iş arama, CV, mentorluk, okul kaydı ve günlük yaşam konularında ücretsiz yardım alabilir. Hizmet uygunluğu göçmenlik statüsüne ve programa göre değişir; bütün geçici sakinlerin her IRCC tarafından finanse edilen hizmete uygun olduğunu varsaymayın."
+        },
+        {
+          "type": "official",
+          "text": "Yakınınızdaki ücretsiz newcomer hizmetlerini bulun",
+          "href": "https://ircc.canada.ca/english/newcomers/services/index.asp"
+        }
+      ]
+    },
+    {
+      "id": "ilk-30-gun",
+      "title": "15–30. günler: Kalıcı günlük düzeninizi kurun",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "İlk resmi işlemler başladıktan sonra odağınızı konut, ulaşım, çocukların eğitimi ve düzenli bütçeye çevirin."
+        },
+        {
+          "type": "heading",
+          "text": "Kalıcı konut arayın"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kiralık ev ararken toplam aylık maliyeti hesaplayın:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Kira",
+            "Elektrik, ısıtma, su ve internet",
+            "Kiracı sigortası",
+            "Otopark",
+            "Çamaşırhane",
+            "Toplu taşıma veya araç gideri",
+            "İşe ve okula ulaşım süresi"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Kira hukuku eyalet ve bölgeye göre değişir. Depozito, kira artışı, standart sözleşme, ev sahibinin eve giriş hakkı ve tahliye prosedürü konusunda yalnız başka bir eyaletten duyduğunuz kurala güvenmeyin."
+        },
+        {
+          "type": "paragraph",
+          "text": "Evi görmeden, ev sahibinin veya yetkili temsilcinin kimliğini doğrulamadan ve yazılı koşulları incelemeden para göndermeyin. Piyasanın belirgin altında fiyat, anahtar gönderme vaadi, yurtdışındaki “ev sahibi” ve acele depozito talebi dolandırıcılık işareti olabilir."
+        },
+        {
+          "type": "internal",
+          "text": "Kanada’da ev kiralama rehberi",
+          "href": "/kanadada-yasam/ev-kiralama"
+        },
+        {
+          "type": "internal",
+          "text": "Kanada şehirlerinde yaşam maliyetini karşılaştırın",
+          "href": "/kanadada-yasam/yasam-maliyeti"
+        },
+        {
+          "type": "heading",
+          "text": "Çocukları okula kaydedin"
+        },
+        {
+          "type": "paragraph",
+          "text": "İlk ve ortaöğretim kaydı genellikle yaşadığınız bölgedeki school board üzerinden yürütülür. İstenebilecek belgeler arasında:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Çocuğun doğum belgesi",
+            "Ebeveynlik, velayet veya guardianship kanıtı",
+            "Adres/ikamet kanıtı",
+            "Aşı kayıtları",
+            "Önceki okul ve karne/transkript belgeleri"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "bulunabilir. İlk kayıtta öğrencinin eğitim düzeyi ve İngilizce veya Fransızca desteği değerlendirilir. Belgeleri hazır bulundurun ancak yerel okul kurulunun güncel listesini esas alın."
+        },
+        {
+          "type": "internal",
+          "text": "Kanada’da çocukların okul kaydı",
+          "href": "/kanadada-yasam/cocuklari-okula-kaydetmek"
+        },
+        {
+          "type": "heading",
+          "text": "Ulaşım planınızı belirleyin"
+        },
+        {
+          "type": "paragraph",
+          "text": "İlk ay araç satın almak zorunda değilsiniz. Toplu taşıma kartı, işe gidiş saatleri, araç paylaşımı, bisiklet ve yürüme seçeneklerini şehir bazında karşılaştırın. Araç maliyetinde yalnız taksiti değil; sigorta, yakıt/şarj, park, bakım, kış lastiği ve kayıt ücretlerini düşünün."
+        },
+        {
+          "type": "heading",
+          "text": "Yabancı ehliyet kullanım süresini kontrol edin"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ehliyet kuralları eyalet veya bölgeye göre belirlenir. Geçerli yabancı ehliyetiniz kısa bir süre kullanılabilir; kesin süre ve değişim/sınav koşulları yaşadığınız eyalete göre değişir. Uluslararası Sürüş İzni ehliyetin çevirisine yardımcı olur, tek başına ehliyet değildir."
+        },
+        {
+          "type": "paragraph",
+          "text": "Sürüş geçmişiniz bazı eyaletlerde ehliyet aşaması veya sigorta değerlendirmesinde yararlı olabilir. Türkiye’den alınan belge için gerekli formatı yerel ulaşım kurumundan ve sigortacıdan doğrulayın."
+        },
+        {
+          "type": "warning",
+          "text": "**Güvenlik:** Kanada’da araç sigortası olmadan araç kullanmak yasaktır. Başkasının aracını düzenli kullanacaksanız poliçede sürücü olarak bildirmeniz gerekip gerekmediğini sigortacıya sorun."
+        },
+        {
+          "type": "internal",
+          "text": "Kanada ehliyeti ve araç kullanma kuralları",
+          "href": "/kanadada-yasam/kanada-ehliyeti"
+        }
+      ]
+    },
+    {
+      "id": "gun-31-60",
+      "title": "31–60. günler: İş ve mali düzeni ilerletin",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "İkinci ayın amacı yalnız herhangi bir işe başvurmak değil; yasal çalışma hakkınızı, mesleğinizin koşullarını ve sürdürülebilir bütçenizi netleştirmektir."
+        },
+        {
+          "type": "heading",
+          "text": "Kanada formatında CV ve LinkedIn hazırlayın"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kanada’daki CV’lerde genellikle fotoğraf, doğum tarihi, medeni durum ve gereksiz kişisel bilgiler kullanılmaz. İlanın istediği becerilere göre uyarlanan, ölçülebilir sonuçları gösteren ve okunması kolay bir CV hazırlayın."
+        },
+        {
+          "type": "paragraph",
+          "text": "İlk haftalarda:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Mesleğinizde kullanılan iş unvanlarını araştırın",
+            "10–15 hedef iş ilanındaki ortak anahtar becerileri çıkarın",
+            "Deneyiminizi sorumluluk yerine sonuçlarla anlatın",
+            "LinkedIn konumunuzu ve iletişim ayarlarınızı güncelleyin",
+            "Referans olabilecek eski yöneticilerinizle bağlantıyı koruyun",
+            "Genel CV göndermek yerine ilana göre küçük düzenlemeler yapın"
+          ]
+        },
+        {
+          "type": "internal",
+          "text": "Kanada formatında CV hazırlama",
+          "href": "/kanadada-calisma/kanada-cv"
+        },
+        {
+          "type": "internal",
+          "text": "Kanada’da LinkedIn ve networking",
+          "href": "/kanadada-calisma/linkedin-networking"
+        },
+        {
+          "type": "internal",
+          "text": "Türkiye’den Kanada’da iş bulmak",
+          "href": "/kanadada-calisma/turkiyeden-kanadada-is-bulmak"
+        },
+        {
+          "type": "heading",
+          "text": "Çalışma yetkinizi doğrulayın"
+        },
+        {
+          "type": "paragraph",
+          "text": "İşveren size teklif verse bile statünüz izin vermiyorsa çalışmaya başlayamazsınız. Work permit üzerindeki işveren, meslek, yer ve süre koşullarını okuyun. Uluslararası öğrenciler ayrıca eğitim programı, tam zamanlı statü, permit ifadesi ve haftalık çalışma sınırı gibi şartları korumalıdır."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ziyaretçi statüsü tek başına çalışma hakkı vermez. “Önce çalışmaya başlayın, izni sonra alırsınız” yaklaşımı statü ihlaline yol açabilir."
+        },
+        {
+          "type": "internal",
+          "text": "Kanada çalışma izni türleri ve koşulları",
+          "href": "/kanadada-calisma/calisma-izni"
+        },
+        {
+          "type": "heading",
+          "text": "Mesleğiniz regüle mi kontrol edin"
+        },
+        {
+          "type": "paragraph",
+          "text": "Doktorluk, hemşirelik, mühendislik ve bazı skilled trades gibi mesleklerde unvanı kullanmak veya çalışmak için eyalet düzenleyicisinden lisans ya da sertifika gerekebilir. Denklik, göçmenlik başvurusunda yapılan ECA ile aynı işlem değildir."
+        },
+        {
+          "type": "paragraph",
+          "text": "Resmî Foreign Credential Recognition aracından:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Mesleğin seçtiğiniz eyalette regüle olup olmadığını",
+            "Yetkili düzenleyici kurumu",
+            "Sınav, eğitim ve dil gerekliliklerini",
+            "Tahmini zaman ve masrafları"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "araştırın. Süreç uzun olabileceği için alternatif veya bağlantılı iş unvanlarını da planlayın."
+        },
+        {
+          "type": "internal",
+          "text": "Kanada’da diploma ve mesleki denklik",
+          "href": "/kanadada-calisma/mesleki-denklik"
+        },
+        {
+          "type": "heading",
+          "text": "İlk üç aylık bütçenizi gerçek verilerle güncelleyin"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kanada’ya gelmeden yaptığınız bütçe ile gerçek giderlerinizi karşılaştırın. Harcamaları şu gruplarda takip edin:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Konut ve faturalar",
+            "Market ve ev ihtiyaçları",
+            "Ulaşım",
+            "Telefon ve internet",
+            "Sağlık, ilaç ve sigorta",
+            "Çocuk ve eğitim giderleri",
+            "İş arama ve denklik masrafları",
+            "Borç ve para transferleri"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "En az bir aylık gerçek harcama gördükten sonra şehir veya konut kararınızı yeniden değerlendirin. Kredi kartı limitini gelir gibi görmeyin."
+        }
+      ]
+    },
+    {
+      "id": "gun-61-90",
+      "title": "61–90. günler: Sistemi kalıcı hale getirin",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Üçüncü ayda odak, ilk işlemleri tamamlamaktan düzenli ve takip edilebilir bir yaşam sistemi kurmaya geçer."
+        },
+        {
+          "type": "heading",
+          "text": "Kredi geçmişini dikkatli başlatın"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kanada kredi geçmişiniz yeni olduğu için yüksek limit veya çok sayıda karta ihtiyacınız yoktur. Basit başlangıç:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Size uygun düşük ücretli veya ücretsiz bir kart seçin",
+            "Harcamayı bütçeniz içinde tutun",
+            "Ekstre tarihini ve son ödeme tarihini ayırın",
+            "En az minimum yerine mümkünse dönem borcunun tamamını zamanında ödeyin",
+            "Kısa sürede çok sayıda kredi başvurusu yapmayın",
+            "Kredi raporunuzu ve hataları nasıl kontrol edeceğinizi öğrenin"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Kredi raporu ve puanı hakkında FCAC’nin resmî kredi bilgilerini inceleyin."
+        },
+        {
+          "type": "official",
+          "text": "Kredi raporu ve kredi puanı — FCAC",
+          "href": "https://www.canada.ca/en/financial-consumer-agency/services/credit-reports-score.html"
+        },
+        {
+          "type": "internal",
+          "text": "Kanada’da kredi geçmişi oluşturma",
+          "href": "/kanadada-yasam/kredi-skoru"
+        },
+        {
+          "type": "heading",
+          "text": "Vergi kayıtlarını ilk günden düzenleyin"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kanada’daki vergi yükümlülüğü yalnız göçmenlik statüsüne göre belirlenmez; vergi mukimliği ayrıca değerlendirilir. Birçok yeni gelen için vergi mukimliği Kanada’da yaşam bağlarının kurulduğu tarihte başlayabilir."
+        },
+        {
+          "type": "paragraph",
+          "text": "Şunları saklayın:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Kanada’ya giriş tarihi ve göçmenlik belgeleri",
+            "Kanada öncesi ve sonrası gelir kayıtları",
+            "Maaş bordroları ve vergi slips",
+            "Uygun olabilecek eğitim, sağlık, çocuk bakımı veya taşınma belgeleri",
+            "Yurtdışındaki varlık ve gelir kayıtları",
+            "Kira ve adres geçmişi"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Geliriniz olmasa bile yıllık vergi beyannamesi, vergi kayıtlarının ve uygun benefit/credit ödemelerinin devamı için önemli olabilir. İlk beyannamenin genel son tarihi çoğu kişi için takip eden yılın 30 Nisan’ıdır; self-employed kişiler ve Québec için farklı ayrıntılar olabilir."
+        },
+        {
+          "type": "paragraph",
+          "text": "Bazı yeni gelenler ilk vergi beyannamesinden önce belirli benefit veya credit ödemelerine başvurabilir. Ancak uygunluk statü, vergi mukimliği, aile durumu ve Kanada’da geçirilen süreye göre değişir. Geçici sakinler bütün yardımlara hemen uygun olmayabilir."
+        },
+        {
+          "type": "internal",
+          "text": "Kanada’ya yeni gelenler için vergi rehberi",
+          "href": "/kanadada-yasam/yeni-gelenler-vergi"
+        },
+        {
+          "type": "heading",
+          "text": "CRA ve diğer hesapları güvenli kurun"
+        },
+        {
+          "type": "paragraph",
+          "text": "Uygun olduğunuzda CRA hesabı ve direct deposit bilgilerini kurun. Adres, medeni durum, çocukların bakımı, banka ve göçmenlik belgesi değişikliklerini ilgili kurumlarda zamanında güncelleyin. Devlet hesaplarına gelen bağlantıları mesajlardan açmak yerine resmî alan adını kendiniz yazarak girin."
+        },
+        {
+          "type": "heading",
+          "text": "Dil ve sosyal çevre planı oluşturun"
+        },
+        {
+          "type": "paragraph",
+          "text": "İş bulmak kadar çevre kurmak da yerleşimin parçasıdır. Yerel kütüphane, community centre, meslek derneği, gönüllülük, spor ve newcomer kuruluşlarını araştırın. Ücretsiz veya uygun fiyatlı dil programlarının uygunluk koşullarını sorun."
+        },
+        {
+          "type": "paragraph",
+          "text": "Haftalık planınıza en az bir profesyonel bağlantı ve bir sosyal etkinlik eklemek, yalnızca online iş başvurusu yapmaktan daha sürdürülebilir bir başlangıç sağlayabilir."
+        },
+        {
+          "type": "heading",
+          "text": "90. gün değerlendirmesi yapın"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kendinize şu soruları sorun:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Göçmenlik belgelerimin ve SIN kaydımın tarihleri doğru mu?",
+            "Sağlık kapsamım başladı mı; kapsam dışı giderler için planım var mı?",
+            "Aylık gerçek yaşam maliyetim bütçeme uygun mu?",
+            "Konutum işe, okula ve ulaşıma göre sürdürülebilir mi?",
+            "İş arama planım ölçülebilir mi?",
+            "Regüle meslek sürecinde doğru kuruma ulaştım mı?",
+            "Çocukların okul ve sağlık düzeni kuruldu mu?",
+            "Vergi ve önemli belge kayıtlarım tek yerde mi?",
+            "Acil durum fonum ve aile iletişim planım var mı?",
+            "Yalnızlık, stres veya uyum zorluğu yaşıyorsam destek alabileceğim yeri biliyor muyum?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "statuye-gore",
+      "title": "Statünüze göre hangi işlemler farklılaşır?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "İşlemleri statünüze göre karşılaştırın. Üstteki filtreyi seçtiğinizde ilgili sütun vurgulanır; bütün açıklamalar görünür kalır."
+        },
+        {
+          "type": "table",
+          "rows": [
+            ["İşlem", "Daimi oturum", "Çalışma izni", "Öğrenci", "Ziyaretçi"],
+            [
+              "PR kartı adresi",
+              "Gerekli",
+              "Uygulanmaz",
+              "Uygulanmaz",
+              "Uygulanmaz"
+            ],
+            [
+              "SIN",
+              "Genellikle alınır",
+              "Çalışma yetkisine bağlı alınır",
+              "Permit üzerinde çalışma yetkisine bağlı",
+              "Genellikle uygun değil"
+            ],
+            [
+              "Kamu sağlık kartı",
+              "Eyalet şartlarına göre",
+              "Statü/permit ve eyalet şartlarına göre",
+              "Eyalet ve okul planına göre",
+              "Genellikle kamu kapsamı yok"
+            ],
+            [
+              "Çalışma",
+              "Çalışabilir",
+              "Permit koşulları içinde",
+              "Uygunluk ve saat sınırları içinde",
+              "Çalışamaz"
+            ],
+            [
+              "Settlement hizmetleri",
+              "Birçok programa uygun olabilir",
+              "Programa göre sınırlı olabilir",
+              "Programa göre sınırlı olabilir",
+              "Genellikle sınırlı"
+            ],
+            [
+              "Benefit/credit",
+              "Vergi ve program şartlarına göre",
+              "Statü ve Kanada’da süre şartlarına göre",
+              "Statü/vergi şartlarına göre",
+              "Genellikle sınırlı"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Bu tablo genel bilgilendirme içindir; kişisel hukuki uygunluk değerlendirmesi değildir."
+        }
+      ]
+    },
+    {
+      "id": "hatalar",
+      "title": "Yeni gelenlerin sık yaptığı hatalar",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Bütün işlemlerin federal olduğunu sanmak; sağlık, ehliyet, kira ve okul kurallarının eyalete göre değiştiğini gözden kaçırmak",
+            "PR kartını beklerken Kanada adresini IRCC’ye bildirmemek",
+            "Çalışma yetkisini kontrol etmeden işe başlamak",
+            "SIN’i gereksiz kişi ve işletmelerle paylaşmak",
+            "Evi doğrulamadan depozito göndermek",
+            "Banka kampanyasının bitiş koşullarını okumamak",
+            "Araç fiyatına bakıp sigorta ve park giderini hesaba katmamak",
+            "DLI, ECA ve mesleki lisans kavramlarını birbirine karıştırmak",
+            "Kanada’daki ilk işi mesleki hedefin sonu gibi görmek",
+            "Gelir yoksa vergi beyannamesi gereksiz sanmak",
+            "Çocuk yardımı veya başka benefitleri bütün statüler için otomatik kabul etmek",
+            "Devlet kurumu gibi arayıp hemen ödeme isteyen dolandırıcılara güvenmek",
+            "Bütün kararları ilk hafta vermeye çalışıp pahalı ve uzun sözleşmelere girmek"
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Kanada’ya gelir gelmez ilk olarak ne yapmalıyım?",
+      "answer": "Sınırda verilen göçmenlik belgelerindeki kişisel bilgiler, izin koşulları ve son kullanma tarihlerini kontrol edin. Güvenli adres ve iletişim erişimi kurduktan sonra statünüze uygunsa SIN, banka ve sağlık kartı işlemlerine başlayın."
+    },
+    {
+      "question": "SIN almak ücretli mi?",
+      "answer": "Hayır. Service Canada üzerinden SIN başvurusu ücretsizdir. Para karşılığında “hızlı SIN” vaat eden sitelere veya kişilere güvenmeyin."
+    },
+    {
+      "question": "SIN olmadan banka hesabı açabilir miyim?",
+      "answer": "Kanada vatandaşı olmayan ve işi bulunmayan kişiler de uygun kimlik belgeleriyle banka hesabı açabilir. SIN gerekliliği hesabın türüne ve faiz/vergi bildirimine göre değişebilir. Bankadan hangi belgenin neden istendiğini sorun."
+    },
+    {
+      "question": "Sağlık kartı gelene kadar ücretsiz sağlık hizmeti alabilir miyim?",
+      "answer": "Kapsam statünüze ve eyalete göre değişir. Acil sağlık hizmeti sunulsa bile sağlık kartınız veya uygun sigortanız yoksa ücret çıkabilir. Kamu kapsamının başlangıcını öğrenin ve gerekiyorsa bekleme dönemi için özel sigorta değerlendirin."
+    },
+    {
+      "question": "PR kartı olmadan çalışabilir miyim?",
+      "answer": "PR kartı temel olarak Kanada’ya ticari taşıtla geri dönüşte statünüzü kanıtlayan seyahat belgesidir. Çalışma için genellikle PR kartının gelmesini beklemek gerekmez; SIN ve işverenin istediği geçerli statü belgeleri önemlidir. Belgenizi işveren dışında gereksiz kişilerle paylaşmayın."
+    },
+    {
+      "question": "Ziyaretçi olarak SIN alıp çalışabilir miyim?",
+      "answer": "Hayır. Ziyaretçi statüsü tek başına çalışma hakkı vermez. Çalışmak için uygun yetki gerekir; SIN çalışma izninin yerine geçmez."
+    },
+    {
+      "question": "Türkiye ehliyeti Kanada’da ne kadar geçerli?",
+      "answer": "Tek bir Kanada geneli süre yoktur. Yabancı ehliyetin kullanım süresi ve Kanada ehliyetine geçiş kuralları yaşadığınız eyalet veya bölge tarafından belirlenir. Yerel ulaşım kurumunun güncel kuralını kontrol edin."
+    },
+    {
+      "question": "Çocuğumu okula kaydetmek için hangi belgeler gerekir?",
+      "answer": "Yerel school board genellikle doğum, velayet/guardianship, ikamet ve aşı kayıtlarını ister; önceki okul belgeleri de seviye belirlemeye yardımcı olabilir. Kesin listeyi yaşadığınız bölgenin okul kurulundan alın."
+    },
+    {
+      "question": "İlk yıl gelir elde etmediysem vergi beyannamesi vermeli miyim?",
+      "answer": "Vergi yükümlülüğü vergi mukimliğinize ve kişisel durumunuza bağlıdır. Geliriniz olmasa bile beyanname vermek uygun benefit ve credit hesaplamaları için önemli olabilir. CRA’nın newcomer rehberini kontrol edin veya yetkili vergi uzmanına danışın."
+    },
+    {
+      "question": "Newcomer hizmetleri herkes için ücretsiz mi?",
+      "answer": "Birçok hizmet ücretsizdir fakat uygunluk programa ve göçmenlik statüsüne göre değişir. IRCC’nin arama aracında kuruluşu bulduktan sonra hizmetin statünüze açık olup olmadığını doğrudan sorun."
+    }
+  ],
+  "checklist": [
+    {
+      "title": "İlk 48 saat",
+      "items": [
+        "Giriş belgelerimdeki bilgileri ve geçerlilik tarihlerini kontrol ettim",
+        "Güvenli geçici adresimi ve yerel ulaşımı netleştirdim",
+        "Telefon/veri erişimi sağladım",
+        "Önemli belgelerin güvenli yedeklerini oluşturdum",
+        "Acil durumda 911’i kullanacağımı biliyorum"
+      ]
+    },
+    {
+      "title": "İlk 2 hafta",
+      "items": [
+        "Statüme uygunsa SIN başvurusu yaptım",
+        "Banka hesabı seçeneklerini ücretleriyle karşılaştırdım",
+        "Sağlık kartı uygunluğumu ve başlangıç tarihini kontrol ettim",
+        "Gerekliyse geçici özel sağlık sigortası aldım",
+        "PR isem Kanada adresimi IRCC’ye bildirdim",
+        "Yakınımdaki newcomer hizmetlerini buldum"
+      ]
+    },
+    {
+      "title": "İlk 30 gün",
+      "items": [
+        "Kalıcı konut bütçemi bütün ek giderlerle hesapladım",
+        "Kira sözleşmesini eyalet kurallarına göre inceledim",
+        "Çocukların okul kayıtlarını tamamladım",
+        "Toplu taşıma veya araç maliyetini karşılaştırdım",
+        "Yabancı ehliyetimin kullanım süresini kontrol ettim"
+      ]
+    },
+    {
+      "title": "31–60. günler",
+      "items": [
+        "Kanada formatında CV ve LinkedIn profilimi hazırladım",
+        "Çalışma yetkimi ve permit koşullarımı doğruladım",
+        "Mesleğimin regüle olup olmadığını öğrendim",
+        "Gerçek aylık giderlerime göre bütçemi güncelledim",
+        "Profesyonel bağlantı planı oluşturdum"
+      ]
+    },
+    {
+      "title": "61–90. günler",
+      "items": [
+        "Kredi kullanım ve ödeme sistemimi kurdum",
+        "Vergi için gelir ve belge kayıtlarımı düzenledim",
+        "Uygun benefit/credit programlarını resmî kaynaktan kontrol ettim",
+        "Adres ve iletişim bilgilerimi gerekli kurumlarda güncelledim",
+        "İlk 90 gün sonuçlarını ve sonraki üç ay hedeflerimi değerlendirdim"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Kanada’ya geldikten sonra önemli işlemler — IRCC",
+      "href": "https://www.canada.ca/content/dam/ircc/documents/pdf/english/corporate/publications-manuals/welcome_to_canada_important_things_to_do_after_you_arrive_e.pdf"
+    },
+    {
+      "title": "Service Canada SIN başvurusu",
+      "href": "https://www.canada.ca/en/employment-social-development/services/sin/apply.html"
+    },
+    {
+      "title": "Kanada sağlık sistemi ve eyalet sağlık planları",
+      "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/health-care/universal-system.html"
+    },
+    {
+      "title": "Banka hesabı açma hakları — FCAC",
+      "href": "https://www.canada.ca/en/financial-consumer-agency/services/banking/opening-bank-account.html"
+    },
+    {
+      "title": "PR kartı için Kanada adresi bildirme",
+      "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/permanent-residents/canadian-address.html"
+    },
+    {
+      "title": "Ücretsiz newcomer hizmetleri",
+      "href": "https://ircc.canada.ca/english/newcomers/services/index.asp"
+    },
+    {
+      "title": "Kanada’da araç kullanma ve eyalet ehliyet bağlantıları",
+      "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/driving.html"
+    },
+    {
+      "title": "Çocukları okula kaydetme",
+      "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/education/enroll.html"
+    },
+    {
+      "title": "Yabancı mesleki yeterliliklerin tanınması",
+      "href": "https://www.canada.ca/en/employment-social-development/programs/foreign-credential-recognition.html"
+    },
+    {
+      "title": "Yeni gelenler için CRA vergi ve benefit rehberi",
+      "href": "https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/individuals-leaving-entering-canada-non-residents/newcomers-canada-immigrants.html"
+    },
+    {
+      "title": "Yeni gelenleri hedefleyen dolandırıcılıklar",
+      "href": "https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud/newcomers.html"
+    }
+  ]
+}
