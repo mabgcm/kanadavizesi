@@ -1,3 +1,12 @@
+export const studyPermit = {
+  path: '/kanadada-egitim/ogrenci-vizesi-ve-egitim-izni',
+  title: 'Kanada Öğrenci Vizesi ve Eğitim İzni: Başvuru Rehberi',
+  seoTitle: 'Kanada Öğrenci Vizesi ve Eğitim İzni: Şartlar ve Başvuru',
+  description:
+    'Kanada öğrenci vizesi ve eğitim izni farkını, okul kabulünü, PAL/TAL, mali yeterlilik, çalışma ve mezuniyet sonrası koşulları öğrenin.',
+  reviewedAt: '2026-09-21',
+} as const;
+
 export const arrivalPath = '/kanadada-yasam/kanadada-yasam-ve-ilk-90-gun';
 export const arrivalTitle =
   'Kanada’da İlk 90 Gün: Yeni Gelenler İçin Adım Adım Rehber';
@@ -495,11 +504,13 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
   return slugs.map((slug, i) => {
     const path = `/${cluster.prefix}/${slug}`;
     const title =
-      path === arrivalPath
-        ? arrivalTitle
-        : i === 0
-          ? cluster.pillar[1]
-          : titleize(slug);
+      path === studyPermit.path
+        ? studyPermit.title
+        : path === arrivalPath
+          ? arrivalTitle
+          : i === 0
+            ? cluster.pillar[1]
+            : titleize(slug);
     return {
       path,
       slug,
@@ -507,9 +518,11 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
       category: cluster.category,
       categorySlug: cluster.prefix,
       description:
-        path === arrivalPath
-          ? arrivalDescription
-          : `${title} hakkında güncel yaklaşımı, değerlendirme ölçütlerini, dikkat edilmesi gereken noktaları ve sonraki adımları öğrenin.`,
+        path === studyPermit.path
+          ? studyPermit.description
+          : path === arrivalPath
+            ? arrivalDescription
+            : `${title} hakkında güncel yaklaşımı, değerlendirme ölçütlerini, dikkat edilmesi gereken noktaları ve sonraki adımları öğrenin.`,
       intro: `${title} konusu, Kanada planı yapan kişilerin koşullarına ve hedeflerine göre farklı biçimde değerlendirilmelidir. Bu rehber; temel kavramları, yaygın yanlış anlamaları, hazırlanırken dikkat edilmesi gereken noktaları ve izlenebilecek sonraki adımları açık, dengeli ve genel bilgilendirme çerçevesinde ele alır.`,
       pillar,
       parent: i === 0 ? null : pillar,
@@ -529,6 +542,7 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
       ],
       isPillar: i === 0,
       contentStatus:
+        path === studyPermit.path ||
         path === arrivalPath ||
         path === '/kanada-vizesi/kanada-ziyaretci-vizesi' ||
         path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir'

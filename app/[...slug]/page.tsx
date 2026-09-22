@@ -1,3 +1,5 @@
+import { StudyPermitGuide } from '@/components/study-permit-guide';
+import { studyPermit } from '@/lib/study-permit';
 import { ArrivalGuide } from '@/components/arrival-guide';
 import { arrivalPath, arrivalDates, arrivalDescription } from '@/lib/arrival';
 import { VisitorVisaGuide } from '@/components/visitor-visa-guide';
@@ -25,6 +27,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = articleMap.get(`/${slug.join('/')}`);
   if (!article) return {};
+  if (article.path === studyPermit.path)
+    return pageMetadata({
+      path: studyPermit.path,
+      title: studyPermit.seoTitle,
+      description: studyPermit.description,
+      article: true,
+    });
   if (article.path === arrivalPath) {
     const base = pageMetadata({
       path: arrivalPath,
@@ -74,6 +83,7 @@ export default async function ContentPage({ params }: Props) {
   const { slug } = await params;
   const article = articleMap.get(`/${slug.join('/')}`);
   if (!article) notFound();
+  if (article.path === studyPermit.path) return <StudyPermitGuide />;
   if (article.path === arrivalPath) return <ArrivalGuide />;
   if (article.path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir')
     return <TurkiyeKanadaGuide />;
