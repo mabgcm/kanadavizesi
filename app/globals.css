@@ -1900,18 +1900,18 @@ input {
 .arrival-starting-plan .arrival-label { font-size: 14px; }
 
 /* Study permit article lists share the visitor guide's marker treatment. */
-.study-permit-page .guide-layout > article :is(ul, ol) {
+:is(.study-permit-page, .work-permit-page) .guide-layout > article :is(ul, ol) {
   margin-block: 18px 24px;
   padding-inline-start: 26px;
   list-style-position: outside;
 }
-.study-permit-page .guide-layout > article ul { list-style-type: disc; }
-.study-permit-page .guide-layout > article ol { list-style-type: decimal; }
-.study-permit-page .guide-layout > article :is(ul, ol) > li {
+:is(.study-permit-page, .work-permit-page) .guide-layout > article ul { list-style-type: disc; }
+:is(.study-permit-page, .work-permit-page) .guide-layout > article ol { list-style-type: decimal; }
+:is(.study-permit-page, .work-permit-page) .guide-layout > article :is(ul, ol) > li {
   padding-inline-start: 6px;
   margin-bottom: 10px;
 }
-.study-permit-page .guide-layout > article li::marker {
+:is(.study-permit-page, .work-permit-page) .guide-layout > article li::marker {
   color: var(--red);
   font-weight: 700;
 }

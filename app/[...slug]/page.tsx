@@ -1,3 +1,5 @@
+import { WorkPermitGuide } from '@/components/work-permit-guide';
+import { workPermit } from '@/lib/content';
 import { StudyPermitGuide } from '@/components/study-permit-guide';
 import { studyPermit } from '@/lib/study-permit';
 import { ArrivalGuide } from '@/components/arrival-guide';
@@ -27,6 +29,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = articleMap.get(`/${slug.join('/')}`);
   if (!article) return {};
+  if (article.path === workPermit.path)
+    return pageMetadata({
+      path: workPermit.path,
+      title: workPermit.title,
+      description: workPermit.description,
+      article: true,
+      modified: workPermit.reviewedAt,
+    });
   if (article.path === studyPermit.path)
     return pageMetadata({
       path: studyPermit.path,
@@ -83,6 +93,7 @@ export default async function ContentPage({ params }: Props) {
   const { slug } = await params;
   const article = articleMap.get(`/${slug.join('/')}`);
   if (!article) notFound();
+  if (article.path === workPermit.path) return <WorkPermitGuide />;
   if (article.path === studyPermit.path) return <StudyPermitGuide />;
   if (article.path === arrivalPath) return <ArrivalGuide />;
   if (article.path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir')

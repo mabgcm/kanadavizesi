@@ -1,3 +1,11 @@
+export const workPermit = {
+  path: '/kanadada-calisma/kanada-calisma-izni',
+  title: 'Kanada Çalışma İzni: Türler, Şartlar ve Başvuru',
+  description:
+    'Kanada çalışma izni türlerini, LMIA ve açık izin farkını, gerekli belgeleri, Türkiye’den başvuru ve işveren değişikliği adımlarını öğrenin.',
+  reviewedAt: '2026-09-22',
+} as const;
+
 export const studyPermit = {
   path: '/kanadada-egitim/ogrenci-vizesi-ve-egitim-izni',
   title: 'Kanada Öğrenci Vizesi ve Eğitim İzni: Başvuru Rehberi',
@@ -504,13 +512,15 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
   return slugs.map((slug, i) => {
     const path = `/${cluster.prefix}/${slug}`;
     const title =
-      path === studyPermit.path
-        ? studyPermit.title
-        : path === arrivalPath
-          ? arrivalTitle
-          : i === 0
-            ? cluster.pillar[1]
-            : titleize(slug);
+      path === workPermit.path
+        ? workPermit.title
+        : path === studyPermit.path
+          ? studyPermit.title
+          : path === arrivalPath
+            ? arrivalTitle
+            : i === 0
+              ? cluster.pillar[1]
+              : titleize(slug);
     return {
       path,
       slug,
@@ -518,11 +528,13 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
       category: cluster.category,
       categorySlug: cluster.prefix,
       description:
-        path === studyPermit.path
-          ? studyPermit.description
-          : path === arrivalPath
-            ? arrivalDescription
-            : `${title} hakkında güncel yaklaşımı, değerlendirme ölçütlerini, dikkat edilmesi gereken noktaları ve sonraki adımları öğrenin.`,
+        path === workPermit.path
+          ? workPermit.description
+          : path === studyPermit.path
+            ? studyPermit.description
+            : path === arrivalPath
+              ? arrivalDescription
+              : `${title} hakkında güncel yaklaşımı, değerlendirme ölçütlerini, dikkat edilmesi gereken noktaları ve sonraki adımları öğrenin.`,
       intro: `${title} konusu, Kanada planı yapan kişilerin koşullarına ve hedeflerine göre farklı biçimde değerlendirilmelidir. Bu rehber; temel kavramları, yaygın yanlış anlamaları, hazırlanırken dikkat edilmesi gereken noktaları ve izlenebilecek sonraki adımları açık, dengeli ve genel bilgilendirme çerçevesinde ele alır.`,
       pillar,
       parent: i === 0 ? null : pillar,
@@ -542,6 +554,7 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
       ],
       isPillar: i === 0,
       contentStatus:
+        path === workPermit.path ||
         path === studyPermit.path ||
         path === arrivalPath ||
         path === '/kanada-vizesi/kanada-ziyaretci-vizesi' ||

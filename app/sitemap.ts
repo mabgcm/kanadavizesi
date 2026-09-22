@@ -1,3 +1,4 @@
+import { workPermit } from '@/lib/content';
 import { studyPermit } from '@/lib/study-permit';
 import { arrivalPath, arrivalDates } from '@/lib/arrival';
 import { visitorVisaPath, visitorVisaFacts } from '@/lib/visitor-visa';
@@ -56,15 +57,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .map((a) => ({
         url: `${SITE_URL}${a.path}`,
         lastModified: new Date(
-          a.path === studyPermit.path
-            ? studyPermit.reviewedAt
-            : a.path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir'
-              ? TURKIYE_KANADA_GUIDE_DATES.modified
-              : a.path === visitorVisaPath
-                ? visitorVisaFacts.reviewedAt
-                : a.path === arrivalPath
-                  ? arrivalDates.modified
-                  : '2026-09-11',
+          a.path === workPermit.path
+            ? workPermit.reviewedAt
+            : a.path === studyPermit.path
+              ? studyPermit.reviewedAt
+              : a.path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir'
+                ? TURKIYE_KANADA_GUIDE_DATES.modified
+                : a.path === visitorVisaPath
+                  ? visitorVisaFacts.reviewedAt
+                  : a.path === arrivalPath
+                    ? arrivalDates.modified
+                    : '2026-09-11',
         ),
         changeFrequency: 'monthly' as const,
         priority: a.isPillar ? 0.9 : 0.7,
