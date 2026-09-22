@@ -126,15 +126,6 @@ export function StudyPermitGuide() {
                   IRCC: Eğitim izni
                 </a>
               </p>
-              <div className="guide-warning">
-                <CircleAlert aria-hidden="true" />
-                <p>
-                  KanadaVizesi.ca bağımsız bir bilgi platformudur; Kanada
-                  Hükümeti veya IRCC ile bağlantılı değildir. Bu rehber genel
-                  bilgilendirme içindir. Başvuru koşulları ve kişisel uygunluk
-                  ayrıca değerlendirilmelidir.
-                </p>
-              </div>
             </section>
             <section id="vize-ve-izin">
               <h2>Öğrenci vizesi ile eğitim izni arasındaki fark</h2>
