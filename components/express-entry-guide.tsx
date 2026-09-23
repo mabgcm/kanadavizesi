@@ -224,14 +224,6 @@ export function ExpressEntryGuide() {
               </p>
               <Source index={1} />
             </section>
-            <div className="guide-warning">
-              <p>
-                KanadaVizesi.ca bağımsız bir bilgi platformudur; Kanada Hükümeti
-                veya IRCC ile bağlantılı değildir. Bu rehber genel
-                bilgilendirmedir; kişisel uygunluk ve güncel başvuru koşulları
-                ayrıca değerlendirilmelidir.
-              </p>
-            </div>
             <section id="kalici-oturum">
               <h2>Kalıcı oturum ne sağlar?</h2>
               <p>
