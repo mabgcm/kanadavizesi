@@ -1,3 +1,5 @@
+import { ExpressEntryGuide } from '@/components/express-entry-guide';
+import { expressEntry } from '@/lib/content';
 import { WorkPermitGuide } from '@/components/work-permit-guide';
 import { workPermit } from '@/lib/content';
 import { StudyPermitGuide } from '@/components/study-permit-guide';
@@ -29,6 +31,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = articleMap.get(`/${slug.join('/')}`);
   if (!article) return {};
+  if (article.path === expressEntry.path)
+    return pageMetadata({
+      path: expressEntry.path,
+      title: expressEntry.title,
+      description: expressEntry.description,
+      article: true,
+      modified: expressEntry.reviewedAt,
+      published: expressEntry.publishedAt,
+    });
   if (article.path === workPermit.path)
     return pageMetadata({
       path: workPermit.path,
@@ -93,6 +104,7 @@ export default async function ContentPage({ params }: Props) {
   const { slug } = await params;
   const article = articleMap.get(`/${slug.join('/')}`);
   if (!article) notFound();
+  if (article.path === expressEntry.path) return <ExpressEntryGuide />;
   if (article.path === workPermit.path) return <WorkPermitGuide />;
   if (article.path === studyPermit.path) return <StudyPermitGuide />;
   if (article.path === arrivalPath) return <ArrivalGuide />;

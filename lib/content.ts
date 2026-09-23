@@ -1,3 +1,12 @@
+export const expressEntry = {
+  path: '/kanada-gocmenlik/kalici-oturum-ve-express-entry',
+  title: 'Kanada Kalıcı Oturum Rehberi: Express Entry ve Alternatif Yollar',
+  description:
+    'Kanada kalıcı oturum ve Express Entry şartlarını, CRS puanını, belgeleri, mali yeterliliği, davet sürecini ve eyalet adaylığını öğrenin.',
+  reviewedAt: '2026-09-22',
+  publishedAt: '2026-09-22',
+} as const;
+
 export const workPermit = {
   path: '/kanadada-calisma/kanada-calisma-izni',
   title: 'Kanada Çalışma İzni: Türler, Şartlar ve Başvuru',
@@ -512,15 +521,17 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
   return slugs.map((slug, i) => {
     const path = `/${cluster.prefix}/${slug}`;
     const title =
-      path === workPermit.path
-        ? workPermit.title
-        : path === studyPermit.path
-          ? studyPermit.title
-          : path === arrivalPath
-            ? arrivalTitle
-            : i === 0
-              ? cluster.pillar[1]
-              : titleize(slug);
+      path === expressEntry.path
+        ? expressEntry.title
+        : path === workPermit.path
+          ? workPermit.title
+          : path === studyPermit.path
+            ? studyPermit.title
+            : path === arrivalPath
+              ? arrivalTitle
+              : i === 0
+                ? cluster.pillar[1]
+                : titleize(slug);
     return {
       path,
       slug,
@@ -528,13 +539,15 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
       category: cluster.category,
       categorySlug: cluster.prefix,
       description:
-        path === workPermit.path
-          ? workPermit.description
-          : path === studyPermit.path
-            ? studyPermit.description
-            : path === arrivalPath
-              ? arrivalDescription
-              : `${title} hakkında güncel yaklaşımı, değerlendirme ölçütlerini, dikkat edilmesi gereken noktaları ve sonraki adımları öğrenin.`,
+        path === expressEntry.path
+          ? expressEntry.description
+          : path === workPermit.path
+            ? workPermit.description
+            : path === studyPermit.path
+              ? studyPermit.description
+              : path === arrivalPath
+                ? arrivalDescription
+                : `${title} hakkında güncel yaklaşımı, değerlendirme ölçütlerini, dikkat edilmesi gereken noktaları ve sonraki adımları öğrenin.`,
       intro: `${title} konusu, Kanada planı yapan kişilerin koşullarına ve hedeflerine göre farklı biçimde değerlendirilmelidir. Bu rehber; temel kavramları, yaygın yanlış anlamaları, hazırlanırken dikkat edilmesi gereken noktaları ve izlenebilecek sonraki adımları açık, dengeli ve genel bilgilendirme çerçevesinde ele alır.`,
       pillar,
       parent: i === 0 ? null : pillar,
@@ -554,6 +567,7 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
       ],
       isPillar: i === 0,
       contentStatus:
+        path === expressEntry.path ||
         path === workPermit.path ||
         path === studyPermit.path ||
         path === arrivalPath ||
