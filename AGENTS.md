@@ -7,3 +7,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Agent instructions
+
+- Before changing application code, read `PROJECT_GUIDE.md` at the repo root.
+- Use `PROJECT_GUIDE.md` to understand architecture, routing, SEO rules and critical flows.
+- Keep `PROJECT_GUIDE.md` up to date when you introduce or remove major features, change SEO behavior, or modify the assessment API.
