@@ -17,9 +17,11 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArticleTemplate } from '@/components/article-template';
 import { TurkiyeKanadaGuide } from '@/components/turkiye-kanada-guide';
+import { LegalWaysGuide } from '@/components/legal-ways-guide';
 import {
   articleMap,
   articles,
+  legalWays,
   TURKIYE_KANADA_GUIDE_DATES,
 } from '@/lib/content';
 
@@ -82,6 +84,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       article: true,
       modified: visitorVisaFacts.reviewedAt,
     });
+  if (article.path === legalWays.path)
+    return pageMetadata({
+      path: article.path,
+      title: legalWays.seoTitle,
+      description: legalWays.description,
+      article: true,
+      modified: legalWays.reviewedAt,
+      published: legalWays.publishedAt,
+    });
   if (article.path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir')
     return pageMetadata({
       path: article.path,
@@ -108,6 +119,7 @@ export default async function ContentPage({ params }: Props) {
   if (article.path === workPermit.path) return <WorkPermitGuide />;
   if (article.path === studyPermit.path) return <StudyPermitGuide />;
   if (article.path === arrivalPath) return <ArrivalGuide />;
+  if (article.path === legalWays.path) return <LegalWaysGuide />;
   if (article.path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir')
     return <TurkiyeKanadaGuide />;
   if (article.path === visitorVisaPath) return <VisitorVisaGuide />;

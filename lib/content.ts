@@ -24,6 +24,17 @@ export const studyPermit = {
   reviewedAt: '2026-09-21',
 } as const;
 
+export const legalWays = {
+  path: '/rehberler/kanadaya-gitmenin-yasal-yollari',
+  title: 'Kanada’ya gitmenin yasal yolları',
+  seoTitle:
+    'Kanada’ya Gitmenin Yasal Yolları 2026: Ziyaret, Eğitim, Çalışma ve Kalıcı Oturum',
+  description:
+    'Türkiye’den Kanada’ya yasal yolları karşılaştırın: ziyaretçi vizesi, eğitim izni, çalışma izni, Express Entry, eyalet programları ve aile sponsorluğu — kimler için uygun, ne gerekir, nereden başlamalı?',
+  publishedAt: '2026-11-08',
+  reviewedAt: '2026-11-08',
+} as const;
+
 export const arrivalPath = '/kanadada-yasam/kanadada-yasam-ve-ilk-90-gun';
 export const arrivalTitle =
   'Kanada’da İlk 90 Gün: Yeni Gelenler İçin Adım Adım Rehber';
@@ -545,9 +556,11 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
             ? workPermit.description
             : path === studyPermit.path
               ? studyPermit.description
-              : path === arrivalPath
-                ? arrivalDescription
-                : `${title} hakkında güncel yaklaşımı, değerlendirme ölçütlerini, dikkat edilmesi gereken noktaları ve sonraki adımları öğrenin.`,
+              : path === legalWays.path
+                ? legalWays.description
+                : path === arrivalPath
+                  ? arrivalDescription
+                  : `${title} hakkında güncel yaklaşımı, değerlendirme ölçütlerini, dikkat edilmesi gereken noktaları ve sonraki adımları öğrenin.`,
       intro: `${title} konusu, Kanada planı yapan kişilerin koşullarına ve hedeflerine göre farklı biçimde değerlendirilmelidir. Bu rehber; temel kavramları, yaygın yanlış anlamaları, hazırlanırken dikkat edilmesi gereken noktaları ve izlenebilecek sonraki adımları açık, dengeli ve genel bilgilendirme çerçevesinde ele alır.`,
       pillar,
       parent: i === 0 ? null : pillar,
@@ -570,6 +583,7 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
         path === expressEntry.path ||
         path === workPermit.path ||
         path === studyPermit.path ||
+        path === legalWays.path ||
         path === arrivalPath ||
         path === '/kanada-vizesi/kanada-ziyaretci-vizesi' ||
         path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir'
