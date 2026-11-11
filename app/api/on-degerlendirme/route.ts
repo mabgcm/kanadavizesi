@@ -1,5 +1,4 @@
 import nodemailer from 'nodemailer';
-import { checkBotId } from 'botid/server';
 import { createHash } from 'node:crypto';
 import {
   assessmentEmail,
@@ -88,21 +87,6 @@ export async function POST(request: Request) {
   const data = validateAssessment(raw);
   if (!data)
     return reply('Zorunlu alanları ve onay kutusunu kontrol edin.', 400);
-  try {
-    const verification = await checkBotId({
-      advancedOptions: { checkLevel: 'basic' },
-    });
-    if (verification.isBot || verification.isHuman !== true)
-      return reply(
-        'Güvenlik doğrulaması başarısız oldu. Sayfayı yenileyip tekrar deneyin.',
-        403,
-      );
-  } catch {
-    return reply(
-      'Güvenlik doğrulaması şu anda tamamlanamıyor. Lütfen daha sonra tekrar deneyin.',
-      503,
-    );
-  }
   const user = process.env.GMAIL_USER?.trim();
   const pass = process.env.GMAIL_APP_PASSWORD?.replace(/\s/g, '');
   const to = process.env.ASSESSMENT_TO_EMAIL?.trim() || user;

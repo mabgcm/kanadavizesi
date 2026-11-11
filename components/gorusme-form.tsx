@@ -397,7 +397,7 @@ export function GorusmeForm() {
               {status === 'sending' ? 'Gönderiliyor…' : 'Görüşme talebini gönder'}
             </button>
             <p className={styles.note}>
-              Gönderimler otomatik spam ve bot kontrolünden geçirilir.
+              Gönderimler otomatik spam kontrolünden geçirilir.
             </p>
             <p className={styles.note}>
               Bilgileriniz yalnızca talebinizi değerlendirmek ve yanıtlamak
