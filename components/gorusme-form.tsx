@@ -131,7 +131,7 @@ export function GorusmeForm() {
               />
             </label>
             <label className={styles.wide}>
-              Telefon
+              WhatsApp numarası
               <input
                 name="phone"
                 type="tel"

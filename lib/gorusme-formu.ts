@@ -220,7 +220,7 @@ export function meetingFormEmail(data: MeetingForm) {
     'Yeni görüşme formu talebi',
     `Ad soyad: ${data.name}`,
     `E-posta: ${data.email}`,
-    `Telefon: ${data.phone}`,
+    `WhatsApp numarası: ${data.phone}`,
     line('callTime'),
     line('source'),
     line('plan'),
