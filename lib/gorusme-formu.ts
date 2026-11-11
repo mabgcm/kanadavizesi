@@ -211,7 +211,133 @@ export function validateMeetingForm(value: unknown): MeetingForm | null {
   };
 }
 
+export type MeetingVerdict = 'call' | 'review' | 'skip';
+export type MeetingEvaluation = {
+  score: number;
+  verdict: MeetingVerdict;
+  verdictLabel: string;
+  reasons: string[];
+};
+
+const incomePoints: Record<string, number> = {
+  low: 1,
+  mid: 3,
+  high: 4,
+  top: 5,
+};
+const englishPoints: Record<string, number> = {
+  none: 0,
+  basic: 2,
+  intermediate: 4,
+  good: 5,
+};
+const timelinePoints: Record<string, number> = {
+  month: 5,
+  quarter: 4,
+  halfYear: 3,
+  unknown: 0,
+};
+
+/**
+ * Görüşme formu değerlendirmesi (100 puan):
+ * - Pasaport 10, seyahat geçmişi 10, Kanada geçmişi 5, engeller 15
+ * - Bütçe 15, birikim 5, gelir 5, çalışma 10, işveren yazısı 5
+ * - Bağlar 10, dil 5, zaman 5
+ * Karar: 70+ ARA, 45–69 ÖNCE İNCELE, 45 altı ARAMA.
+ * Pasaport yoksa doğrudan ARAMA; sabıka, ihlal veya bütçe yoksa en fazla ÖNCE İNCELE.
+ */
+export function evaluateMeetingForm(data: MeetingForm): MeetingEvaluation {
+  let score = 0;
+  const plus: string[] = [];
+  const minus: string[] = [];
+
+  if (data.passport === 'yes') score += 10;
+  else minus.push('Pasaportu yok — vize başvurusu yapılamaz');
+
+  if (data.traveled === 'yes') {
+    score += 6;
+    if (data.refused === 'no') {
+      score += 4;
+      plus.push('Yurt dışı geçmişi var, red almamış');
+    } else {
+      minus.push(`Vize reddi var (${data.refusalDetails}) — red mektubu istenmeli`);
+    }
+  } else {
+    minus.push('Hiç yurt dışı geçmişi yok');
+  }
+
+  if (data.appliedBefore === 'no') score += 5;
+  else if (data.canadaResult === 'approved') {
+    score += 5;
+    plus.push('Daha önce Kanada vizesi almış');
+  } else if (data.canadaResult === 'waiting') score += 3;
+  else minus.push('Daha önce Kanada vizesinden red almış');
+
+  if (data.criminal === 'no') score += 8;
+  else minus.push('Sabıka kaydı var');
+  if (data.overstay === 'no') score += 7;
+  else minus.push('Vize ihlali / sınır dışı geçmişi var');
+
+  if (data.budget === 'ready') {
+    score += 15;
+    plus.push('Bütçe hazır');
+  } else if (data.budget === 'partial') {
+    score += 8;
+    minus.push('Bütçe kısmen hazır');
+  } else minus.push('Bütçe henüz yok');
+  if (data.savings === 'yes') score += 5;
+  else minus.push('Banka birikimi yok');
+  score += incomePoints[data.income] ?? 0;
+
+  if (data.employed === 'yes') {
+    score += 10;
+    if (data.employerLetter === 'yes') {
+      score += 5;
+      plus.push('İşveren yazısı alabiliyor');
+    } else if (data.employerLetter === 'unknown') score += 2;
+    else minus.push('İşveren yazısı alamıyor');
+  } else {
+    minus.push('Şu an çalışmıyor');
+  }
+
+  if (data.married === 'married' && data.familyStays === 'staying') {
+    score += 6;
+    plus.push('Eş/çocuk Türkiye’de kalıyor — güçlü dönüş bağı');
+  } else if (data.married === 'married') score += 3;
+  else score += 3;
+  if (data.property === 'yes') {
+    score += 4;
+    plus.push('Üzerine kayıtlı ev/araç var');
+  }
+
+  score += englishPoints[data.english] ?? 0;
+  score += timelinePoints[data.timeline] ?? 0;
+  if (data.plan === 'unsure') minus.push('Hedefi belirsiz — ne istediğini bilmiyor');
+
+  let verdict: MeetingVerdict;
+  if (data.passport === 'no') verdict = 'skip';
+  else if (score >= 70) verdict = 'call';
+  else if (score >= 45) verdict = 'review';
+  else verdict = 'skip';
+  if (
+    verdict === 'call' &&
+    (data.criminal === 'yes' ||
+      data.overstay === 'yes' ||
+      data.budget === 'none')
+  )
+    verdict = 'review';
+
+  const verdictLabel =
+    verdict === 'call' ? 'ARA' : verdict === 'review' ? 'ÖNCE İNCELE' : 'ARAMA';
+  const reasons =
+    verdict === 'call'
+      ? [...plus.slice(0, 3), ...minus.slice(0, 2)]
+      : [...minus.slice(0, 4), ...plus.slice(0, 2)];
+  return { score, verdict, verdictLabel, reasons };
+}
+
 export function meetingFormEmail(data: MeetingForm) {
+  const evaluation = evaluateMeetingForm(data);
   const q = meetingQuestions as Record<
     string,
     { label: string; options: Record<string, string> }
@@ -219,7 +345,11 @@ export function meetingFormEmail(data: MeetingForm) {
   const line = (key: OptionKey) =>
     `${q[key].label}: ${q[key].options[data[key]]}`;
   const lines = [
-    'Yeni görüşme formu talebi',
+    'GÖRÜŞME FORMU DEĞERLENDİRMESİ',
+    `Karar: ${evaluation.verdictLabel} — ${evaluation.score}/100`,
+    ...evaluation.reasons.map((reason) => `• ${reason}`),
+    '',
+    'CEVAPLAR',
     `Ad soyad: ${data.name}`,
     `E-posta: ${data.email}`,
     `WhatsApp numarası: ${data.phone}`,

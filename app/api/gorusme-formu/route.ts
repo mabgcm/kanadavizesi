@@ -1,6 +1,7 @@
 import nodemailer from 'nodemailer';
 import { createHash } from 'node:crypto';
 import {
+  evaluateMeetingForm,
   meetingFormEmail,
   validateMeetingForm,
 } from '@/lib/gorusme-formu';
@@ -143,11 +144,12 @@ export async function POST(request: Request) {
     disableUrlAccess: true,
   });
   try {
+    const evaluation = evaluateMeetingForm(data);
     const result = await transport.sendMail({
       from: { name: 'KanadaVizesi.ca', address: user },
       to,
       replyTo: { name: data.name, address: data.email },
-      subject: 'Yeni görüşme formu talebi — KanadaVizesi.ca',
+      subject: `Yeni görüşme formu talebi — ${evaluation.verdictLabel} (${evaluation.score}/100)`,
       text: meetingFormEmail(data),
     });
     if (!result.accepted.length) throw new Error('Message rejected');
