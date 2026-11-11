@@ -35,6 +35,17 @@ export const legalWays = {
   reviewedAt: '2026-11-08',
 } as const;
 
+export const visaRefusal = {
+  path: '/kanada-vizesi/vize-reddi',
+  title: 'Kanada Vize Reddi: Nedenleri ve Ret Sonrası Yapılması Gerekenler',
+  seoTitle:
+    'Kanada Vize Reddi 2026: En Sık Ret Nedenleri ve Nasıl Giderilir',
+  description:
+    'Kanada ziyaretçi vizesi reddinin en sık nedenleri: geri dönüş bağları, mali yetersizlik, seyahat amacı, aile bağları ve yanlış beyan. Ret mektubu nasıl okunur, GCMS notları nasıl alınır, yeniden başvuru ve mahkeme yolu.',
+  publishedAt: '2026-11-11',
+  reviewedAt: '2026-11-11',
+} as const;
+
 export const arrivalPath = '/kanadada-yasam/kanadada-yasam-ve-ilk-90-gun';
 export const arrivalTitle =
   'Kanada’da İlk 90 Gün: Yeni Gelenler İçin Adım Adım Rehber';
@@ -558,7 +569,9 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
               ? studyPermit.description
               : path === legalWays.path
                 ? legalWays.description
-                : path === arrivalPath
+                : path === visaRefusal.path
+                  ? visaRefusal.description
+                  : path === arrivalPath
                   ? arrivalDescription
                   : `${title} hakkında güncel yaklaşımı, değerlendirme ölçütlerini, dikkat edilmesi gereken noktaları ve sonraki adımları öğrenin.`,
       intro: `${title} konusu, Kanada planı yapan kişilerin koşullarına ve hedeflerine göre farklı biçimde değerlendirilmelidir. Bu rehber; temel kavramları, yaygın yanlış anlamaları, hazırlanırken dikkat edilmesi gereken noktaları ve izlenebilecek sonraki adımları açık, dengeli ve genel bilgilendirme çerçevesinde ele alır.`,
@@ -584,6 +597,7 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
         path === workPermit.path ||
         path === studyPermit.path ||
         path === legalWays.path ||
+        path === visaRefusal.path ||
         path === arrivalPath ||
         path === '/kanada-vizesi/kanada-ziyaretci-vizesi' ||
         path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir'
