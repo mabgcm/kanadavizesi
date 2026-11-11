@@ -2,12 +2,14 @@ import { emailPattern } from '@/lib/assessment';
 
 export const meetingQuestions = {
   callTime: {
-    label: 'Size en uygun arama saati',
+    label: 'Size en uygun arama saati (Türkiye saatiyle)',
     options: {
-      morning: 'Sabah (09.00–12.00)',
-      noon: 'Öğlen (12.00–15.00)',
-      afternoon: 'İkindi (15.00–18.00)',
-      evening: 'Akşam (18.00–21.00)',
+      slot17: '17.00–18.00',
+      slot18: '18.00–19.00',
+      slot19: '19.00–20.00',
+      slot20: '20.00–21.00',
+      slot21: '21.00–22.00',
+      slot22: '22.00–23.00',
     },
   },
   source: {
