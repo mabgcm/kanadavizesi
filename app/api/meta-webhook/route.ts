@@ -133,7 +133,7 @@ function extractEvents(payload: unknown, now: number): WebhookEvent[] {
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const mode = url.searchParams.get('hub.mode');
-  const token = url.searchParams.get('hub.verify_token');
+  const token = url.searchParams.get('hub.verify_token')?.trim();
   const challenge = url.searchParams.get('hub.challenge');
   const expected = process.env.META_WEBHOOK_VERIFY_TOKEN?.trim();
   if (
