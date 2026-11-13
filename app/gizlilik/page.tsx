@@ -16,7 +16,7 @@ export default function Privacy() {
         </nav>
         <h1>Gizlilik Politikası</h1>
         <span className="red-rule" />
-        <p>Son güncelleme: 12 Eylül 2026</p>
+        <p>Son güncelleme: 13 Kasım 2026</p>
         <h2>Kapsam ve iletişim</h2>
         <p>
           Bu politika, KanadaVizesi.ca üzerindeki ön değerlendirme formu ve site
@@ -60,6 +60,18 @@ export default function Privacy() {
             Google Gizlilik Politikası
           </a>{' '}
           incelenebilir.
+        </p>
+        <h2>Facebook Messenger ve Instagram mesajlaşma asistanı</h2>
+        <p>
+          Facebook Sayfamıza (KanadaVizesi) veya Instagram hesabımıza
+          (kanadavizesi.ca) mesaj gönderdiğinizde, otomatik asistanımız mesaj
+          metninizi ve Meta platformunun verdiği gönderen kimliğini okur; size
+          genel bilgilendirme ve yönlendirme cevabı gönderir. Mesajlaşma
+          verileriniz yalnızca bu cevap ve iç takip (CRM kaydı) için kullanılır,
+          üçüncü kişilerle paylaşılmaz ve pazarlama amacıyla kullanılmaz.
+          Asistan yalnızca sizin başlattığınız sohbetlere, mesajlaşma
+          penceresinin izin verdiği süre içinde cevap verir; size kendi
+          kendine mesaj göndermez.
         </p>
         <h2>Site ölçümü ve çerezler</h2>
         <p>
@@ -110,6 +122,13 @@ export default function Privacy() {
           adresine yazabilirsiniz. Talebi güvenle karşılamak için kimliğinizi
           doğrulamak gerekebilir. Onayın geri çekilmesi önceki işlemleri geri
           almaz; uygulanabilir saklama yükümlülükleri ayrıca değerlendirilir.
+        </p>
+        <p>
+          Mesajlaşma asistanıyla yaptığınız sohbetin ve CRM kaydınızın
+          silinmesini isterseniz aynı adrese &ldquo;Verilerimi silin&rdquo;
+          konulu bir e-posta göndermeniz yeterlidir; mesajlaştığınız hesap
+          adını belirtmeniz talebin bulunmasını kolaylaştırır. Talebiniz en
+          geç 30 gün içinde yerine getirilir ve size e-postayla bildirilir.
         </p>
         <h2>Güncellemeler</h2>
         <p>
