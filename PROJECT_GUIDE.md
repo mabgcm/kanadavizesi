@@ -92,7 +92,7 @@ No user accounts, databases, or client-side authentication flows exist. [code-ve
 
 - `app/api/on-degerlendirme/route.ts` – public pre-assessment form endpoint. [code-verified]
 - `app/api/gorusme-formu/route.ts` – private intake form endpoint (unlisted page `/gorusme-formu`); same Gmail SMTP pattern plus rule-based evaluation in the email. [code-verified]
-- `app/api/meta-webhook/route.ts` – Meta webhook receiver (GET verification handshake, POST event intake). Verifies the `X-Hub-Signature-256` HMAC when `META_APP_SECRET` is set, keeps only inbound text messages addressed to the kanadavizesi.ca Instagram account, dedupes by Meta message id, and forwards each batch as one email to the operator mailbox. No BotID, origin, or rate-limit checks: Meta calls server-to-server. [code-verified]
+- `app/api/meta-webhook/route.ts` – Meta webhook receiver (GET verification handshake, POST event intake). Verifies the `X-Hub-Signature-256` HMAC when `META_APP_SECRET` is set, forwards inbound text messages (any recipient; the bot matches them to Conversations-API messages by text and timestamp), dedupes by Meta message id, and forwards each batch as one email to the operator mailbox. No BotID, origin, or rate-limit checks: Meta calls server-to-server. [code-verified]
   - Responsibilities:
     - Enforce same-origin and content-type checks.
     - Light-weight per-instance rate limits on requests/IPs and submissions (maps `requests`, `attempts`, `submissions`).

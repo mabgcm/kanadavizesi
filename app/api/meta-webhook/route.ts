@@ -17,6 +17,12 @@ export const maxDuration = 30;
 // the message it already read via the Conversations API (same text,
 // close timestamp), and replies using the IGSID.
 //
+// The route forwards every inbound text message, whatever the
+// recipient: the text+timestamp match is what ties an event to a real
+// Instagram conversation, so unrelated events can never cause a reply.
+// Each event carries its object/recipient/entry tags so the bot can
+// prefer Instagram-tagged events when matching.
+//
 // Security notes:
 // - No BotID, origin, or sec-fetch checks: Meta calls this endpoint
 //   server-to-server from its own infrastructure. Authentication is the
@@ -28,9 +34,6 @@ export const maxDuration = 30;
 // - Message text is never logged. It travels only inside the operator
 //   email, the same channel the assessment forms already use.
 
-// Instagram business account id for kanadavizesi.ca. A public
-// identifier, not a secret.
-const IG_ACCOUNT_ID = '17841458289516899';
 const MAX_BODY_BYTES = 65536;
 // Per-instance dedupe for Meta retries (same mid delivered twice).
 const seenMids = new Map<string, number>();
@@ -40,6 +43,9 @@ type WebhookEvent = {
   mid: string;
   text: string;
   timestampMs: number;
+  object: string;
+  recipient: string;
+  entry_id: string;
 };
 
 function safeEqual(a: string, b: string): boolean {
@@ -86,8 +92,10 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 function extractEvents(payload: unknown, now: number): WebhookEvent[] {
   const events: WebhookEvent[] = [];
   if (!isRecord(payload) || !Array.isArray(payload.entry)) return events;
+  const object = typeof payload.object === 'string' ? payload.object : '';
   for (const entry of payload.entry) {
     if (!isRecord(entry) || !Array.isArray(entry.messaging)) continue;
+    const entryId = typeof entry.id === 'string' ? entry.id : '';
     for (const item of entry.messaging) {
       if (!isRecord(item)) continue;
       const sender = isRecord(item.sender) ? item.sender : null;
@@ -101,12 +109,12 @@ function extractEvents(payload: unknown, now: number): WebhookEvent[] {
       const mid = message && typeof message.mid === 'string' ? message.mid : '';
       const timestampMs =
         typeof item.timestamp === 'number' ? item.timestamp : 0;
-      // Only inbound text messages addressed to the kanadavizesi.ca
-      // Instagram account. Echoes (our own sends), delivery receipts,
-      // and Messenger events (different recipient id) are ignored.
+      // Only inbound text messages. Echoes (our own sends) and delivery
+      // receipts are ignored. No recipient filter: the bot's
+      // text+timestamp match decides which events belong to Instagram
+      // conversations.
       if (
         !igsid ||
-        recipientId !== IG_ACCOUNT_ID ||
         !mid ||
         !text.trim() ||
         message?.is_echo === true
@@ -114,7 +122,15 @@ function extractEvents(payload: unknown, now: number): WebhookEvent[] {
         continue;
       }
       if (seenMids.has(mid)) continue;
-      events.push({ igsid, mid, text: text.trim(), timestampMs });
+      events.push({
+        igsid,
+        mid,
+        text: text.trim(),
+        timestampMs,
+        object,
+        recipient: recipientId,
+        entry_id: entryId,
+      });
     }
   }
   for (const [mid, expires] of seenMids) {
