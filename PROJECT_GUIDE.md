@@ -2,7 +2,7 @@
 
 <!-- Verification
 - Status: draft
-- Last verified against code: 2026-10-12
+- Last verified against code: 2026-11-13
 - Commit: _not available from agent environment_
 -->
 
@@ -49,6 +49,8 @@ No user accounts, databases, or client-side authentication flows exist. [code-ve
   - Nodemailer SMTP client configured for Gmail (`smtp.gmail.com:465` TLS) in `app/api/on-degerlendirme/route.ts`. [code-verified]
 - **Bot / abuse protection**:
   - Vercel BotID via `botid` package: `withBotId(nextConfig)` wrapping `next.config.ts` and `checkBotId` called server-side in the assessment API route. [code-verified]
+- **Meta webhook**:
+  - `app/api/meta-webhook/route.ts` receives Meta webhook events for Instagram DMs and forwards captured events to the operator mailbox via the same Gmail SMTP setup, so the assistant bot can reply using the webhook-only Instagram-scoped ID (IGSID). Authenticated with the `X-Hub-Signature-256` HMAC (`META_APP_SECRET`); no BotID or origin checks apply to server-to-server calls. [code-verified]
 - **Other UI libs**: `lucide-react`, `embla-carousel-react`, `react-resizable-panels`, `cmdk`, etc., mainly surfaced under `components/ui/*` and specific guide tools (e.g., arrival/visitor guides). [code-verified]
 
 ## 3. Layout, key directories, routes, and APIs
@@ -88,13 +90,15 @@ No user accounts, databases, or client-side authentication flows exist. [code-ve
 
 ### API endpoints
 
-- `app/api/on-degerlendirme/route.ts` – **only API route** currently present. [code-verified]
+- `app/api/on-degerlendirme/route.ts` – public pre-assessment form endpoint. [code-verified]
+- `app/api/gorusme-formu/route.ts` – private intake form endpoint (unlisted page `/gorusme-formu`); same Gmail SMTP pattern plus rule-based evaluation in the email. [code-verified]
+- `app/api/meta-webhook/route.ts` – Meta webhook receiver (GET verification handshake, POST event intake). Verifies the `X-Hub-Signature-256` HMAC when `META_APP_SECRET` is set, keeps only inbound text messages addressed to the kanadavizesi.ca Instagram account, dedupes by Meta message id, and forwards each batch as one email to the operator mailbox. No BotID, origin, or rate-limit checks: Meta calls server-to-server. [code-verified]
   - Responsibilities:
     - Enforce same-origin and content-type checks.
     - Light-weight per-instance rate limits on requests/IPs and submissions (maps `requests`, `attempts`, `submissions`).
     - Enforce payload size limit (16 KB) by manually reading `ReadableStream` with a `TextDecoder`.
     - Validate JSON structure with `validateAssessment` from `lib/assessment.ts`.
-    - Run BotID verification and reject suspected bots.
+    - BotID verification was removed (2026-11-11): `checkBotId` rejected real submissions, so spam protection is honeypot + origin checks + rate limits only.
     - Guard against misconfiguration by checking `GMAIL_USER`, `GMAIL_APP_PASSWORD`, `ASSESSMENT_TO_EMAIL` environment variables.
     - Use Nodemailer to send plaintext email built from `assessmentEmail()` and return JSON `{ok:true}` on success.
     - Map different failures to different HTTP statuses: 400, 403, 413, 415, 429, 502, 503. [code-verified]
@@ -190,6 +194,8 @@ From `README.md`, `app/layout.tsx`, API route, and SEO docs: [code-verified unle
 - `GMAIL_USER` – Gmail/Google Workspace sender email address for assessment emails. [code-verified]
 - `GMAIL_APP_PASSWORD` – 16-character app password for Gmail SMTP. [code-verified]
 - `ASSESSMENT_TO_EMAIL` – optional recipient email; defaults to `GMAIL_USER` if omitted. [code-verified]
+- `META_WEBHOOK_VERIFY_TOKEN` – shared secret Meta sends back during the webhook verification handshake (`hub.verify_token`). [code-verified]
+- `META_APP_SECRET` – Meta app secret used to verify the `X-Hub-Signature-256` HMAC on webhook POSTs. When unset, events are accepted with a warning (setup interim only). [code-verified]
 - `GOOGLE_SITE_VERIFICATION` – optional Google Search Console verification code; surfaced as `<meta name="google-site-verification">`. [code-verified]
 - `BING_SITE_VERIFICATION` – optional Bing Webmaster Tools verification value. [code-verified]
 - `VERCEL` – environment flag used to choose correct forwarded IP header (`x-vercel-forwarded-for` vs `x-forwarded-for`). [code-verified]
