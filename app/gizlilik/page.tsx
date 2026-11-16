@@ -16,7 +16,7 @@ export default function Privacy() {
         </nav>
         <h1>Gizlilik Politikası</h1>
         <span className="red-rule" />
-        <p>Son güncelleme: 13 Kasım 2026</p>
+        <p>Son güncelleme: 16 Kasım 2026</p>
         <h2>Kapsam ve iletişim</h2>
         <p>
           Bu politika, KanadaVizesi.ca üzerindeki ön değerlendirme formu ve site
@@ -80,6 +80,20 @@ export default function Privacy() {
           gibi kullanım verileri ölçüm kapsamında işlenebilir. Google Analytics
           çerez veya benzer teknolojiler kullanabilir. Form yanıtları uygulama
           tarafından analitik olaylarına eklenmez.
+        </p>
+        <p>
+          Site ayrıca Meta Pixel kullanır. Pixel, ziyaret edilen sayfalar ile
+          cihaz ve tarayıcı türü gibi kullanım verilerini çerezler aracılığıyla
+          Meta’ya iletir; bu veriler reklam ölçümü ve reklam hedeflemesi
+          amacıyla kullanılır. Meta’nın veri işleme uygulamaları için{' '}
+          <a href="https://www.facebook.com/privacy/policy">
+            Meta Gizlilik Politikası
+          </a>{' '}
+          incelenebilir; kişiselleştirilmiş reklamları{' '}
+          <a href="https://www.facebook.com/adpreferences">
+            Meta reklam ayarlarınızdan
+          </a>{' '}
+          sınırlayabilirsiniz.
         </p>
         <p>
           Çerezleri tarayıcı ayarlarınızdan silebilir veya engelleyebilir;

@@ -45,6 +45,7 @@ No user accounts, databases, or client-side authentication flows exist. [code-ve
 - **Analytics & third parties**:
   - Vercel Analytics via `@vercel/analytics/next` component in `app/layout.tsx`. [code-verified]
   - Google Analytics (GA4) via `@next/third-parties/google` with hardcoded `gaId="G-2GFS7EDGN2"`. [code-verified]
+  - Meta Pixel via `components/meta-pixel.tsx` (`next/script`, `afterInteractive`) with hardcoded dataset ID `29066509096341745`; fires `PageView` on every page via the root layout, with a `noscript` image fallback. No env var is needed (the ID is a public identifier visible in page source). [code-verified]
 - **Email / SMTP**:
   - Nodemailer SMTP client configured for Gmail (`smtp.gmail.com:465` TLS) in `app/api/on-degerlendirme/route.ts`. [code-verified]
 - **WhatsApp contact button**:
@@ -216,7 +217,7 @@ Never commit real values or credentials. Use `.env.example` as reference and `.e
   - Structured data: `websiteSchema` on all pages via `<JsonLd data={websiteSchema} />` and per-article JSON-LD for complete guides (see guide components). [code-verified + historically reported]
 
 - **Analytics**:
-  - Page view analytics via Vercel Analytics and GA4 (see layout). [code-verified]
+  - Page view analytics via Vercel Analytics, GA4, and Meta Pixel (see layout). [code-verified]
   - SEO check script `scripts/check-seo.mjs` and `npm run test:seo` provide automated verification of metadata, sitemap, indexing, and responses. [code-verified from `package.json`, docs]
 
 - **Performance and caching**:
