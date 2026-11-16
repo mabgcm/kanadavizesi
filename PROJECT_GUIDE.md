@@ -47,6 +47,8 @@ No user accounts, databases, or client-side authentication flows exist. [code-ve
   - Google Analytics (GA4) via `@next/third-parties/google` with hardcoded `gaId="G-2GFS7EDGN2"`. [code-verified]
 - **Email / SMTP**:
   - Nodemailer SMTP client configured for Gmail (`smtp.gmail.com:465` TLS) in `app/api/on-degerlendirme/route.ts`. [code-verified]
+- **WhatsApp contact button**:
+  - Floating `WhatsAppButton` component (`components/whatsapp-button.tsx`) rendered in the root layout on every page; links to the kanadavizesi.ca WhatsApp number via `wa.me` with a prefilled Turkish greeting. No data is sent until the visitor taps it. [code-verified]
 - **Bot / abuse protection**:
   - Vercel BotID via `botid` package: `withBotId(nextConfig)` wrapping `next.config.ts` and `checkBotId` called server-side in the assessment API route. [code-verified]
 - **Meta webhook**:

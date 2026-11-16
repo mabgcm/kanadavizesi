@@ -8,6 +8,7 @@ import { SITE_URL } from '@/lib/content';
 import { JsonLd } from '@/components/json-ld';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
+import { WhatsAppButton } from '@/components/whatsapp-button';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -52,6 +53,7 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <SiteFooter />
+        <WhatsAppButton />
         <Analytics />
       </body>
       <GoogleAnalytics gaId="G-2GFS7EDGN2" />
