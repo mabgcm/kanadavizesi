@@ -46,6 +46,17 @@ export const visaRefusal = {
   reviewedAt: '2026-11-11',
 } as const;
 
+export const noEnglish = {
+  path: '/rehberler/ingilizce-bilmeden-kanadaya-gitmek',
+  title: "İngilizce Bilmeden Kanada'ya Gelmek: Yollar, Şartlar ve Gerçekçi Plan",
+  seoTitle:
+    "İngilizce Bilmeden Kanada'ya Gelmek 2026: Dil Okulu, Çalışma ve Kalıcı Oturum Yolları",
+  description:
+    "İngilizce bilmeden Kanada'ya gelmek mümkün mü? Ziyaretçi vizesi, dil okulu, çalışma izni, Express Entry ve eyalet programlarında dil şartını, CLB seviyelerini ve gerçekçi planı öğrenin.",
+  publishedAt: '2026-11-20',
+  reviewedAt: '2026-11-20',
+} as const;
+
 export const arrivalPath = '/kanadada-yasam/kanadada-yasam-ve-ilk-90-gun';
 export const arrivalTitle =
   'Kanada’da İlk 90 Gün: Yeni Gelenler İçin Adım Adım Rehber';
@@ -549,11 +560,13 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
           ? workPermit.title
           : path === studyPermit.path
             ? studyPermit.title
-            : path === arrivalPath
-              ? arrivalTitle
-              : i === 0
-                ? cluster.pillar[1]
-                : titleize(slug);
+            : path === noEnglish.path
+              ? noEnglish.title
+              : path === arrivalPath
+                ? arrivalTitle
+                : i === 0
+                  ? cluster.pillar[1]
+                  : titleize(slug);
     return {
       path,
       slug,
@@ -571,6 +584,8 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
                 ? legalWays.description
                 : path === visaRefusal.path
                   ? visaRefusal.description
+                  : path === noEnglish.path
+                    ? noEnglish.description
                   : path === arrivalPath
                   ? arrivalDescription
                   : `${title} hakkında güncel yaklaşımı, değerlendirme ölçütlerini, dikkat edilmesi gereken noktaları ve sonraki adımları öğrenin.`,
@@ -598,6 +613,7 @@ export const articles: Article[] = clusters.flatMap((cluster, ci) => {
         path === studyPermit.path ||
         path === legalWays.path ||
         path === visaRefusal.path ||
+        path === noEnglish.path ||
         path === arrivalPath ||
         path === '/kanada-vizesi/kanada-ziyaretci-vizesi' ||
         path === '/rehberler/turkiyeden-kanadaya-nasil-gidilir'
