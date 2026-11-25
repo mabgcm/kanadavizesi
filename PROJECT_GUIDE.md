@@ -284,6 +284,7 @@ Docs in `docs/SEO.md` and `docs/ilk-90-gun-implementation.md` also describe **ma
 
 - **Content completion**:
   - 6+ primary guides are `contentStatus: 'complete'` (`/rehberler/turkiyeden-kanadaya-nasil-gidilir`, visitor-visa, arrival, Express Entry, study permit, work permit). The remaining ~120+ generated articles are still `starter` and must not be treated as fully researched content. [code-verified in `lib/content.ts` + historically reported]
+  - Complete guides also include 'Kanada'da Lise Eğitimi' (`/kanadada-egitim/kanadada-lise-egitimi`, `highSchool` const in `lib/content.ts`, component `components/high-school-guide.tsx`, added 2026-11-25). [code-verified]
 
 - **Rate limiting scope**:
   - In-memory Maps for rate-limiting are **per server instance** and not shared across Vercel instances; distributed attack resistance is limited. [code-verified from implementation and docs in `README.md`]
